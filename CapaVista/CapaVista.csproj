@@ -137,11 +137,17 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmModificarUsuario.cs">
+    <Compile Include="frmMantenimientoEliminarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificarUsuario.Designer.cs">
-      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    <Compile Include="frmMantenimientoEliminarUsuario.Designer.cs">
+      <DependentUpon>frmMantenimientoEliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoModificarUsuario.Designer.cs">
+      <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSelecciónAsientos.cs">
       <SubType>Form</SubType>
@@ -193,8 +199,11 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModificarUsuario.resx">
-      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="frmMantenimientoEliminarUsuario.resx">
+      <DependentUpon>frmMantenimientoEliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoModificarUsuario.resx">
+      <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelecciónAsientos.resx">
       <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmModificarUsuario : Form
+    public partial class frmMantenimientoModificarUsuario : Form
     {
-        public frmModificarUsuario()
+        public frmMantenimientoModificarUsuario()
         {
             InitializeComponent();
         }
