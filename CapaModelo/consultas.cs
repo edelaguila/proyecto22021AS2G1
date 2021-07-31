@@ -8,6 +8,7 @@ namespace CapaModelo
 {
     public class consultas
     {
+        conexion con = new conexion();
 
 
     }
