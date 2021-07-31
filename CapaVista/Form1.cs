@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmGenerarReportes : Form
+    public partial class insertarUsuario : Form
     {
-        public frmGenerarReportes()
+        public insertarUsuario()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void frmGenerarReportes_Load(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
