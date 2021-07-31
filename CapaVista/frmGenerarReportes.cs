@@ -21,5 +21,10 @@ namespace CapaVista
         {
 
         }
+
+        private void frmGenerarReportes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
