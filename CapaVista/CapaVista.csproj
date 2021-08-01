@@ -101,6 +101,12 @@
     <Compile Include="frmAdminUsuarios.Designer.cs">
       <DependentUpon>frmAdminUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantenimientoConsultaGeneralUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoConsultaGeneralUsuarios.Designer.cs">
+      <DependentUpon>frmMantenimientoConsultaGeneralUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEdiciónCartelera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAdminUsuarios.resx">
       <DependentUpon>frmAdminUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoConsultaGeneralUsuarios.resx">
+      <DependentUpon>frmMantenimientoConsultaGeneralUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdiciónCartelera.resx">
       <DependentUpon>frmEdiciónCartelera.cs</DependentUpon>
