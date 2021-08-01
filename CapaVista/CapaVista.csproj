@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmMantenimientoIngresar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoIngresar.Designer.cs">
+      <DependentUpon>frmMantenimientoIngresar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoGestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmMantenimientoIngresar.resx">
+      <DependentUpon>frmMantenimientoIngresar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminUsuarios.resx">
       <DependentUpon>frmAdminUsuarios.cs</DependentUpon>
     </EmbeddedResource>
