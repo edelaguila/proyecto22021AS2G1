@@ -22,30 +22,60 @@ namespace CapaVista
         {
             try
             {
+                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=123456789;database=cinevision";
                 string cod = idUsuario.Text;
-                string busqueda = "call verUser(2);";
+                string busqueda = "call verUser("+cod+");";
                 //recibi los datos y debe actualizar las textbox
                 //de: nombreUsuario y passwordUsuario
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlCommand MyCommand2 = new MySqlCommand(busqueda, MyConn2);
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                int cont = 0;
+                
                 while (MyReader2.Read())
                 {
                     /*if (cont == 0)
                     {
                         nombreUsuario=MyReader2.
                     }*/
-                    nombreUsuario=MyReader2[0].ToString();
-                    passwordUsuario = MyReader2[1].ToString();
+                    nombreUsuario.Text=MyReader2[0].ToString();
+                    passwordUsuario.Text = MyReader2[1].ToString();
                 }
                 MyConn2.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error, nos e pudo lograr la conexión");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                //This is my connection string i have assigned the database file address path  
+                string MyConnection2 = "datasource=localhost;port=3306;username=root;password=123456789;database=cinevision";
+                //This is my insert query in which i am taking input from the user through windows forms  
+                string Query = "call actuUser('" + this.nombreUsuario.Text + "','" + this.passwordUsuario.Text + "',"+this.idUsuario.Text+"); ";
+                //This is  MySqlConnection here i have created the object and pass my connection string.  
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                //This is command class which will handle the query and connection object.  
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataReader MyReader2;
+                MyConn2.Open();
+                MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.  
+                MessageBox.Show("Informacion alterada en la base de datos");
+                while (MyReader2.Read())
+                {
+                }
+                MyConn2.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error no se pudo alterar la informacion");
             }
         }
     }
