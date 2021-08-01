@@ -10,22 +10,26 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmLogin : Form
+    public partial class insertarUsuario : Form
     {
-        public frmLogin()
+        public insertarUsuario()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var frmAdmin = new frmElecciónAdmin();
-            frmAdmin.Show();
+
         }
     }
 }

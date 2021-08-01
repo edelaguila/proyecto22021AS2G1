@@ -89,11 +89,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmIngresoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoUsuario.Designer.cs">
+      <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoIngresar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoIngresar.Designer.cs">
+      <DependentUpon>frmMantenimientoIngresar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoGestionUsuarios.Designer.cs">
+      <DependentUpon>frmMantenimientoGestionUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdminUsuarios.Designer.cs">
       <DependentUpon>frmAdminUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoConsultaGeneralUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoConsultaGeneralUsuarios.Designer.cs">
+      <DependentUpon>frmMantenimientoConsultaGeneralUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEdiciónCartelera.cs">
       <SubType>Form</SubType>
@@ -137,6 +161,18 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantenimientoEliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoEliminarUsuario.Designer.cs">
+      <DependentUpon>frmMantenimientoEliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoModificarUsuario.Designer.cs">
+      <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelecciónAsientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,8 +199,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmIngresoUsuario.resx">
+      <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoIngresar.resx">
+      <DependentUpon>frmMantenimientoIngresar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminUsuarios.resx">
       <DependentUpon>frmAdminUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoConsultaGeneralUsuarios.resx">
+      <DependentUpon>frmMantenimientoConsultaGeneralUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdiciónCartelera.resx">
       <DependentUpon>frmEdiciónCartelera.cs</DependentUpon>
@@ -186,6 +231,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoEliminarUsuario.resx">
+      <DependentUpon>frmMantenimientoEliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoGestionUsuarios.resx">
+      <DependentUpon>frmMantenimientoGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoModificarUsuario.resx">
+      <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelecciónAsientos.resx">
       <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>

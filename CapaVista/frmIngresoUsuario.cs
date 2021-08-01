@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmGenerarReportes : Form
+    public partial class frmIngresoUsuario : Form
     {
-        public frmGenerarReportes()
+        public frmIngresoUsuario()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmGenerarReportes_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

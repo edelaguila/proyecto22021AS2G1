@@ -8,24 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CapaVista
 {
-    public partial class frmLogin : Form
+    public partial class frmMantenimientoGestionUsuarios : Form
     {
-        public frmLogin()
+        public frmMantenimientoGestionUsuarios()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            var frmAdmin = new frmElecciónAdmin();
-            frmAdmin.Show();
+            //var frmMGU = new frmMantenimientoIngresar();
         }
     }
 }
