@@ -25,6 +25,7 @@ OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.conexion());
     {
         conexion con = new conexion();//instancia de conexion
 
+        //todos los datos que se consulten seran almacenados en un datatable
         public DataTable llenarTbl()//metodo para obtener el contenido de una tabla
         {
             DataTable dTable = new DataTable();

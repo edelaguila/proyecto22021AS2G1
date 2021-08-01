@@ -21,5 +21,12 @@ namespace CapaVista
         {
 
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            DataTable tabla = new DataTable();
+            dvgConsulta.DataSource = tabla;
+
+        }
     }
 }
