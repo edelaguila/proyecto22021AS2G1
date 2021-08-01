@@ -40,10 +40,13 @@ OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.conexion());
                 //DataTable dTable = new DataTable();
                 MyAdapter.Fill(dTable);
 
+                con.cierraConexion(conexion);
+
+
             }
             catch(Exception e)
             {
-
+                Console.WriteLine("No funciono ,la consulta");
             }
 
 
