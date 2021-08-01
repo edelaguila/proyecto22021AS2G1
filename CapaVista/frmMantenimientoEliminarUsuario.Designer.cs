@@ -98,6 +98,7 @@ namespace CapaVista
             this.btnEliminar.TabIndex = 32;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // nombre
             // 
