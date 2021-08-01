@@ -37,6 +37,8 @@ namespace CapaVista
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@ namespace CapaVista
             // 
             this.textBox1.Location = new System.Drawing.Point(132, 76);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
+            this.textBox1.Size = new System.Drawing.Size(169, 20);
             this.textBox1.TabIndex = 3;
             // 
             // label1
@@ -88,7 +90,7 @@ namespace CapaVista
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(329, 74);
+            this.button2.Location = new System.Drawing.Point(324, 76);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -109,11 +111,25 @@ namespace CapaVista
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 169);
+            this.label3.Location = new System.Drawing.Point(35, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Contraseña:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(132, 125);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(172, 20);
+            this.textBox2.TabIndex = 8;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(132, 163);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(172, 20);
+            this.textBox3.TabIndex = 9;
             // 
             // frmMantenimientoModificarUsuario
             // 
@@ -121,6 +137,8 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(489, 286);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
@@ -129,7 +147,7 @@ namespace CapaVista
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "frmMantenimientoModificarUsuario";
-            this.Text = "frmModificarUsuario";
+            this.Text = "frmMantenimientoModificarUsuario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -147,5 +165,7 @@ namespace CapaVista
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
