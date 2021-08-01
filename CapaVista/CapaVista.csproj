@@ -89,11 +89,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormGestionUsuarios.cs">
+    <Compile Include="frmMantenimientoGestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGestionUsuarios.Designer.cs">
-      <DependentUpon>FormGestionUsuarios.cs</DependentUpon>
+    <Compile Include="frmMantenimientoGestionUsuarios.Designer.cs">
+      <DependentUpon>frmMantenimientoGestionUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdminUsuarios.cs">
       <SubType>Form</SubType>
@@ -207,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoEliminarUsuario.resx">
       <DependentUpon>frmMantenimientoEliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoGestionUsuarios.resx">
+      <DependentUpon>frmMantenimientoGestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoModificarUsuario.resx">
       <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
