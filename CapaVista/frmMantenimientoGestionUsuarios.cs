@@ -20,7 +20,26 @@ namespace CapaVista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //var frmMGU = new frmMantenimientoIngresar();
+            var frmMGU = new frmIngresoUsuario();
+            frmMGU.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var frmMU = new frmMantenimientoModificarUsuario();
+            frmMU.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var frmC = new frmMantenimientoConsultaGeneralUsuarios();
+            frmC.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var frmElim = new frmMantenimientoEliminarUsuario();
+            frmElim.Show();
         }
     }
 }
