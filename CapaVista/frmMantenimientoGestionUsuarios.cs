@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CapaVista
 {
     public partial class frmMantenimientoGestionUsuarios : Form
@@ -15,6 +16,11 @@ namespace CapaVista
         public frmMantenimientoGestionUsuarios()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //var frmMGU = new frmMantenimientoIngresar();
         }
     }
 }
