@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C86E6843-2F79-48A1-8939-4CD1D6ED3F86}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaVista</RootNamespace>
+    <AssemblyName>CapaVista</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaControlador">
+      <HintPath>..\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmIngresoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoUsuario.Designer.cs">
+      <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoIngresar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoIngresar.Designer.cs">
+      <DependentUpon>frmMantenimientoIngresar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoGestionUsuarios.Designer.cs">
+      <DependentUpon>frmMantenimientoGestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUsuarios.Designer.cs">
+      <DependentUpon>frmAdminUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoConsultaGeneralUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoConsultaGeneralUsuarios.Designer.cs">
+      <DependentUpon>frmMantenimientoConsultaGeneralUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdiciónCartelera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdiciónCartelera.Designer.cs">
+      <DependentUpon>frmEdiciónCartelera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmElecciónAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmElecciónAdmin.Designer.cs">
+      <DependentUpon>frmElecciónAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFechaReservación.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFechaReservación.Designer.cs">
+      <DependentUpon>frmFechaReservación.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFiltraciónPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltraciónPeliculas.Designer.cs">
+      <DependentUpon>frmFiltraciónPeliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerarReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerarReportes.Designer.cs">
+      <DependentUpon>frmGenerarReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInterfazPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInterfazPago.Designer.cs">
+      <DependentUpon>frmInterfazPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoEliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoEliminarUsuario.Designer.cs">
+      <DependentUpon>frmMantenimientoEliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoModificarUsuario.Designer.cs">
+      <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelecciónAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelecciónAsientos.Designer.cs">
+      <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelecciónCine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelecciónCine.Designer.cs">
+      <DependentUpon>frmSelecciónCine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PruebaBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PruebaBD.Designer.cs">
+      <DependentUpon>PruebaBD.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmIngresoUsuario.resx">
+      <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoIngresar.resx">
+      <DependentUpon>frmMantenimientoIngresar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUsuarios.resx">
+      <DependentUpon>frmAdminUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoConsultaGeneralUsuarios.resx">
+      <DependentUpon>frmMantenimientoConsultaGeneralUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdiciónCartelera.resx">
+      <DependentUpon>frmEdiciónCartelera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmElecciónAdmin.resx">
+      <DependentUpon>frmElecciónAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFechaReservación.resx">
+      <DependentUpon>frmFechaReservación.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFiltraciónPeliculas.resx">
+      <DependentUpon>frmFiltraciónPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerarReportes.resx">
+      <DependentUpon>frmGenerarReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInterfazPago.resx">
+      <DependentUpon>frmInterfazPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoEliminarUsuario.resx">
+      <DependentUpon>frmMantenimientoEliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoGestionUsuarios.resx">
+      <DependentUpon>frmMantenimientoGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoModificarUsuario.resx">
+      <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelecciónAsientos.resx">
+      <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelecciónCine.resx">
+      <DependentUpon>frmSelecciónCine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PruebaBD.resx">
+      <DependentUpon>PruebaBD.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Recursos\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\linea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\btnfondo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
