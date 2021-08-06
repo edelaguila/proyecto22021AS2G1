@@ -49,7 +49,7 @@ namespace CapaVista
                 string pass = txtPass.Text;
 
 
-                /*bool result = cn.actuUsuario(id, nom, pass);
+                bool result = cn.actuUsuario(id, nom, pass);
                 if (result)
                 {
                     MessageBox.Show("Ingreso correcto");
@@ -60,7 +60,7 @@ namespace CapaVista
                 }
                 txtNom.Text = "";
                 txtPass.Text = "";
-                */
+                
             }
         
     }

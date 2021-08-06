@@ -35,7 +35,7 @@ namespace CapaVista
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRegreso = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,13 +99,16 @@ namespace CapaVista
             this.panel1.Size = new System.Drawing.Size(888, 53);
             this.panel1.TabIndex = 23;
             // 
-            // button2
+            // btnRegreso
             // 
-            this.button2.Location = new System.Drawing.Point(825, 444);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 34);
-            this.button2.TabIndex = 24;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRegreso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegreso.Location = new System.Drawing.Point(796, 455);
+            this.btnRegreso.Name = "btnRegreso";
+            this.btnRegreso.Size = new System.Drawing.Size(78, 23);
+            this.btnRegreso.TabIndex = 24;
+            this.btnRegreso.Text = "Regresar";
+            this.btnRegreso.UseVisualStyleBackColor = true;
+            this.btnRegreso.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmGenerarReportes
             // 
@@ -113,7 +116,7 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(886, 490);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
@@ -137,6 +140,6 @@ namespace CapaVista
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRegreso;
     }
 }

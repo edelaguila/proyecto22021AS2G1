@@ -21,5 +21,12 @@ namespace CapaVista
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var frmEC = new frmElecciónAdmin();
+            frmEC.Show();
+            this.Close();
+        }
     }
 }
