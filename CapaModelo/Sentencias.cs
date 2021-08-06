@@ -50,7 +50,7 @@ namespace CapaModelo
 
         public ArrayList busquedaIndividual(string idu)
         {
-            var arlist = new ArrayList();
+            var arList = new ArrayList();
             try
             {
                 string busqueda = "call verUser("+idu+");";
@@ -58,9 +58,9 @@ namespace CapaModelo
                 OdbcDataReader lector = busI.ExecuteReader();
                 while (lector.Read())
                 {
-                    arlist.Add(lector[0]);
-                    arlist.Add(lector[1]);
-                    arlist.Add(lector[2]);
+                    arList.Add(lector[0]);
+                    arList.Add(lector[1]);
+                    arList.Add(lector[2]);
                 }
             }
             catch (OdbcException)
@@ -69,7 +69,57 @@ namespace CapaModelo
             }
 
 
-            return arlist;
+            return arList;
+        }
+
+        public bool actuUsuario(string id, string nombre, string pass)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call actuUser('" + nombre + "','" + pass + "',"+id+");";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al ingresar " + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool deleteUser(string id)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call bajaUser("+ id + ");";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al ingresar " + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

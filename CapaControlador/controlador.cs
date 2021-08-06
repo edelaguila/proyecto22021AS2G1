@@ -34,6 +34,16 @@ namespace CapaControlador
             return sn.busquedaIndividual(idu);
         }
 
+        public bool actuUsuario(string id, string nom, string pass)
+        {
+            return sn.actuUsuario(id, nom, pass);
+        }
+
+        public bool deleteUser(string id)
+        {
+            return sn.deleteUser(id);
+        }
+
     }
 
 }
