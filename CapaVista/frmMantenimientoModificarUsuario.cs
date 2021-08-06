@@ -68,5 +68,12 @@ namespace CapaVista
         {
 
         }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmMGU = new frmMantenimientoGestionUsuarios();
+            frmMGU.Show();
+            this.Close();
+        }
     }
 }

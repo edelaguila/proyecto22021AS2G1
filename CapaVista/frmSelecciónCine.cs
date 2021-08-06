@@ -16,5 +16,19 @@ namespace CapaVista
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e) /*boton ver cartelera*/
+        {
+            var frmMU = new frmCartelera();
+            frmMU.Show();
+            this.Close();
+        }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmME = new frmMenuEntrada();
+            frmME.Show();
+            this.Close();
+        }
     }
 }

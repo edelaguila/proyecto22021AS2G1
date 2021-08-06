@@ -38,5 +38,19 @@ namespace CapaVista
             frmEC.Show();
             this.Hide();
         }
+
+        private void btnGestion_Click(object sender, EventArgs e)
+        {
+            var frmGU = new frmMantenimientoGestionUsuarios();
+            frmGU.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            var frmL = new frmMenuEntrada();
+            frmL.Show();
+            this.Close();
+        }
     }
 }

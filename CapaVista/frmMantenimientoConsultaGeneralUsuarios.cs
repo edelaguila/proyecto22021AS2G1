@@ -78,6 +78,13 @@ namespace CapaVista
         {
             actualizardatagriew();
         }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmMantenimientoGestionUsuarios();
+            frmEA.Show();
+            this.Close();
+        }
     }
     }
 

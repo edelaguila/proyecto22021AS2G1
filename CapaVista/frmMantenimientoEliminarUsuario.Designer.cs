@@ -39,6 +39,7 @@ namespace CapaVista
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
+            this.btnRegreso = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@ namespace CapaVista
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(804, 53);
+            this.panel3.Size = new System.Drawing.Size(656, 53);
             this.panel3.TabIndex = 28;
             // 
             // label5
@@ -65,7 +66,7 @@ namespace CapaVista
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(385, 106);
+            this.btnBuscar.Location = new System.Drawing.Point(345, 89);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 31;
@@ -77,7 +78,7 @@ namespace CapaVista
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 111);
+            this.label1.Location = new System.Drawing.Point(50, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 30;
@@ -85,14 +86,14 @@ namespace CapaVista
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(188, 108);
+            this.txtId.Location = new System.Drawing.Point(148, 91);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(172, 20);
             this.txtId.TabIndex = 29;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(385, 247);
+            this.btnEliminar.Location = new System.Drawing.Point(221, 330);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 32;
@@ -111,7 +112,7 @@ namespace CapaVista
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(90, 223);
+            this.label2.Location = new System.Drawing.Point(117, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 34;
@@ -122,7 +123,7 @@ namespace CapaVista
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(90, 278);
+            this.label3.Location = new System.Drawing.Point(117, 278);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 35;
@@ -135,12 +136,24 @@ namespace CapaVista
             this.txtEstado.Size = new System.Drawing.Size(172, 20);
             this.txtEstado.TabIndex = 36;
             // 
+            // btnRegreso
+            // 
+            this.btnRegreso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegreso.Location = new System.Drawing.Point(551, 415);
+            this.btnRegreso.Name = "btnRegreso";
+            this.btnRegreso.Size = new System.Drawing.Size(75, 23);
+            this.btnRegreso.TabIndex = 37;
+            this.btnRegreso.Text = "Regresar";
+            this.btnRegreso.UseVisualStyleBackColor = true;
+            this.btnRegreso.Click += new System.EventHandler(this.btnRegreso_Click);
+            // 
             // frmMantenimientoEliminarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(656, 450);
+            this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -171,5 +184,6 @@ namespace CapaVista
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Button btnRegreso;
     }
 }
