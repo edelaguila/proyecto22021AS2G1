@@ -30,9 +30,9 @@ namespace CapaVista
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGenerarReportes = new System.Windows.Forms.Button();
+            this.btnAdminUsuarios = new System.Windows.Forms.Button();
+            this.btnEdicionCartelera = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
@@ -48,42 +48,44 @@ namespace CapaVista
             this.label1.TabIndex = 4;
             this.label1.Text = "Bienvenido al Sistema Administrativo";
             // 
-            // button1
+            // btnGenerarReportes
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(64, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 43);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "GENERAR REPORTES";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGenerarReportes.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGenerarReportes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReportes.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReportes.Location = new System.Drawing.Point(64, 167);
+            this.btnGenerarReportes.Name = "btnGenerarReportes";
+            this.btnGenerarReportes.Size = new System.Drawing.Size(244, 43);
+            this.btnGenerarReportes.TabIndex = 23;
+            this.btnGenerarReportes.Text = "GENERAR REPORTES";
+            this.btnGenerarReportes.UseVisualStyleBackColor = false;
+            this.btnGenerarReportes.Click += new System.EventHandler(this.btnGenerarReportes_Click);
             // 
-            // button2
+            // btnAdminUsuarios
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(64, 325);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 43);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "ADMIN. USUARIOS";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAdminUsuarios.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAdminUsuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnAdminUsuarios.Location = new System.Drawing.Point(64, 325);
+            this.btnAdminUsuarios.Name = "btnAdminUsuarios";
+            this.btnAdminUsuarios.Size = new System.Drawing.Size(244, 43);
+            this.btnAdminUsuarios.TabIndex = 24;
+            this.btnAdminUsuarios.Text = "ADMIN. USUARIOS";
+            this.btnAdminUsuarios.UseVisualStyleBackColor = false;
+            this.btnAdminUsuarios.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnEdicionCartelera
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(479, 167);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 43);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "EDICIÓN CARTELERA";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnEdicionCartelera.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnEdicionCartelera.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdicionCartelera.ForeColor = System.Drawing.Color.White;
+            this.btnEdicionCartelera.Location = new System.Drawing.Point(479, 167);
+            this.btnEdicionCartelera.Name = "btnEdicionCartelera";
+            this.btnEdicionCartelera.Size = new System.Drawing.Size(244, 43);
+            this.btnEdicionCartelera.TabIndex = 25;
+            this.btnEdicionCartelera.Text = "EDICIÓN CARTELERA";
+            this.btnEdicionCartelera.UseVisualStyleBackColor = false;
+            this.btnEdicionCartelera.Click += new System.EventHandler(this.btnEdicionCartelera_Click);
             // 
             // panel3
             // 
@@ -113,9 +115,9 @@ namespace CapaVista
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEdicionCartelera);
+            this.Controls.Add(this.btnAdminUsuarios);
+            this.Controls.Add(this.btnGenerarReportes);
             this.Controls.Add(this.label1);
             this.Name = "frmElecciónAdmin";
             this.Text = "frmElecciónAdmin";
@@ -129,9 +131,9 @@ namespace CapaVista
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGenerarReportes;
+        private System.Windows.Forms.Button btnAdminUsuarios;
+        private System.Windows.Forms.Button btnEdicionCartelera;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
     }
