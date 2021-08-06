@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace CapaModelo
 {
-     public class Sentencias
+    public class Sentencias
     {
         conexion con = new conexion();
 
@@ -28,7 +28,7 @@ namespace CapaModelo
             int i = 0;
             try
             {
-                string cadena = "call ingUser('"+nombre+"','"+pass+"');";
+                string cadena = "call ingUser('" + nombre + "','" + pass + "');";
                 OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
                 ingreso.ExecuteNonQuery();
                 i = 1;
@@ -36,7 +36,7 @@ namespace CapaModelo
             catch (OdbcException Error)
             {
                 Console.WriteLine("Error al ingresar " + Error);
-                
+
             }
             if (i == 1)
             {
@@ -50,17 +50,17 @@ namespace CapaModelo
 
         public ArrayList busquedaIndividual(string idu)
         {
-            var arlist = new ArrayList();
+            var arList = new ArrayList();
             try
             {
-                string busqueda = "call verUser("+idu+");";
+                string busqueda = "call verUser(" + idu + ");";
                 OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
                 OdbcDataReader lector = busI.ExecuteReader();
                 while (lector.Read())
                 {
-                    arlist.Add(lector[0]);
-                    arlist.Add(lector[1]);
-                    arlist.Add(lector[2]);
+                    arList.Add(lector[0]);
+                    arList.Add(lector[1]);
+                    arList.Add(lector[2]);
                 }
             }
             catch (OdbcException)
@@ -69,8 +69,68 @@ namespace CapaModelo
             }
 
 
-            return arlist;
+            return arList;
         }
+
+        public bool actuUsuario(string id, string nombre, string pass)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call actuUser('" + nombre + "','" + pass + "',"+id+");";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al ingresar " + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool deleteUser(string id)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call bajaUser("+ id + ");";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al ingresar " + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public OdbcDataAdapter modificarDatos(string tabla)
+        {
+            string query = "UPDATE Nombre SET Nombre = @Usuario, Contraseña = @Password WHERE ID=@idUsuarios";
+            OdbcDataAdapter datTable = new OdbcDataAdapter(query, con.Conexion());
+            
+            return datTable;
+        }
+
 
     }
 }

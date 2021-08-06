@@ -31,13 +31,37 @@ namespace CapaVista
             var lista = cn.busquedaIndividual(uid);
             txtNom.Text = (string)lista[0];
             Int16 estado = (Int16)lista[2];
-            //string estdo = "" + estado.ToString();
-            txtEstado.Text = "" + estado;
+
+            txtEstado.Text = ""+estado;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            //deleteo de los datos del usuario
+            string mnsj = "¿Desea eliminar a este usuario?";
+            string titulo = "Confirmación";
+            MessageBoxButtons btns = MessageBoxButtons.YesNo;
+            DialogResult resultado;
+            resultado = MessageBox.Show(mnsj, titulo, btns);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                //ejecutar eliminación
+                string id = txtId.Text;
+
+
+
+                bool result = cn.deleteUser(id);
+                if (result)
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Eliminación fallida");
+                }
+                txtNom.Text = "";
+                txtEstado.Text = "";
+            }
         }
     }
 }
