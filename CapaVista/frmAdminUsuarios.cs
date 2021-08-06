@@ -46,5 +46,12 @@ namespace CapaVista
         {
 
         }
+
+        private void btnRegrear_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmElecciónAdmin();
+            frmEA.Show();
+            this.Close();
+        }
     }
 }

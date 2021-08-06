@@ -29,8 +29,8 @@ namespace CapaVista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var frmEC = new frmElecciónAdmin();
-            frmEC.Show();
+            var frmEA = new frmElecciónAdmin();
+            frmEA.Show();
             this.Close();
         }
     }
