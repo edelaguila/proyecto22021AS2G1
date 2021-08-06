@@ -99,11 +99,11 @@ namespace CapaVista
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::CapaVista.Properties.Resources.login1;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(59, 114);
+            this.pictureBox2.Image = global::CapaVista.Properties.Resources.logo_cine__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(49, 103);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(238, 200);
+            this.pictureBox2.Size = new System.Drawing.Size(274, 222);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
             // 
