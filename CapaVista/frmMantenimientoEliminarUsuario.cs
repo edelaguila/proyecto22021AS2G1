@@ -30,7 +30,7 @@ namespace CapaVista
             string uid = txtId.Text;
             var lista = cn.busquedaIndividual(uid);
             txtNom.Text = (string)lista[0];
-            txtEstado.Text = (int)lista[2];
+            txtEstado.Text = (string)lista[2];
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

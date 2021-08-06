@@ -16,7 +16,7 @@ namespace SGT_Principal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CapaVista.frmMantenimientoGestionUsuarios());
+            Application.Run(new CapaVista.frmElecciónAdmin());
         }
     }
 }

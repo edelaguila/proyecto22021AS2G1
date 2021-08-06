@@ -42,6 +42,7 @@ namespace CapaVista
             if(resultado == System.Windows.Forms.DialogResult.Yes)
             {
                 //ejecutar actualizacion
+                
 
                 MessageBox.Show("Id de Usuario "+txtId.Text+" actualizada");
             }

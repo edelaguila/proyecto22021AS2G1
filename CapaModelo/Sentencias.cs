@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace CapaModelo
 {
-     public class Sentencias
+    public class Sentencias
     {
         conexion con = new conexion();
 
@@ -28,7 +28,7 @@ namespace CapaModelo
             int i = 0;
             try
             {
-                string cadena = "call ingUser('"+nombre+"','"+pass+"');";
+                string cadena = "call ingUser('" + nombre + "','" + pass + "');";
                 OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
                 ingreso.ExecuteNonQuery();
                 i = 1;
@@ -36,7 +36,7 @@ namespace CapaModelo
             catch (OdbcException Error)
             {
                 Console.WriteLine("Error al ingresar " + Error);
-                
+
             }
             if (i == 1)
             {
@@ -53,7 +53,7 @@ namespace CapaModelo
             var arlist = new ArrayList();
             try
             {
-                string busqueda = "call verUser("+idu+");";
+                string busqueda = "call verUser(" + idu + ");";
                 OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
                 OdbcDataReader lector = busI.ExecuteReader();
                 while (lector.Read())
@@ -71,6 +71,16 @@ namespace CapaModelo
 
             return arlist;
         }
+
+
+        public OdbcDataAdapter modificarDatos(string tabla)
+        {
+            string query = "UPDATE Nombre SET Nombre = @Usuario, Contraseña = @Password WHERE ID=@idUsuarios";
+            OdbcDataAdapter datTable = new OdbcDataAdapter(query, con.Conexion());
+            
+            return datTable;
+        }
+
 
     }
 }

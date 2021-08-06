@@ -106,7 +106,7 @@ namespace CapaVista
             // 
             // btn_consulta
             // 
-            this.btn_consulta.Location = new System.Drawing.Point(426, 96);
+            this.btn_consulta.Location = new System.Drawing.Point(275, 85);
             this.btn_consulta.Name = "btn_consulta";
             this.btn_consulta.Size = new System.Drawing.Size(196, 74);
             this.btn_consulta.TabIndex = 10;

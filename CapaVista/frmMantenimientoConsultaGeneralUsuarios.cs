@@ -28,6 +28,7 @@ namespace CapaVista
         public void actualizardatagriew()
         {
             DataTable dt = cn.llenarTbl(emp);
+            dvgConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dvgConsulta.DataSource = dt;
 
         }
