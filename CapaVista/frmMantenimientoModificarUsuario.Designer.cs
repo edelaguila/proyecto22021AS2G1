@@ -32,13 +32,13 @@ namespace CapaVista
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.idUsuario = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nombreUsuario = new System.Windows.Forms.TextBox();
-            this.passwordUsuario = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,12 +72,12 @@ namespace CapaVista
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // idUsuario
+            // txtId
             // 
-            this.idUsuario.Location = new System.Drawing.Point(132, 76);
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.Size = new System.Drawing.Size(169, 20);
-            this.idUsuario.TabIndex = 3;
+            this.txtId.Location = new System.Drawing.Point(132, 76);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(169, 20);
+            this.txtId.TabIndex = 3;
             // 
             // label1
             // 
@@ -119,19 +119,19 @@ namespace CapaVista
             this.label3.TabIndex = 7;
             this.label3.Text = "Contraseña:";
             // 
-            // nombreUsuario
+            // txtNom
             // 
-            this.nombreUsuario.Location = new System.Drawing.Point(132, 125);
-            this.nombreUsuario.Name = "nombreUsuario";
-            this.nombreUsuario.Size = new System.Drawing.Size(172, 20);
-            this.nombreUsuario.TabIndex = 8;
+            this.txtNom.Location = new System.Drawing.Point(132, 125);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(172, 20);
+            this.txtNom.TabIndex = 8;
             // 
-            // passwordUsuario
+            // txtPass
             // 
-            this.passwordUsuario.Location = new System.Drawing.Point(132, 163);
-            this.passwordUsuario.Name = "passwordUsuario";
-            this.passwordUsuario.Size = new System.Drawing.Size(172, 20);
-            this.passwordUsuario.TabIndex = 9;
+            this.txtPass.Location = new System.Drawing.Point(132, 163);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(172, 20);
+            this.txtPass.TabIndex = 9;
             // 
             // frmMantenimientoModificarUsuario
             // 
@@ -139,13 +139,13 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(489, 286);
-            this.Controls.Add(this.passwordUsuario);
-            this.Controls.Add(this.nombreUsuario);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.idUsuario);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "frmMantenimientoModificarUsuario";
@@ -162,12 +162,12 @@ namespace CapaVista
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox idUsuario;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox nombreUsuario;
-        private System.Windows.Forms.TextBox passwordUsuario;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.TextBox txtPass;
     }
 }

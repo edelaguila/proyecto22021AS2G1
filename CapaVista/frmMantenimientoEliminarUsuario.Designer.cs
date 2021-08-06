@@ -33,12 +33,12 @@ namespace CapaVista
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.idUsuario = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.nombre = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.estado = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,12 +83,12 @@ namespace CapaVista
             this.label1.TabIndex = 30;
             this.label1.Text = "ID USUARIO";
             // 
-            // idUsuario
+            // txtId
             // 
-            this.idUsuario.Location = new System.Drawing.Point(188, 108);
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.Size = new System.Drawing.Size(172, 20);
-            this.idUsuario.TabIndex = 29;
+            this.txtId.Location = new System.Drawing.Point(188, 108);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(172, 20);
+            this.txtId.TabIndex = 29;
             // 
             // btnEliminar
             // 
@@ -100,12 +100,12 @@ namespace CapaVista
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // nombre
+            // txtNom
             // 
-            this.nombre.Location = new System.Drawing.Point(188, 223);
-            this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(172, 20);
-            this.nombre.TabIndex = 33;
+            this.txtNom.Location = new System.Drawing.Point(188, 223);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(172, 20);
+            this.txtNom.TabIndex = 33;
             // 
             // label2
             // 
@@ -128,12 +128,12 @@ namespace CapaVista
             this.label3.TabIndex = 35;
             this.label3.Text = "Estado";
             // 
-            // estado
+            // txtEstado
             // 
-            this.estado.Location = new System.Drawing.Point(188, 275);
-            this.estado.Name = "estado";
-            this.estado.Size = new System.Drawing.Size(172, 20);
-            this.estado.TabIndex = 36;
+            this.txtEstado.Location = new System.Drawing.Point(188, 275);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(172, 20);
+            this.txtEstado.TabIndex = 36;
             // 
             // frmMantenimientoEliminarUsuario
             // 
@@ -141,14 +141,14 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.estado);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.nombre);
+            this.Controls.Add(this.txtNom);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.idUsuario);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.panel3);
             this.Name = "frmMantenimientoEliminarUsuario";
             this.Text = "frmMantenimientoEliminarUsuario";
@@ -165,11 +165,11 @@ namespace CapaVista
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox idUsuario;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox nombre;
+        private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox estado;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }

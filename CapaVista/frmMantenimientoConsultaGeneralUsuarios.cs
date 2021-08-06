@@ -7,17 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient; //clase MYSQL
+using CapaControlador;
 
 namespace CapaVista
 {
     public partial class frmMantenimientoConsultaGeneralUsuarios : Form
     {
+        controlador cn = new controlador();
+        string emp ="usuarios";
         public frmMantenimientoConsultaGeneralUsuarios()
         {
             InitializeComponent();
         }
+
+
+
+        //Mostrar los datos CAPA VISTA
+
+
+        public void actualizardatagriew()
+        {
+            DataTable dt = cn.llenarTbl(emp);
+            dvgConsulta.DataSource = dt;
+
+        }
+
+
+
+
+
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -26,7 +44,7 @@ namespace CapaVista
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            //DataTable tabla = new DataTable();
+            /*//DataTable tabla = new DataTable();
             //dvgConsulta.DataSource = tabla;
             //codigo funcional
             try
@@ -52,7 +70,12 @@ namespace CapaVista
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            actualizardatagriew();
         }
     }
     }
