@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.Odbc;
-
+using System.Collections;
 
 namespace CapaModelo
 {
@@ -48,23 +48,19 @@ namespace CapaModelo
             }
         }
 
-        public string[] busquedaIndividual(string idu)
+        public ArrayList busquedaIndividual(string idu)
         {
-            string name="";
-            string pass="";
+            var arlist = new ArrayList();
             try
             {
                 string busqueda = "call verUser("+idu+");";
                 OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
-                //busI.ExecuteNonQuery();
                 OdbcDataReader lector = busI.ExecuteReader();
-                string tempo = "";
-                //string[] resultado = new string[];
                 while (lector.Read())
                 {
-                    tempo = "";
-                    //Console.WriteLine("CustomerID={0}", lector[0]);
-                    //resultado.Append(tempo);
+                    arlist.Add(lector[0]);
+                    arlist.Add(lector[1]);
+                    arlist.Add(lector[2]);
                 }
             }
             catch (OdbcException)
@@ -73,7 +69,7 @@ namespace CapaModelo
             }
 
 
-            return new[] {name,pass};
+            return arlist;
         }
 
     }

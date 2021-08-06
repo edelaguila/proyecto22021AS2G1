@@ -7,7 +7,7 @@ using CapaControlador;
 using CapaModelo;
 using System.Data;
 using System.Data.Odbc;
-
+using System.Collections;
 
 namespace CapaControlador
 {
@@ -29,6 +29,10 @@ namespace CapaControlador
             return sn.ingreso(nom,pass);
         }
 
+        public ArrayList busquedaIndividual(string idu)
+        {
+            return sn.busquedaIndividual(idu);
+        }
 
     }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControlador;
+using System.Collections;
 
 namespace CapaVista
 {
@@ -24,7 +25,9 @@ namespace CapaVista
 
             //buscqueda individual para traer los datos del ususario seleccionado
             string uid = txtId.Text;
-
+            var lista = cn.busquedaIndividual(uid);
+            txtNom.Text =(string) lista[0];
+            txtPass.Text = (string)lista[1];
         }
 
         private void button1_Click(object sender, EventArgs e)
