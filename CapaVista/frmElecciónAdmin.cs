@@ -21,18 +21,22 @@ namespace CapaVista
         {
             var frmAU = new frmAdminUsuarios();
             frmAU.Show();
+            this.Hide();
+          
         }
 
         private void btnGenerarReportes_Click(object sender, EventArgs e)
         {
             var frmGR = new frmGenerarReportes();
             frmGR.Show();
+            this.Hide();
         }
 
         private void btnEdicionCartelera_Click(object sender, EventArgs e)
         {
             var frmEC = new frmEdiciónCartelera();
             frmEC.Show();
+            this.Hide();
         }
     }
 }

@@ -123,13 +123,6 @@ namespace CapaModelo
         }
 
 
-        public OdbcDataAdapter modificarDatos(string tabla)
-        {
-            string query = "UPDATE Nombre SET Nombre = @Usuario, Contraseña = @Password WHERE ID=@idUsuarios";
-            OdbcDataAdapter datTable = new OdbcDataAdapter(query, con.Conexion());
-            
-            return datTable;
-        }
 
 
     }

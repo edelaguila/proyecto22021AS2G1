@@ -50,7 +50,7 @@ namespace CapaVista
 
 
 
-                bool result = cn.deleteUser(id);
+                /*bool result = cn.deleteUser(id);
                 if (result)
                 {
                     MessageBox.Show("Eliminado correctamente");
@@ -61,6 +61,7 @@ namespace CapaVista
                 }
                 txtNom.Text = "";
                 txtEstado.Text = "";
+                */
             }
         }
     }
