@@ -64,9 +64,10 @@ namespace CapaVista
 
         private void frmAdminUsuarios_Load(object sender, EventArgs e)
         {
-            DataTable dt = cn.llenarTblPriv();
+            /*DataTable dt = cn.llenarTblPriv();
             tiposPriv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            tiposPriv.DataSource = dt;
+            tiposPriv.DataSource = dt;*/
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -109,6 +110,11 @@ namespace CapaVista
                 txtIdPriv.Text = "";
 
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
