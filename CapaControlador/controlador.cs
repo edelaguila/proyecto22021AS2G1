@@ -51,13 +51,13 @@ namespace CapaControlador
         }
 
         //busqueda general tipos privilegios
-        public DataTable llenarTblPriv()
+        /*public DataTable llenarTblPriv()
         {
             OdbcDataAdapter dt = sn.llenarTblPriv();
             DataTable table = new DataTable();
             dt.Fill(table);
             return table;
-        }
+        }*/
 
         public DataTable llenarTblPrivUser(string id)
         {
@@ -70,6 +70,10 @@ namespace CapaControlador
         public bool ingPriv(string idU, string idP)
         {
             return sn.ingPriv(idU,idP);
+        }
+        public ArrayList privilegios()
+        {
+            return sn.privilegios();
         }
     }
 

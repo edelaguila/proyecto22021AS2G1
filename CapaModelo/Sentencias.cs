@@ -150,13 +150,15 @@ namespace CapaModelo
 
             return arList;//retornara el nombre de todos los cines en el arrayList
         }
-        public OdbcDataAdapter llenarTblPriv()// metodo  que obtinene el contenio de una tabla
+        /*public OdbcDataAdapter llenarTblPriv()// metodo  que obtinene el contenio de una tabla
         {
             //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
             string sql = "call consultaPriv();";
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
             return dataTable;
-        }
+        }*/
+
+
 
         public OdbcDataAdapter llenarTblPrivUser(string id)// metodo  que obtinene el contenio de una tabla
         {
@@ -189,6 +191,26 @@ namespace CapaModelo
             {
                 return false;
             }
+        }
+
+        public ArrayList privilegios()
+        {
+            var arList = new ArrayList();
+            try
+            {
+                string busqueda = "call  consultaPriv();";
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+                while (lector.Read())
+                {
+                    arList.Add(lector[1]);
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+            return arList;
         }
     }
 }

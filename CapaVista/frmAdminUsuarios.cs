@@ -64,10 +64,12 @@ namespace CapaVista
 
         private void frmAdminUsuarios_Load(object sender, EventArgs e)
         {
-            /*DataTable dt = cn.llenarTblPriv();
-            tiposPriv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            tiposPriv.DataSource = dt;*/
-            
+            var privs = cn.privilegios();
+
+            for (int i = 0; i < privs.Count; i++)
+            {
+                tipoPriv.Items.Add(privs[i].ToString());
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -115,6 +117,13 @@ namespace CapaVista
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tipoPriv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id;
+            id = (tipoPriv.SelectedIndex+1);
+            txtIdTipo.Text = id+"";
         }
     }
 }

@@ -47,13 +47,11 @@ namespace CapaVista
             this.txtIdTipo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tiposPriv = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tipoPriv = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuPriv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposPriv)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -185,7 +183,7 @@ namespace CapaVista
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 243);
+            this.label1.Location = new System.Drawing.Point(78, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 21);
             this.label1.TabIndex = 30;
@@ -196,31 +194,32 @@ namespace CapaVista
             // 
             this.listaUsuPriv.BackgroundColor = System.Drawing.Color.Gray;
             this.listaUsuPriv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaUsuPriv.Location = new System.Drawing.Point(25, 279);
+            this.listaUsuPriv.Location = new System.Drawing.Point(25, 275);
             this.listaUsuPriv.Name = "listaUsuPriv";
             this.listaUsuPriv.ReadOnly = true;
-            this.listaUsuPriv.Size = new System.Drawing.Size(330, 150);
+            this.listaUsuPriv.Size = new System.Drawing.Size(267, 150);
             this.listaUsuPriv.TabIndex = 31;
             // 
             // txtIdPriv
             // 
-            this.txtIdPriv.Location = new System.Drawing.Point(501, 409);
+            this.txtIdPriv.Location = new System.Drawing.Point(409, 376);
             this.txtIdPriv.Name = "txtIdPriv";
             this.txtIdPriv.Size = new System.Drawing.Size(190, 20);
             this.txtIdPriv.TabIndex = 32;
             // 
             // txtIdTipo
             // 
-            this.txtIdTipo.Location = new System.Drawing.Point(717, 355);
+            this.txtIdTipo.Location = new System.Drawing.Point(599, 275);
             this.txtIdTipo.Name = "txtIdTipo";
-            this.txtIdTipo.Size = new System.Drawing.Size(46, 20);
+            this.txtIdTipo.ReadOnly = true;
+            this.txtIdTipo.Size = new System.Drawing.Size(28, 20);
             this.txtIdTipo.TabIndex = 33;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(419, 410);
+            this.label5.Location = new System.Drawing.Point(327, 380);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 16);
             this.label5.TabIndex = 34;
@@ -231,37 +230,17 @@ namespace CapaVista
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(383, 355);
+            this.label6.Location = new System.Drawing.Point(338, 327);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 16);
+            this.label6.Size = new System.Drawing.Size(289, 16);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Id. Tipo Privilegio";
-            // 
-            // tiposPriv
-            // 
-            this.tiposPriv.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tiposPriv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tiposPriv.Location = new System.Drawing.Point(591, 157);
-            this.tiposPriv.Name = "tiposPriv";
-            this.tiposPriv.ReadOnly = true;
-            this.tiposPriv.Size = new System.Drawing.Size(198, 170);
-            this.tiposPriv.TabIndex = 36;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(624, 134);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 20);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Tipos de Privilegios";
+            this.label6.Text = "Ingresar el ID del registro a actualizar o eliminar";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(421, 489);
+            this.label8.Location = new System.Drawing.Point(421, 472);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 20);
             this.label8.TabIndex = 38;
@@ -272,10 +251,21 @@ namespace CapaVista
             this.tipoPriv.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.tipoPriv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoPriv.FormattingEnabled = true;
-            this.tipoPriv.Location = new System.Drawing.Point(501, 354);
+            this.tipoPriv.Location = new System.Drawing.Point(384, 274);
             this.tipoPriv.Name = "tipoPriv";
             this.tipoPriv.Size = new System.Drawing.Size(190, 21);
             this.tipoPriv.TabIndex = 39;
+            this.tipoPriv.SelectedIndexChanged += new System.EventHandler(this.tipoPriv_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(381, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(195, 16);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "Seleccione un tipo de privilegio";
             // 
             // frmAdminUsuarios
             // 
@@ -283,10 +273,9 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(804, 567);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.tipoPriv);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.tiposPriv);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtIdTipo);
@@ -310,7 +299,6 @@ namespace CapaVista
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaUsuPriv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposPriv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,9 +323,8 @@ namespace CapaVista
         private System.Windows.Forms.TextBox txtIdTipo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView tiposPriv;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox tipoPriv;
+        private System.Windows.Forms.Label label7;
     }
 }
