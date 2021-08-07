@@ -23,9 +23,12 @@ namespace CapaVista
 
         private void button1_Click(object sender, EventArgs e) /*boton ver cartelera*/
         {
-            var frmMU = new frmCartelera();
+            var frmMU = new frmFiltraciónPeliculas();
             frmMU.Show();
             this.Close();
+
+            int id;
+            id = comboCine.SelectedIndex + 1;
 
 
         }
@@ -35,6 +38,7 @@ namespace CapaVista
             var frmME = new frmMenuEntrada();
             frmME.Show();
             this.Close();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,7 +76,7 @@ namespace CapaVista
 
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

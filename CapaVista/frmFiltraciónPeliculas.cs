@@ -21,5 +21,12 @@ namespace CapaVista
         {
 
         }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmME = new frmSelecciónCine();
+            frmME.Show();
+            this.Close();
+        }
     }
 }

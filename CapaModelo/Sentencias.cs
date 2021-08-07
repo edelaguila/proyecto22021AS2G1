@@ -280,6 +280,7 @@ namespace CapaModelo
                 {
                     dataLogin.Add(lector[0]);
                     dataLogin.Add(lector[1]);
+
                 }
 
                 int i = dataLogin.Count;
