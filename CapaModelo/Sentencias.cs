@@ -237,5 +237,30 @@ namespace CapaModelo
                 return false;
             }
         }
+
+        public bool elPriv(string idPriv)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call elPrivUs(" + idPriv + ");";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al eliminar el privilegio" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

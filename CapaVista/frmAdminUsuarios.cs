@@ -47,7 +47,30 @@ namespace CapaVista
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //btnEliminar
+            string mnsj = "¿Desea eliminar el privilegio con id: " + txtIdPriv.Text + " ?";
+            string titulo = "Confirmación";
+            MessageBoxButtons btns = MessageBoxButtons.YesNo;
+            DialogResult resultado;
+            resultado = MessageBox.Show(mnsj, titulo, btns);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                //ejecutar actualizacion
+                string idPriv = txtIdPriv.Text;
+                
+                bool result = cn.elPriv(idPriv);
+                if (result)
+                {
+                    MessageBox.Show("Privilegio eliminado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se logro eliminar el privilegio");
+                }
 
+                txtIdPriv.Text = "";
+                consulta();
+            }
         }
 
         private void btnRegrear_Click(object sender, EventArgs e)

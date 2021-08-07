@@ -80,6 +80,10 @@ namespace CapaControlador
             return sn.modifPriv(idPriv, idP);
         }
 
+        public bool elPriv( string idPriv)
+        {
+            return sn.elPriv(idPriv);
+        }
     }
 
 }
