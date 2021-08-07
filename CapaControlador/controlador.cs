@@ -45,9 +45,9 @@ namespace CapaControlador
         }
 
         //metodo para buscar ciudad
-        public ArrayList busquedaCiudad()
+        public ArrayList busquedaCine()
         {
-            return sn.busquedaCiudad();
+            return sn.busquedaCine();
         }
 
     }

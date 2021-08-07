@@ -23,11 +23,33 @@ namespace CapaVista
 
         private void button1_Click(object sender, EventArgs e) /*boton ver cartelera*/
         {
-            //var frmMU = new frmCartelera();
-            // frmMU.Show();
-            //this.Close();
+            var frmMU = new frmCartelera();
+            frmMU.Show();
+            this.Close();
 
-            var listaCines = cn.busquedaCiudad();//tengo la lista de las ciudades
+
+        }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmME = new frmMenuEntrada();
+            frmME.Show();
+            this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmSelecciónCine_Load(object sender, EventArgs e)
+        {
+
+            //bloqueo combobox
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            var listaCines = cn.busquedaCine();//tengo la lista de las ciudades
 
 
             //convertir a string
@@ -39,13 +61,13 @@ namespace CapaVista
             {
                 comboBox1.Items.Add(listaCines[i].ToString());
             }
+
+
         }
 
-        private void btnRegreso_Click(object sender, EventArgs e)
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var frmME = new frmMenuEntrada();
-            frmME.Show();
-            this.Close();
+            
         }
     }
 }

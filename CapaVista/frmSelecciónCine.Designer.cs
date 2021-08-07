@@ -49,9 +49,9 @@ namespace CapaVista
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(296, 246);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 17);
+            this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Selecciona una ciudad";
+            this.label1.Text = "Selecciona un cine";
             // 
             // label2
             // 
@@ -59,9 +59,9 @@ namespace CapaVista
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(476, 246);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 17);
+            this.label2.Size = new System.Drawing.Size(132, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Selecciona un cine";
+            this.label2.Text = "Seleccione una zona";
             // 
             // comboBox1
             // 
@@ -70,6 +70,7 @@ namespace CapaVista
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(141, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -78,6 +79,7 @@ namespace CapaVista
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(144, 21);
             this.comboBox2.TabIndex = 4;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -159,6 +161,7 @@ namespace CapaVista
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmSelecciónCine";
             this.Text = "frmSelecciónCine";
+            this.Load += new System.EventHandler(this.frmSelecciónCine_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
