@@ -90,6 +90,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConsultaHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaHorario.Designer.cs">
+      <DependentUpon>frmConsultaHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminacionHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminacionHorario.Designer.cs">
+      <DependentUpon>frmEliminacionHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHorarios.Designer.cs">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoDerechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoDerechos.Designer.cs">
+      <DependentUpon>frmIngresoDerechos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoHorario.Designer.cs">
+      <DependentUpon>frmIngresoHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngresoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +204,12 @@
     <Compile Include="frmMenuEntrada.Designer.cs">
       <DependentUpon>frmMenuEntrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificacionHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificacionHorario.Designer.cs">
+      <DependentUpon>frmModificacionHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelecciónAsientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +230,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmConsultaHorario.resx">
+      <DependentUpon>frmConsultaHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminacionHorario.resx">
+      <DependentUpon>frmEliminacionHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHorarios.resx">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoDerechos.resx">
+      <DependentUpon>frmIngresoDerechos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoHorario.resx">
+      <DependentUpon>frmIngresoHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngresoUsuario.resx">
       <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuEntrada.resx">
       <DependentUpon>frmMenuEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificacionHorario.resx">
+      <DependentUpon>frmModificacionHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelecciónAsientos.resx">
       <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>
