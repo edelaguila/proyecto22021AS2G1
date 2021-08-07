@@ -147,7 +147,13 @@ namespace CapaModelo
 
             return arList;//retornara el nombre de todos los cines en el arrayList
         }
-
+        public OdbcDataAdapter llenarTblPriv()// metodo  que obtinene el contenio de una tabla
+        {
+            //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
+            string sql = "call consultaPriv();";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
 
 
     }

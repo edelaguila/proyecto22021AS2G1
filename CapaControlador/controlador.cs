@@ -50,6 +50,15 @@ namespace CapaControlador
             return sn.busquedaCiudad();
         }
 
+        //busqueda general tipos privilegios
+        public DataTable llenarTblPriv()
+        {
+            OdbcDataAdapter dt = sn.llenarTblPriv();
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
+
     }
 
 }
