@@ -122,6 +122,31 @@ namespace CapaModelo
             }
         }
 
+        public ArrayList busquedaCiudad()
+        {
+            var arList = new ArrayList();
+            try
+            {
+                string busqueda = "call consultaGenCiudad();";
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+                while (lector.Read())//en toeria esta recorrera todos los registros
+                {
+                    //arList.Add(lector[0]);//idciudad
+                    arList.Add(lector[1]);//nombre ciudad
+                   
+
+                    //arList.Add(lector[2]);//foraneo con cine
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+
+
+            return arList;//retornara el nombre de todos los cines en el arrayList
+        }
 
 
 

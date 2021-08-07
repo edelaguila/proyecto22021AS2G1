@@ -44,6 +44,12 @@ namespace CapaControlador
             return sn.deleteUser(id);
         }
 
+        //metodo para buscar ciudad
+        public ArrayList busquedaCiudad()
+        {
+            return sn.busquedaCiudad();
+        }
+
     }
 
 }
