@@ -46,8 +46,8 @@ namespace CapaVista
         {
 
             //bloqueo combobox
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+           // comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboCine.DropDownStyle = ComboBoxStyle.DropDownList;
 
             var listaCines = cn.busquedaCine();//tengo la lista de las ciudades
 
@@ -59,7 +59,7 @@ namespace CapaVista
             //intento de recorrer todo el arralist
             for (int i = 0; i < listaCines.Count; i++)
             {
-                comboBox1.Items.Add(listaCines[i].ToString());
+                comboCine.Items.Add(listaCines[i].ToString());
             }
 
 
@@ -68,6 +68,11 @@ namespace CapaVista
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

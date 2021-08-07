@@ -138,7 +138,7 @@ namespace CapaModelo
 
                    
                     //arList.Add(lector[0]);//idciudad
-                    arList.Add(lector[1]);//nombre ciudad
+                    arList.Add(lector[1]+"   "+lector[2]);//nombre ciudad
                    // arList.Add(lector[2]);//Dirección
                 }
             }
