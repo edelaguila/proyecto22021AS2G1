@@ -262,5 +262,39 @@ namespace CapaModelo
                 return false;
             }
         }
+
+        public bool iniciaSesion(string usuario, string pass)
+        {
+            bool coincidencia = false;
+
+            var dataLogin = new ArrayList();
+            string userDB;
+            string passDB;
+            try
+            {
+
+                string busqueda = "call login('"+usuario+"','"+pass+"');";
+                OdbcCommand iSesion = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = iSesion.ExecuteReader();
+                while (lector.Read())
+                {
+                    dataLogin.Add(lector[0]);
+                    dataLogin.Add(lector[1]);
+                }
+
+                userDB = (string)dataLogin[0];
+                passDB = (string)dataLogin[1];
+                if(usuario==userDB && pass == passDB)
+                {
+                    coincidencia = true;
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+
+            return coincidencia;
+        }
     }
 }

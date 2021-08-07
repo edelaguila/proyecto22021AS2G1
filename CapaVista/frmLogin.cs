@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaControlador;
 
 namespace CapaVista
 {
     public partial class frmLogin : Form
     {
+        controlador cn = new controlador();
         public frmLogin()
         {
             InitializeComponent();
@@ -24,9 +26,22 @@ namespace CapaVista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var frmAdmin = new frmElecciónAdmin();
-            frmAdmin.Show();
-            this.Hide();
+
+            bool encontrado = false;
+            string user = txtUser.Text;
+            string pass = txtPass.Text;
+            encontrado = cn.iniciaSesion(user, pass);
+
+            if (encontrado)
+            {
+                var frmAdmin = new frmElecciónAdmin();
+                frmAdmin.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Credenciales Incorrectas, intente de nuevo");
+            }
         }
     }
 }

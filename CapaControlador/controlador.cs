@@ -84,6 +84,12 @@ namespace CapaControlador
         {
             return sn.elPriv(idPriv);
         }
+
+        public bool iniciaSesion(string user, string pass)
+        {
+
+            return sn.iniciaSesion(user, pass);
+        }
     }
 
 }

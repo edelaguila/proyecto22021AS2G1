@@ -95,7 +95,7 @@ CREATE TABLE `asientos` (
 CREATE TABLE `cines` (
   `idCines` int NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
-  `Dirección` varchar(45) DEFAULT NULL
+  `Direccion` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

@@ -52,11 +52,11 @@ namespace CapaVista
                 bool result = cn.actuUsuario(id, nom, pass);
                 if (result)
                 {
-                    MessageBox.Show("Ingreso correcto");
+                    MessageBox.Show("Modificación correcta");
                 }
                 else
                 {
-                    MessageBox.Show("Ingreso fallido");
+                    MessageBox.Show("Modificación fallida");
                 }
                 txtNom.Text = "";
                 txtPass.Text = "";

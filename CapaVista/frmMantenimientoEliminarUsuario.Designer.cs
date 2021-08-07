@@ -105,8 +105,10 @@ namespace CapaVista
             // 
             this.txtNom.Location = new System.Drawing.Point(188, 223);
             this.txtNom.Name = "txtNom";
+            this.txtNom.ReadOnly = true;
             this.txtNom.Size = new System.Drawing.Size(172, 20);
             this.txtNom.TabIndex = 33;
+            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             // 
             // label2
             // 
@@ -133,13 +135,15 @@ namespace CapaVista
             // 
             this.txtEstado.Location = new System.Drawing.Point(188, 275);
             this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
             this.txtEstado.Size = new System.Drawing.Size(172, 20);
             this.txtEstado.TabIndex = 36;
+            this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
             // 
             // btnRegreso
             // 
             this.btnRegreso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegreso.Location = new System.Drawing.Point(551, 415);
+            this.btnRegreso.Location = new System.Drawing.Point(443, 346);
             this.btnRegreso.Name = "btnRegreso";
             this.btnRegreso.Size = new System.Drawing.Size(75, 23);
             this.btnRegreso.TabIndex = 37;
@@ -152,7 +156,7 @@ namespace CapaVista
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(656, 450);
+            this.ClientSize = new System.Drawing.Size(530, 381);
             this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label3);
