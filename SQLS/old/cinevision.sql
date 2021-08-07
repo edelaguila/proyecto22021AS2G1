@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-08-2021 a las 10:05:40
+-- Tiempo de generación: 07-08-2021 a las 09:23:05
 -- Versión del servidor: 8.0.23
 -- Versión de PHP: 8.0.2
 
@@ -39,10 +39,6 @@ CREATE PROCEDURE `consultaGen` ()  BEGIN
 	select idUsuarios as ID, Usuario, estado from usuarios;
 END$$
 
-CREATE PROCEDURE `consultaGenCine` ()  BEGIN
-	select idCines as ID, Nombre, Direccion from Cines;
-END$$
-
 CREATE PROCEDURE `consultaPriv` ()  BEGIN
 	select idPrivilegios as id, descPrivilegio as Privilegio from privilegios;
 END$$
@@ -57,10 +53,6 @@ END$$
 
 CREATE PROCEDURE `ingUser` (IN `usuario` VARCHAR(45), IN `pass` VARCHAR(45))  BEGIN
 	insert into usuarios (Usuario, Password) values (usuario,pass);
-END$$
-
-CREATE PROCEDURE `login` (IN `usuario` VARCHAR(45), IN `passwor` VARCHAR(45))  BEGIN
-	select Usuario, usuarios.Password from usuarios where Usuario=usuario and Password=passwor; 
 END$$
 
 CREATE PROCEDURE `modifPrivUs` (IN `idPriv` INT, IN `idP` INT)  BEGIN
@@ -105,16 +97,6 @@ CREATE TABLE `cines` (
   `Nombre` varchar(45) DEFAULT NULL,
   `Direccion` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `cines`
---
-
-INSERT INTO `cines` (`idCines`, `Nombre`, `Direccion`) VALUES
-(1, 'Cine 1', '33 Calle 8-39 Zona 10'),
-(2, 'Cine 2', '33 Calle 1-12 Zona 12'),
-(3, 'Cine 3', '33 Calle 9-30 Zona 13'),
-(4, 'XD', '33 Calle 9-30 Zona 20');
 
 -- --------------------------------------------------------
 
@@ -269,8 +251,7 @@ INSERT INTO `usuarioprivilegios` (`idusuarioPrivilegios`, `fkUsuario`, `fkPrivil
 (7, 1, 2),
 (8, 1, 3),
 (9, 1, 1),
-(10, 1, 2),
-(12, 7, 1);
+(10, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -296,9 +277,7 @@ INSERT INTO `usuarios` (`idUsuarios`, `Usuario`, `Password`, `estado`) VALUES
 (4, 'Prueba333', '123456', 1),
 (5, 'Kevin', 'Kevin2', 1),
 (6, 'zcxxz', 'zzzz', 1),
-(7, 'abc', 'abc', 1),
-(8, 'Noel1', 'Pruebas1', 0),
-(9, 'Noel2', 'NNNN', 1);
+(7, 'abc', 'abc', 1);
 
 --
 -- Índices para tablas volcadas
@@ -407,7 +386,7 @@ ALTER TABLE `asientos`
 -- AUTO_INCREMENT de la tabla `cines`
 --
 ALTER TABLE `cines`
-  MODIFY `idCines` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idCines` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -467,13 +446,13 @@ ALTER TABLE `salas`
 -- AUTO_INCREMENT de la tabla `usuarioprivilegios`
 --
 ALTER TABLE `usuarioprivilegios`
-  MODIFY `idusuarioPrivilegios` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idusuarioPrivilegios` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuarios` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idUsuarios` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

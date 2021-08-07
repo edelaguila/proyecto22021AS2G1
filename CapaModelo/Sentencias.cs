@@ -268,8 +268,8 @@ namespace CapaModelo
             bool coincidencia = false;
 
             var dataLogin = new ArrayList();
-            string userDB;
-            string passDB;
+            string userDB = "";
+            string passDB = "";
             try
             {
 
@@ -282,13 +282,19 @@ namespace CapaModelo
                     dataLogin.Add(lector[1]);
                 }
 
-                userDB = (string)dataLogin[0];
-                passDB = (string)dataLogin[1];
-                if(usuario==userDB && pass == passDB)
+                int i = dataLogin.Count;
+
+                if (!(i < 2))
                 {
-                    coincidencia = true;
+                    userDB = (string)dataLogin[0];
+                    passDB = (string)dataLogin[1];
+                    if (usuario == userDB && pass == passDB)
+                    {
+                        coincidencia = true;
+                    }
                 }
             }
+                
             catch (OdbcException)
             {
 
