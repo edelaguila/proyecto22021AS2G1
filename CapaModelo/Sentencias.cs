@@ -270,6 +270,8 @@ namespace CapaModelo
             var dataLogin = new ArrayList();
             string userDB = "";
             string passDB = "";
+            Int16 estado = 0;
+
             try
             {
 
@@ -280,16 +282,17 @@ namespace CapaModelo
                 {
                     dataLogin.Add(lector[0]);
                     dataLogin.Add(lector[1]);
-
+                    dataLogin.Add(lector[2]);
                 }
 
                 int i = dataLogin.Count;
 
-                if (!(i < 2))
+                if (!(i < 3))
                 {
                     userDB = (string)dataLogin[0];
                     passDB = (string)dataLogin[1];
-                    if (usuario == userDB && pass == passDB)
+                    estado = (Int16)dataLogin[2];
+                    if (usuario == userDB && pass == passDB && estado==1)
                     {
                         coincidencia = true;
                     }
