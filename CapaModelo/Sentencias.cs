@@ -84,7 +84,7 @@ namespace CapaModelo
             }
             catch (OdbcException Error)
             {
-                Console.WriteLine("Error al ingresar " + Error);
+                Console.WriteLine("Error al actualizar " + Error);
 
             }
             if (i == 1)
@@ -109,7 +109,7 @@ namespace CapaModelo
             }
             catch (OdbcException Error)
             {
-                Console.WriteLine("Error al ingresar " + Error);
+                Console.WriteLine("Error al dar de baja " + Error);
 
             }
             if (i == 1)
@@ -161,6 +161,31 @@ namespace CapaModelo
             string sql = "call privilegiosUsuarios("+id+");";
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
             return dataTable;
+        }
+
+        public bool ingPriv(string idU, string idP)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call ingPrivUs("+idU + "," + idP + ");";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al ingresar privilegio" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

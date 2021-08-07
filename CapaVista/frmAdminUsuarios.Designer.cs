@@ -203,14 +203,14 @@ namespace CapaVista
             // 
             // txtIdPriv
             // 
-            this.txtIdPriv.Location = new System.Drawing.Point(501, 366);
+            this.txtIdPriv.Location = new System.Drawing.Point(501, 413);
             this.txtIdPriv.Name = "txtIdPriv";
             this.txtIdPriv.Size = new System.Drawing.Size(190, 20);
             this.txtIdPriv.TabIndex = 32;
             // 
             // txtIdTipo
             // 
-            this.txtIdTipo.Location = new System.Drawing.Point(501, 409);
+            this.txtIdTipo.Location = new System.Drawing.Point(501, 355);
             this.txtIdTipo.Name = "txtIdTipo";
             this.txtIdTipo.Size = new System.Drawing.Size(190, 20);
             this.txtIdTipo.TabIndex = 33;
@@ -219,7 +219,7 @@ namespace CapaVista
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(374, 370);
+            this.label5.Location = new System.Drawing.Point(374, 413);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 16);
             this.label5.TabIndex = 34;
@@ -229,7 +229,7 @@ namespace CapaVista
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(383, 413);
+            this.label6.Location = new System.Drawing.Point(383, 355);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 16);
             this.label6.TabIndex = 35;

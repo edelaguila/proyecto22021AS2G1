@@ -84,7 +84,7 @@ namespace CapaVista
 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
-            string mnsj = "¿Desea dar este privilegio a este usuario?";
+            string mnsj = "¿Desea dar este privilegio "+txtIdTipo.Text+", a este usuario "+txtUser.Text+" ?";
             string titulo = "Confirmación";
             MessageBoxButtons btns = MessageBoxButtons.YesNo;
             DialogResult resultado;
@@ -96,7 +96,7 @@ namespace CapaVista
                 string idP = txtIdTipo.Text;
 
 
-                bool result=true;//= cn.actuUsuario(id, nom, pass);
+                bool result= cn.ingPriv(idU,idP);
                 if (result)
                 {
                     MessageBox.Show("Privilegio otorgado correctamente");

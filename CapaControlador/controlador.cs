@@ -64,10 +64,13 @@ namespace CapaControlador
             OdbcDataAdapter dt = sn.llenarTblPrivUser(id);
             DataTable table = new DataTable();
             dt.Fill(table);
-            return table;
+            return table; 
         }
 
-
+        public bool ingPriv(string idU, string idP)
+        {
+            return sn.ingPriv(idU,idP);
+        }
     }
 
 }
