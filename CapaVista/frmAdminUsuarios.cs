@@ -72,9 +72,8 @@ namespace CapaVista
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void consulta()
         {
-            //la consulta para el name
             string id = txtId.Text;
             var lista = cn.busquedaIndividual(id);
             txtUser.Text = (string)lista[1];
@@ -83,6 +82,19 @@ namespace CapaVista
             DataTable dt = cn.llenarTblPrivUser(id);
             listaUsuPriv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             listaUsuPriv.DataSource = dt;
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            /*//la consulta para el name
+            string id = txtId.Text;
+            var lista = cn.busquedaIndividual(id);
+            txtUser.Text = (string)lista[1];
+
+            //la consulta para la tabla
+            DataTable dt = cn.llenarTblPrivUser(id);
+            listaUsuPriv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            listaUsuPriv.DataSource = dt;*/
+            consulta();
         }
 
         private void btnIngreso_Click(object sender, EventArgs e)
@@ -111,7 +123,7 @@ namespace CapaVista
                 }
                 
                 txtIdPriv.Text = "";
-
+                consulta();
             }
         }
 
@@ -154,13 +166,9 @@ namespace CapaVista
                 }
 
                 txtIdPriv.Text = "";
-
+                consulta();
             }
         }
         
-        private void recargaTablaPriv()
-        {
-
-        }
     }
 }
