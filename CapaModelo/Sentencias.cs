@@ -122,21 +122,24 @@ namespace CapaModelo
             }
         }
 
-        public ArrayList busquedaCiudad()
+        public ArrayList busquedaCine()
         {
             var arList = new ArrayList();
             try
             {
-                string busqueda = "call consultaGenCiudad();";
+
+                string busqueda = "call consultaGen();";//select 
+                //procedure
+                //triger
                 OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
                 OdbcDataReader lector = busI.ExecuteReader();
                 while (lector.Read())//en toeria esta recorrera todos los registros
                 {
-                    //arList.Add(lector[0]);//idciudad
-                    arList.Add(lector[1]);//nombre ciudad
-                   
 
-                    //arList.Add(lector[2]);//foraneo con cine
+                   
+                    //arList.Add(lector[0]);//idciudad
+                    arList.Add(lector[1]+"   "+lector[2]);//nombre ciudad
+                   // arList.Add(lector[2]);//Dirección
                 }
             }
             catch (OdbcException)
