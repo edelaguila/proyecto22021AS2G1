@@ -34,9 +34,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="CapaControlador">
-      <HintPath>..\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Protobuf, Version=3.17.3.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.17.3\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -272,6 +269,12 @@
   <ItemGroup>
     <Content Include="Recursos\flecha.png" />
     <Content Include="Recursos\logo cine %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaControlador\CapaControlador.csproj">
+      <Project>{5dff24f5-837a-4671-af12-d5e34b0964c6}</Project>
+      <Name>CapaControlador</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

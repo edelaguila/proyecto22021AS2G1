@@ -44,6 +44,7 @@ namespace CapaVista
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.btnRegreso = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@ namespace CapaVista
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-6, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(914, 49);
+            this.panel1.Size = new System.Drawing.Size(647, 49);
             this.panel1.TabIndex = 2;
             // 
             // label4
@@ -70,16 +71,16 @@ namespace CapaVista
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(171, 94);
+            this.txtNom.Location = new System.Drawing.Point(245, 103);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(172, 20);
+            this.txtNom.Size = new System.Drawing.Size(203, 20);
             this.txtNom.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(74, 146);
+            this.label3.Location = new System.Drawing.Point(148, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 17);
             this.label3.TabIndex = 11;
@@ -89,7 +90,7 @@ namespace CapaVista
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(93, 97);
+            this.label2.Location = new System.Drawing.Point(167, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 10;
@@ -105,16 +106,16 @@ namespace CapaVista
             "R- (No apta para menores de 17 años si no es con la compañía de un adulto)",
             "NC-17 (Contenido sólo apto para mayores de 18años)",
             ""});
-            this.comboBox1.Location = new System.Drawing.Point(171, 142);
+            this.comboBox1.Location = new System.Drawing.Point(245, 151);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 21);
+            this.comboBox1.Size = new System.Drawing.Size(203, 21);
             this.comboBox1.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(99, 185);
+            this.label1.Location = new System.Drawing.Point(173, 194);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 14;
@@ -124,7 +125,7 @@ namespace CapaVista
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(74, 224);
+            this.label5.Location = new System.Drawing.Point(148, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
             this.label5.TabIndex = 15;
@@ -134,7 +135,7 @@ namespace CapaVista
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(92, 263);
+            this.label6.Location = new System.Drawing.Point(166, 272);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 16;
@@ -144,7 +145,7 @@ namespace CapaVista
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(92, 301);
+            this.label7.Location = new System.Drawing.Point(166, 310);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 17);
             this.label7.TabIndex = 17;
@@ -164,47 +165,59 @@ namespace CapaVista
             "Musical",
             "Animada",
             "Misterio"});
-            this.comboBox2.Location = new System.Drawing.Point(171, 181);
+            this.comboBox2.Location = new System.Drawing.Point(245, 190);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
+            this.comboBox2.Size = new System.Drawing.Size(203, 21);
             this.comboBox2.TabIndex = 18;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 221);
+            this.textBox1.Location = new System.Drawing.Point(245, 230);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
+            this.textBox1.Size = new System.Drawing.Size(203, 20);
             this.textBox1.TabIndex = 19;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 298);
+            this.textBox2.Location = new System.Drawing.Point(245, 307);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 20);
+            this.textBox2.Size = new System.Drawing.Size(203, 20);
             this.textBox2.TabIndex = 20;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(171, 260);
+            this.textBox3.Location = new System.Drawing.Point(245, 269);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 20);
+            this.textBox3.Size = new System.Drawing.Size(203, 20);
             this.textBox3.TabIndex = 21;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(196, 352);
+            this.btnIngresar.Location = new System.Drawing.Point(255, 359);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(112, 37);
             this.btnIngresar.TabIndex = 22;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             // 
+            // btnRegreso
+            // 
+            this.btnRegreso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegreso.Location = new System.Drawing.Point(494, 496);
+            this.btnRegreso.Name = "btnRegreso";
+            this.btnRegreso.Size = new System.Drawing.Size(85, 23);
+            this.btnRegreso.TabIndex = 44;
+            this.btnRegreso.Text = "Regresar";
+            this.btnRegreso.UseVisualStyleBackColor = true;
+            this.btnRegreso.Click += new System.EventHandler(this.btnRegreso_Click);
+            // 
             // frmMantenimientoDePeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(906, 564);
+            this.ClientSize = new System.Drawing.Size(601, 531);
+            this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -245,5 +258,6 @@ namespace CapaVista
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button btnRegreso;
     }
 }
