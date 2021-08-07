@@ -112,6 +112,7 @@ namespace CapaVista
             this.btnIngreso.TabIndex = 16;
             this.btnIngreso.Text = "INGRESO";
             this.btnIngreso.UseVisualStyleBackColor = true;
+            this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
             // btnActualizar
             // 

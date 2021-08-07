@@ -77,9 +77,38 @@ namespace CapaVista
             txtUser.Text = (string)lista[1];
 
             //la consulta para la tabla
-            DataTable dt = cn.llenarTblPriv();
+            DataTable dt = cn.llenarTblPrivUser(id);
             listaUsuPriv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             listaUsuPriv.DataSource = dt;
+        }
+
+        private void btnIngreso_Click(object sender, EventArgs e)
+        {
+            string mnsj = "¿Desea dar este privilegio a este usuario?";
+            string titulo = "Confirmación";
+            MessageBoxButtons btns = MessageBoxButtons.YesNo;
+            DialogResult resultado;
+            resultado = MessageBox.Show(mnsj, titulo, btns);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                //ejecutar actualizacion
+                string idU = txtId.Text;
+                string idP = txtIdTipo.Text;
+
+
+                bool result=true;//= cn.actuUsuario(id, nom, pass);
+                if (result)
+                {
+                    MessageBox.Show("Privilegio otorgado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se logro otorgar el privilegio");
+                }
+                txtIdTipo.Text = "";
+                txtIdPriv.Text = "";
+
+            }
         }
     }
 }

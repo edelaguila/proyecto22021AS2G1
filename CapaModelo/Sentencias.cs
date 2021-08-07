@@ -155,6 +155,12 @@ namespace CapaModelo
             return dataTable;
         }
 
-
+        public OdbcDataAdapter llenarTblPrivUser(string id)// metodo  que obtinene el contenio de una tabla
+        {
+            //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
+            string sql = "call privilegiosUsuarios("+id+");";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
     }
 }

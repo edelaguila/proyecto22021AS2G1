@@ -59,6 +59,15 @@ namespace CapaControlador
             return table;
         }
 
+        public DataTable llenarTblPrivUser(string id)
+        {
+            OdbcDataAdapter dt = sn.llenarTblPrivUser(id);
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
+
+
     }
 
 }
