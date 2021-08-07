@@ -303,5 +303,79 @@ namespace CapaModelo
 
             return coincidencia;
         }
+
+
+        //metodo parafiltra peliculas 
+        public ArrayList busquedaFiltraPelis()
+        {
+
+            //todos los Arraylist
+            var arID = new ArrayList();
+            var arNom = new ArrayList();
+            var arCla = new ArrayList();
+            var arGen = new ArrayList();
+            var arSub = new ArrayList();
+            var arIdioma = new ArrayList();
+            var arPrecio = new ArrayList();
+
+            var arList = new ArrayList();
+            try
+            {
+
+                string busqueda = "call consultaFiltraPelis();";//select 
+                //procedure
+                //triger
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+                while (lector.Read())//en toeria esta recorrera todos los registros
+                {
+
+                    //proceso
+                    arID.Add(lector[0]);//ID
+                    arNom.Add(lector[1]);//Nombre
+                    arCla.Add(lector[2]);//Clasificación
+                    arGen.Add(lector[3]);//Genero
+                    arSub.Add(lector[4]);//Subtitulado
+                    arIdioma.Add(lector[5]);//Idioma
+                    arPrecio.Add(lector[6]);//Precio
+
+                   
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+
+
+            arID.Add(arID);
+            arID.Add(arNom);
+            arID.Add(arCla);
+            arID.Add(arGen);
+            arID.Add(arSub);
+            arID.Add(arIdioma);
+            arID.Add(arPrecio);
+
+            /*
+             DELIMITER |
+CREATE PROCEDURE consultaFiltraPelis()
+BEGIN
+	select idPeliculas as ID, Nombre, Clasificación, Genero, Subtitulado, Idioma, precio from peliculas;
+END
+| 
+
+call consultaFiltraPelis();
+drop consultaFiltraPelis;
+select *from peliculas;
+
+insert into peliculas values (1,'avengers','Adultos','peleas','No','latino',400);
+insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','latino',500);
+             */
+
+
+
+            return arList;//retorna toda la infomración nencesara para la caterlera
+        }
+
     }
 }
