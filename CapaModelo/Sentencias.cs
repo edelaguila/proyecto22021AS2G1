@@ -128,7 +128,7 @@ namespace CapaModelo
             try
             {
 
-                string busqueda = "call consultaGen();";//select 
+                string busqueda = "call consultaGenCine();";//select 
                 //procedure
                 //triger
                 OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
