@@ -44,7 +44,6 @@ namespace CapaVista
             this.label1 = new System.Windows.Forms.Label();
             this.listaUsuPriv = new System.Windows.Forms.DataGridView();
             this.txtIdPriv = new System.Windows.Forms.TextBox();
-            this.txtIdTipo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -208,14 +207,6 @@ namespace CapaVista
             this.txtIdPriv.Size = new System.Drawing.Size(190, 20);
             this.txtIdPriv.TabIndex = 32;
             // 
-            // txtIdTipo
-            // 
-            this.txtIdTipo.Location = new System.Drawing.Point(663, 275);
-            this.txtIdTipo.Name = "txtIdTipo";
-            this.txtIdTipo.ReadOnly = true;
-            this.txtIdTipo.Size = new System.Drawing.Size(28, 20);
-            this.txtIdTipo.TabIndex = 33;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -279,7 +270,6 @@ namespace CapaVista
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtIdTipo);
             this.Controls.Add(this.txtIdPriv);
             this.Controls.Add(this.listaUsuPriv);
             this.Controls.Add(this.label1);
@@ -321,7 +311,6 @@ namespace CapaVista
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView listaUsuPriv;
         private System.Windows.Forms.TextBox txtIdPriv;
-        private System.Windows.Forms.TextBox txtIdTipo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;

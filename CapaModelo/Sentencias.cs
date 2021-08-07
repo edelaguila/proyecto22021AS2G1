@@ -212,5 +212,30 @@ namespace CapaModelo
             }
             return arList;
         }
+
+        public bool modifPriv(string idPriv, string idP)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call modifPrivUs(" + idPriv + "," + idP + ");";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al modificar privilegio" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

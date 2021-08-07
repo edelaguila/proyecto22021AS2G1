@@ -75,6 +75,11 @@ namespace CapaControlador
         {
             return sn.privilegios();
         }
+        public bool modifPriv(string idPriv, string idP)
+        {
+            return sn.modifPriv(idPriv, idP);
+        }
+
     }
 
 }

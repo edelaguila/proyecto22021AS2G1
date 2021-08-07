@@ -109,7 +109,7 @@ namespace CapaVista
                 {
                     MessageBox.Show("No se logro otorgar el privilegio");
                 }
-                txtIdTipo.Text = "";
+                
                 txtIdPriv.Text = "";
 
             }
@@ -129,8 +129,37 @@ namespace CapaVista
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            int id;
-            id = (tipoPriv.SelectedIndex + 1);
+           
+            string mnsj = "¿Desea modificar el privilegio con id: "+txtIdPriv.Text +" por este otro:"+ tipoPriv.Text +" ?";
+            string titulo = "Confirmación";
+            MessageBoxButtons btns = MessageBoxButtons.YesNo;
+            DialogResult resultado;
+            resultado = MessageBox.Show(mnsj, titulo, btns);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                //ejecutar actualizacion
+                string idPriv = txtIdPriv.Text;
+                //string idP = txtIdTipo.Text;
+                int id;
+                id = (tipoPriv.SelectedIndex + 1);
+                string idP = id + "";
+                bool result = cn.modifPriv(idPriv, idP);
+                if (result)
+                {
+                    MessageBox.Show("Privilegio modificado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se logro modificar el privilegio");
+                }
+
+                txtIdPriv.Text = "";
+
+            }
+        }
+        
+        private void recargaTablaPriv()
+        {
 
         }
     }
