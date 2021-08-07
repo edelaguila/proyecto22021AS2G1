@@ -87,7 +87,7 @@ namespace CapaVista
 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
-            string mnsj = "¿Desea dar este privilegio "+txtIdTipo.Text+", a este usuario "+txtUser.Text+" ?";
+            string mnsj = "¿Desea dar este privilegio "+tipoPriv.Text+", a este usuario "+txtUser.Text+" ?";
             string titulo = "Confirmación";
             MessageBoxButtons btns = MessageBoxButtons.YesNo;
             DialogResult resultado;
@@ -96,9 +96,10 @@ namespace CapaVista
             {
                 //ejecutar actualizacion
                 string idU = txtId.Text;
-                string idP = txtIdTipo.Text;
-
-
+                //string idP = txtIdTipo.Text;
+                int id;
+                id = (tipoPriv.SelectedIndex + 1);
+                string idP = id + "";
                 bool result= cn.ingPriv(idU,idP);
                 if (result)
                 {
@@ -121,9 +122,16 @@ namespace CapaVista
 
         private void tipoPriv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
+            /*int id;
             id = (tipoPriv.SelectedIndex+1);
-            txtIdTipo.Text = id+"";
+            txtIdTipo.Text = id+"";*/
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            int id;
+            id = (tipoPriv.SelectedIndex + 1);
+
         }
     }
 }

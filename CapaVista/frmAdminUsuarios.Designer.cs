@@ -122,6 +122,7 @@ namespace CapaVista
             this.btnActualizar.TabIndex = 17;
             this.btnActualizar.Text = "ACTUALIZACIÓN";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnDelete
             // 
@@ -202,14 +203,14 @@ namespace CapaVista
             // 
             // txtIdPriv
             // 
-            this.txtIdPriv.Location = new System.Drawing.Point(409, 376);
+            this.txtIdPriv.Location = new System.Drawing.Point(465, 376);
             this.txtIdPriv.Name = "txtIdPriv";
             this.txtIdPriv.Size = new System.Drawing.Size(190, 20);
             this.txtIdPriv.TabIndex = 32;
             // 
             // txtIdTipo
             // 
-            this.txtIdTipo.Location = new System.Drawing.Point(599, 275);
+            this.txtIdTipo.Location = new System.Drawing.Point(663, 275);
             this.txtIdTipo.Name = "txtIdTipo";
             this.txtIdTipo.ReadOnly = true;
             this.txtIdTipo.Size = new System.Drawing.Size(28, 20);
@@ -219,7 +220,7 @@ namespace CapaVista
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(327, 380);
+            this.label5.Location = new System.Drawing.Point(366, 377);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 16);
             this.label5.TabIndex = 34;
@@ -230,7 +231,7 @@ namespace CapaVista
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(338, 327);
+            this.label6.Location = new System.Drawing.Point(366, 341);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(289, 16);
             this.label6.TabIndex = 35;
@@ -251,7 +252,7 @@ namespace CapaVista
             this.tipoPriv.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.tipoPriv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoPriv.FormattingEnabled = true;
-            this.tipoPriv.Location = new System.Drawing.Point(384, 274);
+            this.tipoPriv.Location = new System.Drawing.Point(409, 274);
             this.tipoPriv.Name = "tipoPriv";
             this.tipoPriv.Size = new System.Drawing.Size(190, 21);
             this.tipoPriv.TabIndex = 39;
@@ -261,7 +262,7 @@ namespace CapaVista
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(381, 248);
+            this.label7.Location = new System.Drawing.Point(395, 243);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(195, 16);
             this.label7.TabIndex = 40;
