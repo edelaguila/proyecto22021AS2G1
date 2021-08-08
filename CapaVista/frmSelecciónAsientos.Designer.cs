@@ -58,11 +58,11 @@ namespace CapaVista
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.btna2 = new System.Windows.Forms.Button();
             this.btna3 = new System.Windows.Forms.Button();
-            this.btn4 = new System.Windows.Forms.Button();
+            this.btna4 = new System.Windows.Forms.Button();
             this.btna8 = new System.Windows.Forms.Button();
             this.btna7 = new System.Windows.Forms.Button();
-            this.btn6 = new System.Windows.Forms.Button();
-            this.btn5 = new System.Windows.Forms.Button();
+            this.btna6 = new System.Windows.Forms.Button();
+            this.btna5 = new System.Windows.Forms.Button();
             this.btnb8 = new System.Windows.Forms.Button();
             this.btnb7 = new System.Windows.Forms.Button();
             this.btnb6 = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@ namespace CapaVista
             this.btne7 = new System.Windows.Forms.Button();
             this.btne6 = new System.Windows.Forms.Button();
             this.btne5 = new System.Windows.Forms.Button();
-            this.btnE4 = new System.Windows.Forms.Button();
+            this.btne4 = new System.Windows.Forms.Button();
             this.btne3 = new System.Windows.Forms.Button();
             this.btne2 = new System.Windows.Forms.Button();
             this.btne1 = new System.Windows.Forms.Button();
@@ -313,7 +313,7 @@ namespace CapaVista
             this.textBox1.BackColor = System.Drawing.Color.Lime;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(353, 410);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(27, 15);
             this.textBox1.TabIndex = 19;
@@ -323,7 +323,7 @@ namespace CapaVista
             this.textBox2.BackColor = System.Drawing.Color.Red;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Location = new System.Drawing.Point(705, 410);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(27, 15);
             this.textBox2.TabIndex = 20;
@@ -333,7 +333,7 @@ namespace CapaVista
             this.textBox3.BackColor = System.Drawing.Color.Silver;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Location = new System.Drawing.Point(531, 410);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(27, 15);
             this.textBox3.TabIndex = 21;
@@ -379,7 +379,7 @@ namespace CapaVista
             this.panel3.BackColor = System.Drawing.Color.MediumBlue;
             this.panel3.Controls.Add(this.label22);
             this.panel3.Location = new System.Drawing.Point(1, 1);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1176, 65);
             this.panel3.TabIndex = 27;
@@ -405,6 +405,7 @@ namespace CapaVista
             this.btna1.TabIndex = 28;
             this.btna1.Text = "A1";
             this.btna1.UseVisualStyleBackColor = true;
+            this.btna1.Click += new System.EventHandler(this.btna1_Click);
             // 
             // textBox4
             // 
@@ -426,6 +427,7 @@ namespace CapaVista
             this.btna2.TabIndex = 30;
             this.btna2.Text = "A2";
             this.btna2.UseVisualStyleBackColor = true;
+            this.btna2.Click += new System.EventHandler(this.btna2_Click);
             // 
             // btna3
             // 
@@ -435,15 +437,17 @@ namespace CapaVista
             this.btna3.TabIndex = 31;
             this.btna3.Text = "A3";
             this.btna3.UseVisualStyleBackColor = true;
+            this.btna3.Click += new System.EventHandler(this.btna3_Click);
             // 
-            // btn4
+            // btna4
             // 
-            this.btn4.Location = new System.Drawing.Point(535, 502);
-            this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(43, 31);
-            this.btn4.TabIndex = 32;
-            this.btn4.Text = "A4";
-            this.btn4.UseVisualStyleBackColor = true;
+            this.btna4.Location = new System.Drawing.Point(535, 502);
+            this.btna4.Name = "btna4";
+            this.btna4.Size = new System.Drawing.Size(43, 31);
+            this.btna4.TabIndex = 32;
+            this.btna4.Text = "A4";
+            this.btna4.UseVisualStyleBackColor = true;
+            this.btna4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // btna8
             // 
@@ -453,6 +457,7 @@ namespace CapaVista
             this.btna8.TabIndex = 36;
             this.btna8.Text = "A8";
             this.btna8.UseVisualStyleBackColor = true;
+            this.btna8.Click += new System.EventHandler(this.btna8_Click);
             // 
             // btna7
             // 
@@ -462,24 +467,27 @@ namespace CapaVista
             this.btna7.TabIndex = 35;
             this.btna7.Text = "A7";
             this.btna7.UseVisualStyleBackColor = true;
+            this.btna7.Click += new System.EventHandler(this.btna7_Click);
             // 
-            // btn6
+            // btna6
             // 
-            this.btn6.Location = new System.Drawing.Point(641, 502);
-            this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(43, 31);
-            this.btn6.TabIndex = 34;
-            this.btn6.Text = "A6";
-            this.btn6.UseVisualStyleBackColor = true;
+            this.btna6.Location = new System.Drawing.Point(641, 502);
+            this.btna6.Name = "btna6";
+            this.btna6.Size = new System.Drawing.Size(43, 31);
+            this.btna6.TabIndex = 34;
+            this.btna6.Text = "A6";
+            this.btna6.UseVisualStyleBackColor = true;
+            this.btna6.Click += new System.EventHandler(this.btn6_Click);
             // 
-            // btn5
+            // btna5
             // 
-            this.btn5.Location = new System.Drawing.Point(591, 502);
-            this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(43, 31);
-            this.btn5.TabIndex = 33;
-            this.btn5.Text = "A5";
-            this.btn5.UseVisualStyleBackColor = true;
+            this.btna5.Location = new System.Drawing.Point(591, 502);
+            this.btna5.Name = "btna5";
+            this.btna5.Size = new System.Drawing.Size(43, 31);
+            this.btna5.TabIndex = 33;
+            this.btna5.Text = "A5";
+            this.btna5.UseVisualStyleBackColor = true;
+            this.btna5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // btnb8
             // 
@@ -489,6 +497,7 @@ namespace CapaVista
             this.btnb8.TabIndex = 44;
             this.btnb8.Text = "B8";
             this.btnb8.UseVisualStyleBackColor = true;
+            this.btnb8.Click += new System.EventHandler(this.btnb8_Click);
             // 
             // btnb7
             // 
@@ -498,6 +507,7 @@ namespace CapaVista
             this.btnb7.TabIndex = 43;
             this.btnb7.Text = "B7";
             this.btnb7.UseVisualStyleBackColor = true;
+            this.btnb7.Click += new System.EventHandler(this.btnb7_Click);
             // 
             // btnb6
             // 
@@ -507,6 +517,7 @@ namespace CapaVista
             this.btnb6.TabIndex = 42;
             this.btnb6.Text = "B6";
             this.btnb6.UseVisualStyleBackColor = true;
+            this.btnb6.Click += new System.EventHandler(this.btnb6_Click);
             // 
             // btnb5
             // 
@@ -516,6 +527,7 @@ namespace CapaVista
             this.btnb5.TabIndex = 41;
             this.btnb5.Text = "B5";
             this.btnb5.UseVisualStyleBackColor = true;
+            this.btnb5.Click += new System.EventHandler(this.btnb5_Click);
             // 
             // btnb4
             // 
@@ -525,6 +537,7 @@ namespace CapaVista
             this.btnb4.TabIndex = 40;
             this.btnb4.Text = "B4";
             this.btnb4.UseVisualStyleBackColor = true;
+            this.btnb4.Click += new System.EventHandler(this.btnb4_Click);
             // 
             // btnb3
             // 
@@ -534,6 +547,7 @@ namespace CapaVista
             this.btnb3.TabIndex = 39;
             this.btnb3.Text = "B3";
             this.btnb3.UseVisualStyleBackColor = true;
+            this.btnb3.Click += new System.EventHandler(this.btnb3_Click);
             // 
             // btnb2
             // 
@@ -543,6 +557,7 @@ namespace CapaVista
             this.btnb2.TabIndex = 38;
             this.btnb2.Text = "B2";
             this.btnb2.UseVisualStyleBackColor = true;
+            this.btnb2.Click += new System.EventHandler(this.btnb2_Click);
             // 
             // btnb1
             // 
@@ -552,6 +567,7 @@ namespace CapaVista
             this.btnb1.TabIndex = 37;
             this.btnb1.Text = "B1";
             this.btnb1.UseVisualStyleBackColor = true;
+            this.btnb1.Click += new System.EventHandler(this.btnb1_Click);
             // 
             // btnc8
             // 
@@ -561,6 +577,7 @@ namespace CapaVista
             this.btnc8.TabIndex = 52;
             this.btnc8.Text = "C8";
             this.btnc8.UseVisualStyleBackColor = true;
+            this.btnc8.Click += new System.EventHandler(this.btnc8_Click);
             // 
             // btnc7
             // 
@@ -570,6 +587,7 @@ namespace CapaVista
             this.btnc7.TabIndex = 51;
             this.btnc7.Text = "C7";
             this.btnc7.UseVisualStyleBackColor = true;
+            this.btnc7.Click += new System.EventHandler(this.btnc7_Click);
             // 
             // btnc6
             // 
@@ -579,6 +597,7 @@ namespace CapaVista
             this.btnc6.TabIndex = 50;
             this.btnc6.Text = "C6";
             this.btnc6.UseVisualStyleBackColor = true;
+            this.btnc6.Click += new System.EventHandler(this.btnc6_Click);
             // 
             // btnc5
             // 
@@ -588,6 +607,7 @@ namespace CapaVista
             this.btnc5.TabIndex = 49;
             this.btnc5.Text = "C5";
             this.btnc5.UseVisualStyleBackColor = true;
+            this.btnc5.Click += new System.EventHandler(this.btnc5_Click);
             // 
             // btnc4
             // 
@@ -597,6 +617,7 @@ namespace CapaVista
             this.btnc4.TabIndex = 48;
             this.btnc4.Text = "C4";
             this.btnc4.UseVisualStyleBackColor = true;
+            this.btnc4.Click += new System.EventHandler(this.btnc4_Click);
             // 
             // btnc3
             // 
@@ -606,6 +627,7 @@ namespace CapaVista
             this.btnc3.TabIndex = 47;
             this.btnc3.Text = "C3";
             this.btnc3.UseVisualStyleBackColor = true;
+            this.btnc3.Click += new System.EventHandler(this.btnc3_Click);
             // 
             // btnc2
             // 
@@ -615,6 +637,7 @@ namespace CapaVista
             this.btnc2.TabIndex = 46;
             this.btnc2.Text = "C2";
             this.btnc2.UseVisualStyleBackColor = true;
+            this.btnc2.Click += new System.EventHandler(this.btnc2_Click);
             // 
             // btnc1
             // 
@@ -624,6 +647,7 @@ namespace CapaVista
             this.btnc1.TabIndex = 45;
             this.btnc1.Text = "C1";
             this.btnc1.UseVisualStyleBackColor = true;
+            this.btnc1.Click += new System.EventHandler(this.btnc1_Click);
             // 
             // btnd8
             // 
@@ -633,6 +657,7 @@ namespace CapaVista
             this.btnd8.TabIndex = 60;
             this.btnd8.Text = "D8";
             this.btnd8.UseVisualStyleBackColor = true;
+            this.btnd8.Click += new System.EventHandler(this.btnd8_Click);
             // 
             // btnd7
             // 
@@ -642,6 +667,7 @@ namespace CapaVista
             this.btnd7.TabIndex = 59;
             this.btnd7.Text = "D7";
             this.btnd7.UseVisualStyleBackColor = true;
+            this.btnd7.Click += new System.EventHandler(this.btnd7_Click);
             // 
             // btnd6
             // 
@@ -651,6 +677,7 @@ namespace CapaVista
             this.btnd6.TabIndex = 58;
             this.btnd6.Text = "D6";
             this.btnd6.UseVisualStyleBackColor = true;
+            this.btnd6.Click += new System.EventHandler(this.btnd6_Click);
             // 
             // btnd5
             // 
@@ -660,6 +687,7 @@ namespace CapaVista
             this.btnd5.TabIndex = 57;
             this.btnd5.Text = "D5";
             this.btnd5.UseVisualStyleBackColor = true;
+            this.btnd5.Click += new System.EventHandler(this.btnd5_Click);
             // 
             // btnd4
             // 
@@ -669,6 +697,7 @@ namespace CapaVista
             this.btnd4.TabIndex = 56;
             this.btnd4.Text = "D4";
             this.btnd4.UseVisualStyleBackColor = true;
+            this.btnd4.Click += new System.EventHandler(this.btnd4_Click);
             // 
             // btnd3
             // 
@@ -678,6 +707,7 @@ namespace CapaVista
             this.btnd3.TabIndex = 55;
             this.btnd3.Text = "D3";
             this.btnd3.UseVisualStyleBackColor = true;
+            this.btnd3.Click += new System.EventHandler(this.btnd3_Click);
             // 
             // btnd2
             // 
@@ -687,6 +717,7 @@ namespace CapaVista
             this.btnd2.TabIndex = 54;
             this.btnd2.Text = "D2";
             this.btnd2.UseVisualStyleBackColor = true;
+            this.btnd2.Click += new System.EventHandler(this.btnd2_Click);
             // 
             // btnd1
             // 
@@ -696,6 +727,7 @@ namespace CapaVista
             this.btnd1.TabIndex = 53;
             this.btnd1.Text = "D1";
             this.btnd1.UseVisualStyleBackColor = true;
+            this.btnd1.Click += new System.EventHandler(this.btnd1_Click);
             // 
             // btne8
             // 
@@ -705,6 +737,7 @@ namespace CapaVista
             this.btne8.TabIndex = 68;
             this.btne8.Text = "E8";
             this.btne8.UseVisualStyleBackColor = true;
+            this.btne8.Click += new System.EventHandler(this.btne8_Click);
             // 
             // btne7
             // 
@@ -714,6 +747,7 @@ namespace CapaVista
             this.btne7.TabIndex = 67;
             this.btne7.Text = "E7";
             this.btne7.UseVisualStyleBackColor = true;
+            this.btne7.Click += new System.EventHandler(this.btne7_Click);
             // 
             // btne6
             // 
@@ -723,6 +757,7 @@ namespace CapaVista
             this.btne6.TabIndex = 66;
             this.btne6.Text = "E6";
             this.btne6.UseVisualStyleBackColor = true;
+            this.btne6.Click += new System.EventHandler(this.btne6_Click);
             // 
             // btne5
             // 
@@ -732,15 +767,17 @@ namespace CapaVista
             this.btne5.TabIndex = 65;
             this.btne5.Text = "E5";
             this.btne5.UseVisualStyleBackColor = true;
+            this.btne5.Click += new System.EventHandler(this.btne5_Click);
             // 
-            // btnE4
+            // btne4
             // 
-            this.btnE4.Location = new System.Drawing.Point(535, 708);
-            this.btnE4.Name = "btnE4";
-            this.btnE4.Size = new System.Drawing.Size(43, 31);
-            this.btnE4.TabIndex = 64;
-            this.btnE4.Text = "E4";
-            this.btnE4.UseVisualStyleBackColor = true;
+            this.btne4.Location = new System.Drawing.Point(535, 708);
+            this.btne4.Name = "btne4";
+            this.btne4.Size = new System.Drawing.Size(43, 31);
+            this.btne4.TabIndex = 64;
+            this.btne4.Text = "E4";
+            this.btne4.UseVisualStyleBackColor = true;
+            this.btne4.Click += new System.EventHandler(this.btne4_Click);
             // 
             // btne3
             // 
@@ -750,6 +787,7 @@ namespace CapaVista
             this.btne3.TabIndex = 63;
             this.btne3.Text = "E3";
             this.btne3.UseVisualStyleBackColor = true;
+            this.btne3.Click += new System.EventHandler(this.btne3_Click);
             // 
             // btne2
             // 
@@ -759,6 +797,7 @@ namespace CapaVista
             this.btne2.TabIndex = 62;
             this.btne2.Text = "E2";
             this.btne2.UseVisualStyleBackColor = true;
+            this.btne2.Click += new System.EventHandler(this.btne2_Click);
             // 
             // btne1
             // 
@@ -768,6 +807,7 @@ namespace CapaVista
             this.btne1.TabIndex = 61;
             this.btne1.Text = "E1";
             this.btne1.UseVisualStyleBackColor = true;
+            this.btne1.Click += new System.EventHandler(this.btne1_Click);
             // 
             // frmSelecciónAsientos
             // 
@@ -779,7 +819,7 @@ namespace CapaVista
             this.Controls.Add(this.btne7);
             this.Controls.Add(this.btne6);
             this.Controls.Add(this.btne5);
-            this.Controls.Add(this.btnE4);
+            this.Controls.Add(this.btne4);
             this.Controls.Add(this.btne3);
             this.Controls.Add(this.btne2);
             this.Controls.Add(this.btne1);
@@ -809,9 +849,9 @@ namespace CapaVista
             this.Controls.Add(this.btnb1);
             this.Controls.Add(this.btna8);
             this.Controls.Add(this.btna7);
-            this.Controls.Add(this.btn6);
-            this.Controls.Add(this.btn5);
-            this.Controls.Add(this.btn4);
+            this.Controls.Add(this.btna6);
+            this.Controls.Add(this.btna5);
+            this.Controls.Add(this.btna4);
             this.Controls.Add(this.btna3);
             this.Controls.Add(this.btna2);
             this.Controls.Add(this.textBox4);
@@ -840,7 +880,7 @@ namespace CapaVista
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSelecciónAsientos";
             this.Text = "frmSelecciónAsientos";
             this.panel3.ResumeLayout(false);
@@ -880,11 +920,11 @@ namespace CapaVista
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btna2;
         private System.Windows.Forms.Button btna3;
-        private System.Windows.Forms.Button btn4;
+        private System.Windows.Forms.Button btna4;
         private System.Windows.Forms.Button btna8;
         private System.Windows.Forms.Button btna7;
-        private System.Windows.Forms.Button btn6;
-        private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.Button btna6;
+        private System.Windows.Forms.Button btna5;
         private System.Windows.Forms.Button btnb8;
         private System.Windows.Forms.Button btnb7;
         private System.Windows.Forms.Button btnb6;
@@ -913,7 +953,7 @@ namespace CapaVista
         private System.Windows.Forms.Button btne7;
         private System.Windows.Forms.Button btne6;
         private System.Windows.Forms.Button btne5;
-        private System.Windows.Forms.Button btnE4;
+        private System.Windows.Forms.Button btne4;
         private System.Windows.Forms.Button btne3;
         private System.Windows.Forms.Button btne2;
         private System.Windows.Forms.Button btne1;
