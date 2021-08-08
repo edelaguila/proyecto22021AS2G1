@@ -436,7 +436,7 @@ namespace CapaVista
                 btne3.BackColor = Color.Lime;
             }
         }
-
+        // :3
         private void btne4_Click(object sender, EventArgs e)
         {
             if (btne4.BackColor == Color.Lime)
