@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmMantenimientoDePeliculas : Form
+    public partial class frmConsultaHorario : Form
     {
-        public frmMantenimientoDePeliculas()
+        public frmConsultaHorario()
         {
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegreso_Click(object sender, EventArgs e)
         {
-            var frmEA = new frmEdiciónCartelera();
-            frmEA.Show();
+            var frmH = new frmHorarios();
+            frmH.Show();
             this.Close();
         }
     }

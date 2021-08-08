@@ -28,5 +28,26 @@ namespace CapaVista
             frmEA.Show();
             this.Close();
         }
+
+        private void btnPeliculas_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmMantenimientoDePeliculas();
+            frmEA.Show();
+            this.Hide();
+        }
+
+        private void btnDerechos_Click(object sender, EventArgs e)
+        {
+            var frmID = new frmIngresoDerechos();
+            frmID.Show();
+            this.Hide();
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            var frmH = new frmHorarios();
+            frmH.Show();
+            this.Hide();
+        }
     }
 }

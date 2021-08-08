@@ -34,9 +34,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="CapaControlador">
-      <HintPath>..\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Protobuf, Version=3.17.3.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.17.3\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -89,6 +86,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConsultaHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaHorario.Designer.cs">
+      <DependentUpon>frmConsultaHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminacionHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminacionHorario.Designer.cs">
+      <DependentUpon>frmEliminacionHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHorarios.Designer.cs">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoDerechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoDerechos.Designer.cs">
+      <DependentUpon>frmIngresoDerechos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoHorario.Designer.cs">
+      <DependentUpon>frmIngresoHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngresoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +206,12 @@
     <Compile Include="frmMenuEntrada.Designer.cs">
       <DependentUpon>frmMenuEntrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificacionHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificacionHorario.Designer.cs">
+      <DependentUpon>frmModificacionHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelecciónAsientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +232,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmConsultaHorario.resx">
+      <DependentUpon>frmConsultaHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminacionHorario.resx">
+      <DependentUpon>frmEliminacionHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHorarios.resx">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoDerechos.resx">
+      <DependentUpon>frmIngresoDerechos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoHorario.resx">
+      <DependentUpon>frmIngresoHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngresoUsuario.resx">
       <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +292,9 @@
     <EmbeddedResource Include="frmMenuEntrada.resx">
       <DependentUpon>frmMenuEntrada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmModificacionHorario.resx">
+      <DependentUpon>frmModificacionHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSelecciónAsientos.resx">
       <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +323,12 @@
   <ItemGroup>
     <Content Include="Recursos\flecha.png" />
     <Content Include="Recursos\logo cine %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaControlador\CapaControlador.csproj">
+      <Project>{5dff24f5-837a-4671-af12-d5e34b0964c6}</Project>
+      <Name>CapaControlador</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
