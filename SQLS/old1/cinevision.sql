@@ -350,7 +350,8 @@ ALTER TABLE `horariocine`
 --
 ALTER TABLE `peliculas`
   ADD PRIMARY KEY (`idPeliculas`);
-
+-- desc horariocine;
+-- desc usuarioprivilegios;
 --
 -- Indices de la tabla `privilegios`
 --

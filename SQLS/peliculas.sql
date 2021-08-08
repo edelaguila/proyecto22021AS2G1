@@ -16,7 +16,7 @@ CREATE TABLE `peliculas` (
   `sinopsis` varchar (100),
   `estado` tinyint default 1,
   PRIMARY KEY (`idPeliculas`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 drop database cinevision;

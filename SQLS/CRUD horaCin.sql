@@ -65,12 +65,16 @@ call modifHorarioCi(1,1,1,1);
 DELIMITER |
 CREATE PROCEDURE conGenHorarioCi()
 BEGIN
-	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario 
+	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario,
+    sa.Descripción as descripcionSala
 	from horariocine hc 
 	INNER JOIN peliculas pe on pe.idPeliculas = hc.fkPelicula
-	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario;
+	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario
+    INNER JOIN salas sa on sa.idSalas = hc.fkSala;
 END
 |
+
+-- drop procedure conGenHorarioCi;
 
 call conGenHorarioCi();
 -- desc horarios;
@@ -85,14 +89,16 @@ INNER JOIN horarios ho on ho.idHorario = hc.fkHorario;
 DELIMITER |
 CREATE PROCEDURE conGenHorarioCiInd(in id int)
 BEGIN
-	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario 
+	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario,
+    sa.Descripción as descripcionSala
 	from horariocine hc 
 	INNER JOIN peliculas pe on pe.idPeliculas = hc.fkPelicula
 	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario
+    INNER JOIN salas sa on sa.idSalas = hc.fkSala
     where hc.idhorarioCine=id;
 END
 |
-
+-- drop procedure conGenHorarioCiInd;
 call conGenHorarioCiInd(1);
 
 -- consulta horarios
@@ -121,3 +127,18 @@ call ingHorarioCi(1,2,2);
 
 call conGenHorarioCi();
 call conGenHorarioCiInd(1);
+
+-- procedimiento dardebaja
+DELIMITER |
+CREATE PROCEDURE bajaHorarioCin(in id int)
+BEGIN
+	delete from horariocine where idhorarioCine=id;
+END
+|
+
+call bajaHorarioCin(2);
+-- delete from horariocine where idhorarioCine=1;
+select * from horariocine;
+
+desc horariocine;
+
