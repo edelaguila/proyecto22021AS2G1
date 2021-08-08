@@ -44,6 +44,7 @@ namespace CapaVista
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnRegreso = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -52,10 +53,9 @@ namespace CapaVista
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumBlue;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-122, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(-92, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1239, 69);
+            this.panel1.Size = new System.Drawing.Size(929, 56);
             this.panel1.TabIndex = 26;
             // 
             // label1
@@ -64,10 +64,9 @@ namespace CapaVista
             this.label1.BackColor = System.Drawing.Color.MediumBlue;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(401, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(104, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(396, 50);
+            this.label1.Size = new System.Drawing.Size(310, 40);
             this.label1.TabIndex = 2;
             this.label1.Text = "Modificación Horario";
             // 
@@ -76,17 +75,17 @@ namespace CapaVista
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(792, 514);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(595, 365);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 53);
+            this.button1.Size = new System.Drawing.Size(142, 43);
             this.button1.TabIndex = 44;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(476, 360);
+            this.monthCalendar1.Location = new System.Drawing.Point(345, 290);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 43;
             // 
@@ -94,80 +93,89 @@ namespace CapaVista
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(516, 299);
+            this.label5.Location = new System.Drawing.Point(375, 241);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 41);
+            this.label5.Size = new System.Drawing.Size(79, 32);
             this.label5.TabIndex = 42;
             this.label5.Text = "Fecha";
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(664, 256);
+            this.comboBox3.Location = new System.Drawing.Point(486, 206);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(268, 24);
+            this.comboBox3.Size = new System.Drawing.Size(202, 21);
             this.comboBox3.TabIndex = 41;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(516, 239);
+            this.label4.Location = new System.Drawing.Point(375, 192);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 41);
+            this.label4.Size = new System.Drawing.Size(103, 32);
             this.label4.TabIndex = 40;
             this.label4.Text = "Horario";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(664, 196);
+            this.comboBox2.Location = new System.Drawing.Point(486, 157);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(268, 24);
+            this.comboBox2.Size = new System.Drawing.Size(202, 21);
             this.comboBox2.TabIndex = 39;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(516, 179);
+            this.label3.Location = new System.Drawing.Point(375, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 41);
+            this.label3.Size = new System.Drawing.Size(61, 32);
             this.label3.TabIndex = 38;
             this.label3.Text = "Sala";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(664, 141);
+            this.comboBox1.Location = new System.Drawing.Point(486, 113);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 24);
+            this.comboBox1.Size = new System.Drawing.Size(202, 21);
             this.comboBox1.TabIndex = 37;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(516, 124);
+            this.label2.Location = new System.Drawing.Point(375, 99);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 41);
+            this.label2.Size = new System.Drawing.Size(103, 32);
             this.label2.TabIndex = 36;
             this.label2.Text = "Película";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(198, 120);
+            this.textBox1.Location = new System.Drawing.Point(136, 96);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 22);
+            this.textBox1.Size = new System.Drawing.Size(187, 20);
             this.textBox1.TabIndex = 46;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 103);
+            this.label6.Location = new System.Drawing.Point(10, 82);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 41);
+            this.label6.Size = new System.Drawing.Size(133, 32);
             this.label6.TabIndex = 45;
             this.label6.Text = "Ingrese ID";
             // 
@@ -176,10 +184,9 @@ namespace CapaVista
             this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(121, 176);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(79, 141);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 53);
+            this.button2.Size = new System.Drawing.Size(142, 43);
             this.button2.TabIndex = 47;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = false;
@@ -187,19 +194,32 @@ namespace CapaVista
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 256);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 206);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(342, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(256, 228);
             this.dataGridView1.TabIndex = 48;
+            // 
+            // btnRegreso
+            // 
+            this.btnRegreso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegreso.Location = new System.Drawing.Point(756, 484);
+            this.btnRegreso.Name = "btnRegreso";
+            this.btnRegreso.Size = new System.Drawing.Size(85, 23);
+            this.btnRegreso.TabIndex = 49;
+            this.btnRegreso.Text = "Regresar";
+            this.btnRegreso.UseVisualStyleBackColor = true;
+            this.btnRegreso.Click += new System.EventHandler(this.btnRegreso_Click);
             // 
             // frmModificacionHorario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(995, 580);
+            this.ClientSize = new System.Drawing.Size(853, 519);
+            this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -214,6 +234,7 @@ namespace CapaVista
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmModificacionHorario";
             this.Text = "frmModificacionHorario";
             this.panel1.ResumeLayout(false);
@@ -241,5 +262,6 @@ namespace CapaVista
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnRegreso;
     }
 }

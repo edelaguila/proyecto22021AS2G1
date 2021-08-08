@@ -16,5 +16,12 @@ namespace CapaVista
         {
             InitializeComponent();
         }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmH = new frmHorarios();
+            frmH.Show();
+            this.Close();
+        }
     }
 }

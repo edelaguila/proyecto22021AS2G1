@@ -94,6 +94,7 @@ namespace CapaVista
             this.btnDerechos.TabIndex = 45;
             this.btnDerechos.Text = "EDICIÓN DERECHOS";
             this.btnDerechos.UseVisualStyleBackColor = false;
+            this.btnDerechos.Click += new System.EventHandler(this.btnDerechos_Click);
             // 
             // btnHorarios
             // 
@@ -106,6 +107,7 @@ namespace CapaVista
             this.btnHorarios.TabIndex = 46;
             this.btnHorarios.Text = "EDICIÓN HORARIOS";
             this.btnHorarios.UseVisualStyleBackColor = false;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
             // 
             // frmEdiciónCartelera
             // 
