@@ -99,7 +99,7 @@ namespace CapaVista
         {
             string id = txtId.Text;
             var lista = cn.busquedaIndividual(id);
-            txtUser.Text = (string)lista[1];
+            txtUser.Text = (string)lista[0];
 
             //la consulta para la tabla
             DataTable dt = cn.llenarTblPrivUser(id);
