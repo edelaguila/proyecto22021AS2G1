@@ -30,12 +30,56 @@ namespace CapaVista
             string uid = txtId.Text;
             var lista = cn.busquedaIndividual(uid);
             txtNom.Text = (string)lista[0];
-            txtEstado.Text = (int)lista[2];
+            Int16 estado = (Int16)lista[2];
+
+            txtEstado.Text = ""+estado;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            //deleteo de los datos del usuario
+            string mnsj = "¿Desea eliminar a este usuario?";
+            string titulo = "Confirmación";
+            MessageBoxButtons btns = MessageBoxButtons.YesNo;
+            DialogResult resultado;
+            resultado = MessageBox.Show(mnsj, titulo, btns);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                //ejecutar eliminación
+                string id = txtId.Text;
+
+
+
+                bool result = cn.deleteUser(id);
+                if (result)
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Eliminación fallida");
+                }
+                txtNom.Text = "";
+                txtEstado.Text = "";
+              
+            }
+        }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmMantenimientoGestionUsuarios();
+            frmEA.Show();
+            this.Close();
+        }
+
+        private void txtNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEstado_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

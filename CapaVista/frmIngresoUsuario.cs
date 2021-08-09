@@ -41,5 +41,12 @@ namespace CapaVista
             txtPass.Text = "";
 
         }
+
+        private void btnRegresa_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmMantenimientoGestionUsuarios();
+            frmEA.Show();
+            this.Close();
+        }
     }
 }

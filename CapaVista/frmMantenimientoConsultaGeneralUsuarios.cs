@@ -28,6 +28,7 @@ namespace CapaVista
         public void actualizardatagriew()
         {
             DataTable dt = cn.llenarTbl(emp);
+            dvgConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dvgConsulta.DataSource = dt;
 
         }
@@ -76,6 +77,13 @@ namespace CapaVista
         private void button2_Click(object sender, EventArgs e)
         {
             actualizardatagriew();
+        }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmMantenimientoGestionUsuarios();
+            frmEA.Show();
+            this.Close();
         }
     }
     }

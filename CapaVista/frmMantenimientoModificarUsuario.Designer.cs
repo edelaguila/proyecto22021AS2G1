@@ -39,6 +39,7 @@ namespace CapaVista
             this.label3 = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.btnRegreso = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@ namespace CapaVista
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(169, 20);
             this.txtId.TabIndex = 3;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // label1
             // 
@@ -130,8 +132,21 @@ namespace CapaVista
             // 
             this.txtPass.Location = new System.Drawing.Point(132, 163);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(172, 20);
             this.txtPass.TabIndex = 9;
+            this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // btnRegreso
+            // 
+            this.btnRegreso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegreso.Location = new System.Drawing.Point(402, 251);
+            this.btnRegreso.Name = "btnRegreso";
+            this.btnRegreso.Size = new System.Drawing.Size(75, 23);
+            this.btnRegreso.TabIndex = 10;
+            this.btnRegreso.Text = "Regresar";
+            this.btnRegreso.UseVisualStyleBackColor = true;
+            this.btnRegreso.Click += new System.EventHandler(this.btnRegreso_Click);
             // 
             // frmMantenimientoModificarUsuario
             // 
@@ -139,6 +154,7 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(489, 286);
+            this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label3);
@@ -169,5 +185,6 @@ namespace CapaVista
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Button btnRegreso;
     }
 }

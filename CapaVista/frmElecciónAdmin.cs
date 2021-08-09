@@ -19,8 +19,38 @@ namespace CapaVista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var frmGA = new frmMantenimientoGestionUsuarios();
-            frmGA.Show();
+            var frmAU = new frmAdminUsuarios();
+            frmAU.Show();
+            this.Hide();
+          
+        }
+
+        private void btnGenerarReportes_Click(object sender, EventArgs e)
+        {
+            var frmGR = new frmGenerarReportes();
+            frmGR.Show();
+            this.Hide();
+        }
+
+        private void btnEdicionCartelera_Click(object sender, EventArgs e)
+        {
+            var frmEC = new frmEdiciónCartelera();
+            frmEC.Show();
+            this.Hide();
+        }
+
+        private void btnGestion_Click(object sender, EventArgs e)
+        {
+            var frmGU = new frmMantenimientoGestionUsuarios();
+            frmGU.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            var frmL = new frmMenuEntrada();
+            frmL.Show();
+            this.Close();
         }
     }
 }

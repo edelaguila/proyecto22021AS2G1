@@ -16,7 +16,10 @@ namespace SGT_Principal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CapaVista.frmMantenimientoGestionUsuarios());
+
+            var frmAU = new CapaVista.frmMenuEntrada();
+            frmAU.Show();
+            Application.Run();
         }
     }
 }
