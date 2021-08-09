@@ -29,6 +29,9 @@ namespace CapaModelo
             try
             {
                 string cadena = "call ingUser('" + nombre + "','" + pass + "');";
+                // call ingUser('Noel','123456');
+                // call consultGen();
+                // call conInd(1);
                 OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
                 ingreso.ExecuteNonQuery();
                 i = 1;
