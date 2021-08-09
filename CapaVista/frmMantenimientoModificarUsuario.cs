@@ -52,20 +52,28 @@ namespace CapaVista
                 bool result = cn.actuUsuario(id, nom, pass);
                 if (result)
                 {
-                    MessageBox.Show("Ingreso correcto");
+                    MessageBox.Show("Modificación correcta");
                 }
                 else
                 {
-                    MessageBox.Show("Ingreso fallido");
+                    MessageBox.Show("Modificación fallida");
                 }
                 txtNom.Text = "";
                 txtPass.Text = "";
+                
             }
         
     }
         private void txtId_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmMGU = new frmMantenimientoGestionUsuarios();
+            frmMGU.Show();
+            this.Close();
         }
     }
 }

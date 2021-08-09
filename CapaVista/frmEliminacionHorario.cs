@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmFechaReservación : Form
+    public partial class frmEliminacionHorario : Form
     {
-        public frmFechaReservación()
+        public frmEliminacionHorario()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnRegreso_Click(object sender, EventArgs e)
         {
-
+            var frmH = new frmHorarios();
+            frmH.Show();
+            this.Close();
         }
     }
 }

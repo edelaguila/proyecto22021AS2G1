@@ -34,9 +34,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="CapaControlador">
-      <HintPath>..\..\..\Ética Profesional\SGT\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Protobuf, Version=3.17.3.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.17.3\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -89,11 +86,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConsultaHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaHorario.Designer.cs">
+      <DependentUpon>frmConsultaHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminacionHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminacionHorario.Designer.cs">
+      <DependentUpon>frmEliminacionHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHorarios.Designer.cs">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoDerechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoDerechos.Designer.cs">
+      <DependentUpon>frmIngresoDerechos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoHorario.Designer.cs">
+      <DependentUpon>frmIngresoHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngresoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmIngresoUsuario.Designer.cs">
       <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoDePeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoDePeliculas.Designer.cs">
+      <DependentUpon>frmMantenimientoDePeliculas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMantenimientoIngresar.cs">
       <SubType>Form</SubType>
@@ -131,12 +164,6 @@
     <Compile Include="frmElecciónAdmin.Designer.cs">
       <DependentUpon>frmElecciónAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFechaReservación.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFechaReservación.Designer.cs">
-      <DependentUpon>frmFechaReservación.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmFiltraciónPeliculas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +200,18 @@
     <Compile Include="frmMantenimientoModificarUsuario.Designer.cs">
       <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuEntrada.Designer.cs">
+      <DependentUpon>frmMenuEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificacionHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificacionHorario.Designer.cs">
+      <DependentUpon>frmModificacionHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelecciónAsientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,16 +230,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PruebaBD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PruebaBD.Designer.cs">
-      <DependentUpon>PruebaBD.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmConsultaHorario.resx">
+      <DependentUpon>frmConsultaHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminacionHorario.resx">
+      <DependentUpon>frmEliminacionHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHorarios.resx">
+      <DependentUpon>frmHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoDerechos.resx">
+      <DependentUpon>frmIngresoDerechos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoHorario.resx">
+      <DependentUpon>frmIngresoHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngresoUsuario.resx">
       <DependentUpon>frmIngresoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoDePeliculas.resx">
+      <DependentUpon>frmMantenimientoDePeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoIngresar.resx">
       <DependentUpon>frmMantenimientoIngresar.cs</DependentUpon>
@@ -216,9 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmElecciónAdmin.resx">
       <DependentUpon>frmElecciónAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFechaReservación.resx">
-      <DependentUpon>frmFechaReservación.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFiltraciónPeliculas.resx">
       <DependentUpon>frmFiltraciónPeliculas.cs</DependentUpon>
@@ -241,6 +289,12 @@
     <EmbeddedResource Include="frmMantenimientoModificarUsuario.resx">
       <DependentUpon>frmMantenimientoModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuEntrada.resx">
+      <DependentUpon>frmMenuEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificacionHorario.resx">
+      <DependentUpon>frmModificacionHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSelecciónAsientos.resx">
       <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,9 +304,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PruebaBD.resx">
-      <DependentUpon>PruebaBD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +319,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\btnfondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recursos\flecha.png" />
+    <Content Include="Recursos\logo cine %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaControlador\CapaControlador.csproj">
+      <Project>{5dff24f5-837a-4671-af12-d5e34b0964c6}</Project>
+      <Name>CapaControlador</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

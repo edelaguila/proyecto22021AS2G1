@@ -44,6 +44,59 @@ namespace CapaControlador
             return sn.deleteUser(id);
         }
 
+        //metodo para buscar ciudad
+        public ArrayList busquedaCine()
+        {
+            return sn.busquedaCine();
+        }
+
+        //busqueda general tipos privilegios
+        /*public DataTable llenarTblPriv()
+        {
+            OdbcDataAdapter dt = sn.llenarTblPriv();
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }*/
+
+        public DataTable llenarTblPrivUser(string id)
+        {
+            OdbcDataAdapter dt = sn.llenarTblPrivUser(id);
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table; 
+        }
+
+        public bool ingPriv(string idU, string idP)
+        {
+            return sn.ingPriv(idU,idP);
+        }
+        public ArrayList privilegios()
+        {
+            return sn.privilegios();
+        }
+        public bool modifPriv(string idPriv, string idP)
+        {
+            return sn.modifPriv(idPriv, idP);
+        }
+
+        public bool elPriv( string idPriv)
+        {
+            return sn.elPriv(idPriv);
+        }
+
+        public bool iniciaSesion(string user, string pass)
+        {
+
+            return sn.iniciaSesion(user, pass);
+        }
+
+
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        {
+            return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop);
+
+        }
     }
 
 }

@@ -61,7 +61,25 @@ namespace CapaVista
                 }
                 txtNom.Text = "";
                 txtEstado.Text = "";
+              
             }
+        }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmMantenimientoGestionUsuarios();
+            frmEA.Show();
+            this.Close();
+        }
+
+        private void txtNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEstado_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

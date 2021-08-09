@@ -36,6 +36,7 @@ namespace CapaVista
             this.btnActualizar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_consulta = new System.Windows.Forms.Button();
+            this.btnRegreso = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgConsulta)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@ namespace CapaVista
             // dvgConsulta
             // 
             this.dvgConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgConsulta.Location = new System.Drawing.Point(36, 193);
+            this.dvgConsulta.Location = new System.Drawing.Point(42, 158);
             this.dvgConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.dvgConsulta.Name = "dvgConsulta";
             this.dvgConsulta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -75,7 +76,7 @@ namespace CapaVista
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(180, 452);
+            this.btnFiltrar.Location = new System.Drawing.Point(186, 429);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(105, 46);
@@ -85,7 +86,7 @@ namespace CapaVista
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(341, 452);
+            this.btnActualizar.Location = new System.Drawing.Point(342, 429);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 46);
@@ -96,7 +97,7 @@ namespace CapaVista
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(499, 452);
+            this.button1.Location = new System.Drawing.Point(489, 429);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 46);
@@ -106,13 +107,24 @@ namespace CapaVista
             // 
             // btn_consulta
             // 
-            this.btn_consulta.Location = new System.Drawing.Point(275, 85);
+            this.btn_consulta.Location = new System.Drawing.Point(296, 71);
             this.btn_consulta.Name = "btn_consulta";
-            this.btn_consulta.Size = new System.Drawing.Size(196, 74);
+            this.btn_consulta.Size = new System.Drawing.Size(173, 60);
             this.btn_consulta.TabIndex = 10;
             this.btn_consulta.Text = "Consultar";
             this.btn_consulta.UseVisualStyleBackColor = true;
             this.btn_consulta.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnRegreso
+            // 
+            this.btnRegreso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegreso.Location = new System.Drawing.Point(658, 474);
+            this.btnRegreso.Name = "btnRegreso";
+            this.btnRegreso.Size = new System.Drawing.Size(75, 23);
+            this.btnRegreso.TabIndex = 11;
+            this.btnRegreso.Text = "Regresar";
+            this.btnRegreso.UseVisualStyleBackColor = true;
+            this.btnRegreso.Click += new System.EventHandler(this.btnRegreso_Click);
             // 
             // frmMantenimientoConsultaGeneralUsuarios
             // 
@@ -120,6 +132,7 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(745, 509);
+            this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.btn_consulta);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnActualizar);
@@ -145,5 +158,6 @@ namespace CapaVista
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_consulta;
+        private System.Windows.Forms.Button btnRegreso;
     }
 }

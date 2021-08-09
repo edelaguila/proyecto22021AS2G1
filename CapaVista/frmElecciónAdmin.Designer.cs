@@ -35,6 +35,8 @@ namespace CapaVista
             this.btnEdicionCartelera = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnGestion = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@ namespace CapaVista
             this.btnAdminUsuarios.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAdminUsuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnAdminUsuarios.Location = new System.Drawing.Point(64, 325);
+            this.btnAdminUsuarios.Location = new System.Drawing.Point(64, 298);
             this.btnAdminUsuarios.Name = "btnAdminUsuarios";
             this.btnAdminUsuarios.Size = new System.Drawing.Size(244, 43);
             this.btnAdminUsuarios.TabIndex = 24;
@@ -108,12 +110,40 @@ namespace CapaVista
             this.label3.TabIndex = 2;
             this.label3.Text = "Sistema Administrativo";
             // 
+            // btnGestion
+            // 
+            this.btnGestion.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestion.ForeColor = System.Drawing.Color.White;
+            this.btnGestion.Location = new System.Drawing.Point(479, 298);
+            this.btnGestion.Name = "btnGestion";
+            this.btnGestion.Size = new System.Drawing.Size(244, 43);
+            this.btnGestion.TabIndex = 27;
+            this.btnGestion.Text = "GESTIÓN DE USUARIOS";
+            this.btnGestion.UseVisualStyleBackColor = false;
+            this.btnGestion.Click += new System.EventHandler(this.btnGestion_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(274, 378);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(244, 43);
+            this.btnCerrarSesion.TabIndex = 28;
+            this.btnCerrarSesion.Text = "CERRAR SESIÓN";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // frmElecciónAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCerrarSesion);
+            this.Controls.Add(this.btnGestion);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnEdicionCartelera);
             this.Controls.Add(this.btnAdminUsuarios);
@@ -136,5 +166,7 @@ namespace CapaVista
         private System.Windows.Forms.Button btnEdicionCartelera;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnGestion;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }
