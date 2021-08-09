@@ -380,5 +380,45 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
             return arList;//retorna toda la infomración nencesara para la caterlera
         }
 
+
+        //metodo de ingreso de peliculas
+
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call insertPeliculas('" + nom + "','" + clas + "','" + gen + "','" + sub + "','" + idio + "'," + preci + ",'" + sinop + "', 1);";
+                OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
+                ingreso.ExecuteNonQuery();
+                i = 1;
+
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al ingresar " + Error);
+                
+                
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
+
 }
