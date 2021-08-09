@@ -92,6 +92,12 @@
     <Compile Include="frmConsultaHorario.Designer.cs">
       <DependentUpon>frmConsultaHorario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaPeliculas.Designer.cs">
+      <DependentUpon>frmConsultaPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEliminacionHorario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmConsultaHorario.resx">
       <DependentUpon>frmConsultaHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaPeliculas.resx">
+      <DependentUpon>frmConsultaPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminacionHorario.resx">
       <DependentUpon>frmEliminacionHorario.cs</DependentUpon>

@@ -379,6 +379,13 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
 
             return arList;//retorna toda la infomración nencesara para la caterlera
         }
+        public OdbcDataAdapter ConsultaPeliculas()// metodo  que obtinene el contenio de una tabla
+        {
+            //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
+            string sql = "call consultaGenpelis();";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
 
     }
 }

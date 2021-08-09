@@ -28,5 +28,12 @@ namespace CapaVista
             frmEA.Show();
             this.Close();
         }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            var frmEA = new frmConsultaPeliculas();
+            frmEA.Show();
+            this.Hide();
+        }
     }
 }

@@ -89,7 +89,16 @@ namespace CapaControlador
         {
 
             return sn.iniciaSesion(user, pass);
+
+        }
+        public DataTable ConsultaPeliculas()
+        {
+            OdbcDataAdapter dt = sn.ConsultaPeliculas();
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
         }
     }
+
 
 }
