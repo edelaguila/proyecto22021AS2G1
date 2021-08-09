@@ -98,6 +98,13 @@ namespace CapaControlador
             dt.Fill(table);
             return table;
         }
+
+
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        {
+            return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop);
+
+        }
     }
 
 
