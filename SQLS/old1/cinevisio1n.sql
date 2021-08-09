@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2021 a las 06:37:18
+-- Tiempo de generación: 08-08-2021 a las 06:01:47
 -- Versión del servidor: 8.0.23
 -- Versión de PHP: 8.0.2
 
@@ -27,21 +27,19 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE PROCEDURE `actuPelis` (IN `id` INT, IN `nom` VARCHAR(40), IN `clas` VARCHAR(1), IN `gen` VARCHAR(30), IN `sub` VARCHAR(15), IN `lan` VARCHAR(15), IN `preciop` INT, IN `sinopsisp` VARCHAR(50), IN `estate` INT)  UPDATE peliculas set Nombre = nom, Clasificación = clas, Genero = gen, Subtitulado = sub, Idioma = lan, precio = preciop, sinopsis = sinopsisp, estado = estate where id = idPeliculas;$$
-
-CREATE PROCEDURE `actuUser` (IN `nusuario` VARCHAR(45), IN `npass` VARCHAR(45), IN `id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actuUser` (IN `nusuario` VARCHAR(45), IN `npass` VARCHAR(45), IN `id` INT)  BEGIN
 	update usuarios set Usuario=nusuario, Password=npass where idUsuarios=id;
 END$$
 
-CREATE PROCEDURE `bajaHorarioCin` (IN `id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `bajaHorarioCin` (IN `id` INT)  BEGIN
 	delete from horariocine where idhorarioCine=id;
 END$$
 
-CREATE PROCEDURE `bajaUser` (IN `id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `bajaUser` (IN `id` INT)  BEGIN
 	update usuarios set usuarios.estado= 0 where usuarios.idUsuarios=id;
 END$$
 
-CREATE PROCEDURE `conGenHorarioCi` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `conGenHorarioCi` ()  BEGIN
 	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario,
     sa.Descripción as descripcionSala
 	from horariocine hc 
@@ -50,7 +48,7 @@ CREATE PROCEDURE `conGenHorarioCi` ()  BEGIN
     INNER JOIN salas sa on sa.idSalas = hc.fkSala;
 END$$
 
-CREATE PROCEDURE `conGenHorarioCiInd` (IN `id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `conGenHorarioCiInd` (IN `id` INT)  BEGIN
 	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario,
     sa.Descripción as descripcionSala
 	from horariocine hc 
@@ -60,75 +58,59 @@ CREATE PROCEDURE `conGenHorarioCiInd` (IN `id` INT)  BEGIN
     where hc.idhorarioCine=id;
 END$$
 
-CREATE PROCEDURE `consultaFiltraPelis` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaFiltraPelis` ()  BEGIN
 	select idPeliculas as ID, Nombre, Clasificación, Genero, Subtitulado, Idioma, precio from peliculas;
 END$$
 
-CREATE PROCEDURE `consultaGen` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaGen` ()  BEGIN
 	select idUsuarios as ID, Usuario, estado from usuarios;
 END$$
 
-CREATE PROCEDURE `consultaGenCine` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaGenCine` ()  BEGIN
 	select idCines as ID, Nombre, Direccion from Cines;
 END$$
 
-CREATE PROCEDURE `consultaGenpelis` ()  BEGIN
-	select * from peliculas;
-END$$
-
-CREATE PROCEDURE `consultaInpeli` (IN `id` INT)  BEGIN
-		select * from peliculas where id = peliculas.idPeliculas;
-END$$
-
-CREATE PROCEDURE `consultaPriv` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaPriv` ()  BEGIN
 	select idPrivilegios as id, descPrivilegio as Privilegio from privilegios;
 END$$
 
-CREATE PROCEDURE `elimPelis` (IN `id` INT)  BEGIN
-	UPDATE peliculas set estado = 0 where id = idPeliculas;
-    END$$
-
-CREATE PROCEDURE `elPrivUs` (IN `idPriv` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `elPrivUs` (IN `idPriv` INT)  BEGIN
 	delete from usuarioprivilegios where idusuarioPrivilegios=idPriv;
 END$$
 
-CREATE PROCEDURE `ingHorarioCi` (IN `peli` INT, IN `sala` INT, IN `hora` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ingHorarioCi` (IN `peli` INT, IN `sala` INT, IN `hora` INT)  BEGIN
 	insert into horariocine(fkPelicula,fkSala,fkHorario) values(peli,sala,hora);
 END$$
 
-CREATE PROCEDURE `ingPrivUs` (IN `idU` INT, IN `idP` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ingPrivUs` (IN `idU` INT, IN `idP` INT)  BEGIN
 	insert into usuarioprivilegios(fkUsuario,fkPrivilegio) values (idU,idP);
 END$$
 
-CREATE PROCEDURE `ingUser` (IN `usuario` VARCHAR(45), IN `pass` VARCHAR(45))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ingUser` (IN `usuario` VARCHAR(45), IN `pass` VARCHAR(45))  BEGIN
 	insert into usuarios (Usuario, Password) values (usuario,pass);
 END$$
 
-CREATE PROCEDURE `insertPeli` (IN `nom` VARCHAR(40), IN `clas` VARCHAR(1), IN `gen` VARCHAR(30), IN `sub` VARCHAR(15), IN `lan` VARCHAR(15), IN `precio` INT, IN `sinoPsis` VARCHAR(50), IN `esTado` INT)  BEGIN 
-		insert into peliculas (Nombre, Estado, Clasificacion, Genero, Subtitulado, Idioma, precio, sonopsis, estado) values (nom,clas,gen,sub,lan,precio,sinoPsis,esTado);
-END$$
-
-CREATE PROCEDURE `login` (IN `usuario` VARCHAR(45), IN `passwor` VARCHAR(45))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `login` (IN `usuario` VARCHAR(45), IN `passwor` VARCHAR(45))  BEGIN
 	select Usuario, usuarios.Password, usuarios.estado from usuarios where Usuario=usuario and Password=passwor; 
 END$$
 
-CREATE PROCEDURE `modifHorarioCi` (IN `peli` INT, IN `sala` INT, IN `hora` INT, IN `id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `modifHorarioCi` (IN `peli` INT, IN `sala` INT, IN `hora` INT, IN `id` INT)  BEGIN
 	update horariocine set fkPelicula=peli, fkSala=sala, fkHorario=hora where idhorarioCine=id;
 END$$
 
-CREATE PROCEDURE `modifPrivUs` (IN `idPriv` INT, IN `idP` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `modifPrivUs` (IN `idPriv` INT, IN `idP` INT)  BEGIN
 	update usuarioprivilegios set fkPrivilegio=idP where idusuarioPrivilegios=idPriv;
 
 END$$
 
-CREATE PROCEDURE `privilegiosUsuarios` (IN `id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `privilegiosUsuarios` (IN `id` INT)  BEGIN
 	select us.idusuarioPrivilegios as idRegistro, priv.descPrivilegio as tipo
 	from usuarioprivilegios us 
 	INNER JOIN privilegios priv on us.fkPrivilegio = priv.idPrivilegios
 	where us.fkUsuario=id; 
 END$$
 
-CREATE PROCEDURE `verUser` (IN `id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `verUser` (IN `id` INT)  BEGIN
 	select Usuario, Password, Estado from usuarios where idUsuarios=id;
 END$$
 
@@ -252,23 +234,18 @@ CREATE TABLE `peliculas` (
   `Genero` varchar(45) DEFAULT NULL,
   `Subtitulado` varchar(45) DEFAULT NULL,
   `Idioma` varchar(45) DEFAULT NULL,
-  `precio` double DEFAULT NULL,
-  `sinopsis` varchar(100) DEFAULT NULL,
-  `estado` tinyint DEFAULT '1'
+  `precio` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `peliculas`
 --
 
-INSERT INTO `peliculas` (`idPeliculas`, `Nombre`, `Clasificación`, `Genero`, `Subtitulado`, `Idioma`, `precio`, `sinopsis`, `estado`) VALUES
-(1, 'avengers', 'Adultos', 'peleas', 'No', 'latino', 400, 'No me quiero ir señor coordinador', 1),
-(2, 'Dragon ball super broly', 'T', 'peleas', 'No', 'latino', 500, 'F por Goku', 1),
-(3, 'No Game No Life Zero', 'T', 'Anime', 'Español', 'Japonés', 500, 'Precuela al anime No Game No Life', 1),
-(4, 'Fate/stay night UBW', 'T', 'Anime', 'Español', 'Japonés', 450, 'Im the bone of my sword', 1),
-(5, 'Rapidos y Furiosos 9', 'T', 'Acción', 'Si', 'Español Latino', 50, 'Repollo', 1),
-(6, 'Spiderman 3', 'T', 'Acción', 'Si', 'Español Latino', 30, 'Un clásico', 1),
-(7, 'COCO', 'E', 'Aventura', 'No', 'Español Latino', 40, 'Sad', 1);
+INSERT INTO `peliculas` (`idPeliculas`, `Nombre`, `Clasificación`, `Genero`, `Subtitulado`, `Idioma`, `precio`) VALUES
+(1, 'avengers', 'Adultos', 'peleas', 'No', 'latino', 400),
+(2, 'Dragon ball super broly', 'T', 'peleas', 'No', 'latino', 500),
+(3, 'No Game No Life Zero', 'T', 'Anime', 'Español', 'Japonés', 500),
+(4, 'Fate/stay night UBW', 'T', 'Anime', 'Español', 'Japonés', 450);
 
 -- --------------------------------------------------------
 
@@ -548,7 +525,7 @@ ALTER TABLE `horarios`
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `privilegios`

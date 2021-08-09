@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2021 a las 06:37:18
+-- Tiempo de generación: 07-08-2021 a las 10:05:40
 -- Versión del servidor: 8.0.23
 -- Versión de PHP: 8.0.2
 
@@ -27,41 +27,12 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE PROCEDURE `actuPelis` (IN `id` INT, IN `nom` VARCHAR(40), IN `clas` VARCHAR(1), IN `gen` VARCHAR(30), IN `sub` VARCHAR(15), IN `lan` VARCHAR(15), IN `preciop` INT, IN `sinopsisp` VARCHAR(50), IN `estate` INT)  UPDATE peliculas set Nombre = nom, Clasificación = clas, Genero = gen, Subtitulado = sub, Idioma = lan, precio = preciop, sinopsis = sinopsisp, estado = estate where id = idPeliculas;$$
-
 CREATE PROCEDURE `actuUser` (IN `nusuario` VARCHAR(45), IN `npass` VARCHAR(45), IN `id` INT)  BEGIN
 	update usuarios set Usuario=nusuario, Password=npass where idUsuarios=id;
 END$$
 
-CREATE PROCEDURE `bajaHorarioCin` (IN `id` INT)  BEGIN
-	delete from horariocine where idhorarioCine=id;
-END$$
-
 CREATE PROCEDURE `bajaUser` (IN `id` INT)  BEGIN
 	update usuarios set usuarios.estado= 0 where usuarios.idUsuarios=id;
-END$$
-
-CREATE PROCEDURE `conGenHorarioCi` ()  BEGIN
-	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario,
-    sa.Descripción as descripcionSala
-	from horariocine hc 
-	INNER JOIN peliculas pe on pe.idPeliculas = hc.fkPelicula
-	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario
-    INNER JOIN salas sa on sa.idSalas = hc.fkSala;
-END$$
-
-CREATE PROCEDURE `conGenHorarioCiInd` (IN `id` INT)  BEGIN
-	select hc.idhorarioCine as id, pe.Nombre as Pelicula, ho.fechaHora as horario,
-    sa.Descripción as descripcionSala
-	from horariocine hc 
-	INNER JOIN peliculas pe on pe.idPeliculas = hc.fkPelicula
-	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario
-    INNER JOIN salas sa on sa.idSalas = hc.fkSala
-    where hc.idhorarioCine=id;
-END$$
-
-CREATE PROCEDURE `consultaFiltraPelis` ()  BEGIN
-	select idPeliculas as ID, Nombre, Clasificación, Genero, Subtitulado, Idioma, precio from peliculas;
 END$$
 
 CREATE PROCEDURE `consultaGen` ()  BEGIN
@@ -72,28 +43,12 @@ CREATE PROCEDURE `consultaGenCine` ()  BEGIN
 	select idCines as ID, Nombre, Direccion from Cines;
 END$$
 
-CREATE PROCEDURE `consultaGenpelis` ()  BEGIN
-	select * from peliculas;
-END$$
-
-CREATE PROCEDURE `consultaInpeli` (IN `id` INT)  BEGIN
-		select * from peliculas where id = peliculas.idPeliculas;
-END$$
-
 CREATE PROCEDURE `consultaPriv` ()  BEGIN
 	select idPrivilegios as id, descPrivilegio as Privilegio from privilegios;
 END$$
 
-CREATE PROCEDURE `elimPelis` (IN `id` INT)  BEGIN
-	UPDATE peliculas set estado = 0 where id = idPeliculas;
-    END$$
-
 CREATE PROCEDURE `elPrivUs` (IN `idPriv` INT)  BEGIN
 	delete from usuarioprivilegios where idusuarioPrivilegios=idPriv;
-END$$
-
-CREATE PROCEDURE `ingHorarioCi` (IN `peli` INT, IN `sala` INT, IN `hora` INT)  BEGIN
-	insert into horariocine(fkPelicula,fkSala,fkHorario) values(peli,sala,hora);
 END$$
 
 CREATE PROCEDURE `ingPrivUs` (IN `idU` INT, IN `idP` INT)  BEGIN
@@ -104,16 +59,8 @@ CREATE PROCEDURE `ingUser` (IN `usuario` VARCHAR(45), IN `pass` VARCHAR(45))  BE
 	insert into usuarios (Usuario, Password) values (usuario,pass);
 END$$
 
-CREATE PROCEDURE `insertPeli` (IN `nom` VARCHAR(40), IN `clas` VARCHAR(1), IN `gen` VARCHAR(30), IN `sub` VARCHAR(15), IN `lan` VARCHAR(15), IN `precio` INT, IN `sinoPsis` VARCHAR(50), IN `esTado` INT)  BEGIN 
-		insert into peliculas (Nombre, Estado, Clasificacion, Genero, Subtitulado, Idioma, precio, sonopsis, estado) values (nom,clas,gen,sub,lan,precio,sinoPsis,esTado);
-END$$
-
 CREATE PROCEDURE `login` (IN `usuario` VARCHAR(45), IN `passwor` VARCHAR(45))  BEGIN
-	select Usuario, usuarios.Password, usuarios.estado from usuarios where Usuario=usuario and Password=passwor; 
-END$$
-
-CREATE PROCEDURE `modifHorarioCi` (IN `peli` INT, IN `sala` INT, IN `hora` INT, IN `id` INT)  BEGIN
-	update horariocine set fkPelicula=peli, fkSala=sala, fkHorario=hora where idhorarioCine=id;
+	select Usuario, usuarios.Password from usuarios where Usuario=usuario and Password=passwor; 
 END$$
 
 CREATE PROCEDURE `modifPrivUs` (IN `idPriv` INT, IN `idP` INT)  BEGIN
@@ -217,27 +164,8 @@ CREATE TABLE `horariocine` (
   `idhorarioCine` int NOT NULL,
   `fkPelicula` int DEFAULT NULL,
   `fkSala` int NOT NULL,
-  `fkHorario` int NOT NULL
+  `fechaHorario` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `horarios`
---
-
-CREATE TABLE `horarios` (
-  `idHorario` int NOT NULL,
-  `fechaHora` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `horarios`
---
-
-INSERT INTO `horarios` (`idHorario`, `fechaHora`) VALUES
-(1, '2021-10-21 15:00:00'),
-(2, '2027-12-03 01:00:00');
 
 -- --------------------------------------------------------
 
@@ -252,23 +180,8 @@ CREATE TABLE `peliculas` (
   `Genero` varchar(45) DEFAULT NULL,
   `Subtitulado` varchar(45) DEFAULT NULL,
   `Idioma` varchar(45) DEFAULT NULL,
-  `precio` double DEFAULT NULL,
-  `sinopsis` varchar(100) DEFAULT NULL,
-  `estado` tinyint DEFAULT '1'
+  `precio` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `peliculas`
---
-
-INSERT INTO `peliculas` (`idPeliculas`, `Nombre`, `Clasificación`, `Genero`, `Subtitulado`, `Idioma`, `precio`, `sinopsis`, `estado`) VALUES
-(1, 'avengers', 'Adultos', 'peleas', 'No', 'latino', 400, 'No me quiero ir señor coordinador', 1),
-(2, 'Dragon ball super broly', 'T', 'peleas', 'No', 'latino', 500, 'F por Goku', 1),
-(3, 'No Game No Life Zero', 'T', 'Anime', 'Español', 'Japonés', 500, 'Precuela al anime No Game No Life', 1),
-(4, 'Fate/stay night UBW', 'T', 'Anime', 'Español', 'Japonés', 450, 'Im the bone of my sword', 1),
-(5, 'Rapidos y Furiosos 9', 'T', 'Acción', 'Si', 'Español Latino', 50, 'Repollo', 1),
-(6, 'Spiderman 3', 'T', 'Acción', 'Si', 'Español Latino', 30, 'Un clásico', 1),
-(7, 'COCO', 'E', 'Aventura', 'No', 'Español Latino', 40, 'Sad', 1);
 
 -- --------------------------------------------------------
 
@@ -331,16 +244,6 @@ CREATE TABLE `salas` (
   `precioSala` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `salas`
---
-
-INSERT INTO `salas` (`idSalas`, `fkCine`, `Descripción`, `formatoPeli`, `puntos`, `precioSala`) VALUES
-(1, 1, 'sala full hd 4+', 'mkv', 100, 100),
-(2, 2, 'imax', 'mp4', 70, 70),
-(3, 3, 'dolby atmosphere audio', 'flv', 65, 65),
-(4, 4, '144p', 'gpo', 40, 40);
-
 -- --------------------------------------------------------
 
 --
@@ -367,8 +270,7 @@ INSERT INTO `usuarioprivilegios` (`idusuarioPrivilegios`, `fkUsuario`, `fkPrivil
 (8, 1, 3),
 (9, 1, 1),
 (10, 1, 2),
-(12, 7, 1),
-(13, 1, 2);
+(12, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -441,21 +343,15 @@ ALTER TABLE `factura`
 ALTER TABLE `horariocine`
   ADD PRIMARY KEY (`idhorarioCine`),
   ADD KEY `fkhcinP` (`fkPelicula`),
-  ADD KEY `fkhcinSa` (`fkSala`),
-  ADD KEY `fkHrr` (`fkHorario`);
-
---
--- Indices de la tabla `horarios`
---
-ALTER TABLE `horarios`
-  ADD PRIMARY KEY (`idHorario`);
+  ADD KEY `fkhcinSa` (`fkSala`);
 
 --
 -- Indices de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
   ADD PRIMARY KEY (`idPeliculas`);
-
+-- desc horariocine;
+-- desc usuarioprivilegios;
 --
 -- Indices de la tabla `privilegios`
 --
@@ -536,19 +432,13 @@ ALTER TABLE `factura`
 -- AUTO_INCREMENT de la tabla `horariocine`
 --
 ALTER TABLE `horariocine`
-  MODIFY `idhorarioCine` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `horarios`
---
-ALTER TABLE `horarios`
-  MODIFY `idHorario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idhorarioCine` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `privilegios`
@@ -572,13 +462,13 @@ ALTER TABLE `reservaciones`
 -- AUTO_INCREMENT de la tabla `salas`
 --
 ALTER TABLE `salas`
-  MODIFY `idSalas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idSalas` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarioprivilegios`
 --
 ALTER TABLE `usuarioprivilegios`
-  MODIFY `idusuarioPrivilegios` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idusuarioPrivilegios` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -607,6 +497,13 @@ ALTER TABLE `derechos`
 --
 ALTER TABLE `factura`
   ADD CONSTRAINT `fkfacCl` FOREIGN KEY (`fkCliente`) REFERENCES `clientes` (`idClientes`);
+
+--
+-- Filtros para la tabla `horariocine`
+--
+ALTER TABLE `horariocine`
+  ADD CONSTRAINT `fkhcinP` FOREIGN KEY (`fkPelicula`) REFERENCES `peliculas` (`idPeliculas`),
+  ADD CONSTRAINT `fkhcinSa` FOREIGN KEY (`fkSala`) REFERENCES `salas` (`idSalas`);
 
 --
 -- Filtros para la tabla `registropuntos`
