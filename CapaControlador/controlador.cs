@@ -90,6 +90,13 @@ namespace CapaControlador
 
             return sn.iniciaSesion(user, pass);
         }
+
+
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        {
+            return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop);
+
+        }
     }
 
 }
