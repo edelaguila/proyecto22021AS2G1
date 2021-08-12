@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2021 a las 07:43:43
+-- Tiempo de generación: 08-08-2021 a las 06:37:18
 -- Versión del servidor: 8.0.23
 -- Versión de PHP: 8.0.2
 
@@ -27,7 +27,7 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE PROCEDURE `actuPelis` (IN `id` INT, IN `nom` VARCHAR(40), IN `clas` VARCHAR(1), IN `gen` VARCHAR(30), IN `sub` VARCHAR(15), IN `lan` VARCHAR(15), IN `preciop` INT, IN `sinopsisp` VARCHAR(50), IN `estate` INT)  UPDATE peliculas set Nombre = nom, Clasificación = clas, Genero = gen, Subtitulado = sub, Idioma = lan, precio = preciop, sinopsis = sinopsisp, estado = estate where id = idPeliculas$$
+CREATE PROCEDURE `actuPelis` (IN `id` INT, IN `nom` VARCHAR(40), IN `clas` VARCHAR(1), IN `gen` VARCHAR(30), IN `sub` VARCHAR(15), IN `lan` VARCHAR(15), IN `preciop` INT, IN `sinopsisp` VARCHAR(50), IN `estate` INT)  UPDATE peliculas set Nombre = nom, Clasificación = clas, Genero = gen, Subtitulado = sub, Idioma = lan, precio = preciop, sinopsis = sinopsisp, estado = estate where id = idPeliculas;$$
 
 CREATE PROCEDURE `actuUser` (IN `nusuario` VARCHAR(45), IN `npass` VARCHAR(45), IN `id` INT)  BEGIN
 	update usuarios set Usuario=nusuario, Password=npass where idUsuarios=id;
@@ -104,16 +104,8 @@ CREATE PROCEDURE `ingUser` (IN `usuario` VARCHAR(45), IN `pass` VARCHAR(45))  BE
 	insert into usuarios (Usuario, Password) values (usuario,pass);
 END$$
 
-CREATE PROCEDURE `insertPeli` (IN `nom` VARCHAR(45), IN `clas` VARCHAR(45), IN `gen` VARCHAR(45), IN `sub` VARCHAR(45), IN `lan` VARCHAR(45), IN `precio` DOUBLE, IN `sinoPsis` VARCHAR(100))  BEGIN 
-		DECLARE cuenta INT;
-        DECLARE estado INT;
-        SET estado=1;
-        
-        insert into peliculas (Nombre, Clasificación, Genero, Subtitulado, Idioma, precio, sinopsis, estado) values (nom,clas,gen,sub,lan,precio,sinoPsis,1);
-		SET cuenta = LAST_INSERT_ID(); -- obtiene el id de la peli que acabamos de insetar
-        insert into derechos(fkPelicula, estadoDerechos) values(cuenta,0);
-        -- select cuenta;
-        
+CREATE PROCEDURE `insertPeli` (IN `nom` VARCHAR(40), IN `clas` VARCHAR(1), IN `gen` VARCHAR(30), IN `sub` VARCHAR(15), IN `lan` VARCHAR(15), IN `precio` INT, IN `sinoPsis` VARCHAR(50), IN `esTado` INT)  BEGIN 
+		insert into peliculas (Nombre, Estado, Clasificacion, Genero, Subtitulado, Idioma, precio, sonopsis, estado) values (nom,clas,gen,sub,lan,precio,sinoPsis,esTado);
 END$$
 
 CREATE PROCEDURE `login` (IN `usuario` VARCHAR(45), IN `passwor` VARCHAR(45))  BEGIN
@@ -201,15 +193,6 @@ CREATE TABLE `derechos` (
   `estadoDerechos` tinyint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `derechos`
---
-
-INSERT INTO `derechos` (`idDerechos`, `fkPelicula`, `estadoDerechos`) VALUES
-(1, 9, 0),
-(2, 10, 0),
-(3, 11, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -285,11 +268,7 @@ INSERT INTO `peliculas` (`idPeliculas`, `Nombre`, `Clasificación`, `Genero`, `S
 (4, 'Fate/stay night UBW', 'T', 'Anime', 'Español', 'Japonés', 450, 'Im the bone of my sword', 1),
 (5, 'Rapidos y Furiosos 9', 'T', 'Acción', 'Si', 'Español Latino', 50, 'Repollo', 1),
 (6, 'Spiderman 3', 'T', 'Acción', 'Si', 'Español Latino', 30, 'Un clásico', 1),
-(7, 'COCO', 'E', 'Aventura', 'No', 'Español Latino', 40, 'Sad', 1),
-(8, 'a', 'a', 'a', 'a', 'a', 30.25, 'a', 1),
-(9, 'b', 'b', 'b', 'b', 'b', 32.25, 'b', 1),
-(10, 'c', 'R', 'Comedia', 'NO', 'a', 12, 'a', 1),
-(11, '7 Votos del exito', 'PG13', 'Ciencia Ficción', 'SI', 'Español', 250.5, 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 1);
+(7, 'COCO', 'E', 'Aventura', 'No', 'Español Latino', 40, 'Sad', 1);
 
 -- --------------------------------------------------------
 
@@ -545,7 +524,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `derechos`
 --
 ALTER TABLE `derechos`
-  MODIFY `idDerechos` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idDerechos` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
@@ -569,7 +548,7 @@ ALTER TABLE `horarios`
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `privilegios`

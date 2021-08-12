@@ -68,6 +68,7 @@ namespace CapaVista
             this.dvgConsulta.Location = new System.Drawing.Point(42, 158);
             this.dvgConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.dvgConsulta.Name = "dvgConsulta";
+            this.dvgConsulta.ReadOnly = true;
             this.dvgConsulta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dvgConsulta.RowHeadersWidth = 51;
             this.dvgConsulta.RowTemplate.Height = 24;

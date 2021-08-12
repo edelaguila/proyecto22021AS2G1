@@ -24,5 +24,13 @@ namespace CapaVista
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.DataSource = data;
         }
+
+        private void btnRegreso_Click(object sender, EventArgs e)
+        {
+            var frmINGP = new frmMantenimientoDePeliculas();
+            frmINGP.Show();
+            this.Close();
+
+        }
     }
 }

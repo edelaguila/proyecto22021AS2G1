@@ -33,6 +33,7 @@ namespace CapaVista
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCon = new System.Windows.Forms.Button();
+            this.btnRegreso = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,12 +78,23 @@ namespace CapaVista
             this.btnCon.UseVisualStyleBackColor = true;
             this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
             // 
+            // btnRegreso
+            // 
+            this.btnRegreso.Location = new System.Drawing.Point(83, 391);
+            this.btnRegreso.Name = "btnRegreso";
+            this.btnRegreso.Size = new System.Drawing.Size(98, 37);
+            this.btnRegreso.TabIndex = 3;
+            this.btnRegreso.Text = "Regresar";
+            this.btnRegreso.UseVisualStyleBackColor = true;
+            this.btnRegreso.Click += new System.EventHandler(this.btnRegreso_Click);
+            // 
             // frmConsultaPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.btnCon);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -102,5 +114,6 @@ namespace CapaVista
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCon;
+        private System.Windows.Forms.Button btnRegreso;
     }
 }

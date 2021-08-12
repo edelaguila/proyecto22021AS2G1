@@ -43,14 +43,14 @@ namespace CapaVista
             string preci = txtPrecio.Text;
             string sinop = txtSinopsis.Text;
 
-            MessageBox.Show("Param: nom:"+nom+
+            /*MessageBox.Show("Param: nom:"+nom+
                 "\nclas:"+clas+
                 "\ngen:" + gen +
                 "\nsub:" + sub +
                 "\nidio:" + idio +
                 "\npreci:" + preci +
                 "\nsinop:"+sinop
-                );
+                );*/
 
             if (cn.ingresoPeliculas(nom, clas, gen, sub, idio, preci, sinop))
             {
@@ -83,6 +83,7 @@ namespace CapaVista
         {
             var frmC = new frmConsultaPeliculas();
             frmC.Show();
+            this.Hide();
         }
     }
 }
