@@ -97,6 +97,14 @@ namespace CapaControlador
             return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop);
 
         }
+
+        public DataTable llenarTblPeli()
+        {
+            OdbcDataAdapter dt = sn.llenarTblPeli();
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
     }
 
 }

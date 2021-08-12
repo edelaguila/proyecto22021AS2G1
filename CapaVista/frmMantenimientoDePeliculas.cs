@@ -43,6 +43,15 @@ namespace CapaVista
             string preci = txtPrecio.Text;
             string sinop = txtSinopsis.Text;
 
+            MessageBox.Show("Param: nom:"+nom+
+                "\nclas:"+clas+
+                "\ngen:" + gen +
+                "\nsub:" + sub +
+                "\nidio:" + idio +
+                "\npreci:" + preci +
+                "\nsinop:"+sinop
+                );
+
             if (cn.ingresoPeliculas(nom, clas, gen, sub, idio, preci, sinop))
             {
                 MessageBox.Show("Ingreso exitoso");
@@ -68,6 +77,12 @@ namespace CapaVista
             cmbClasi.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSub.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            var frmC = new frmConsultaPeliculas();
+            frmC.Show();
         }
     }
 }

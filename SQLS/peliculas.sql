@@ -23,8 +23,10 @@ drop database cinevision;
 /*Procedure de Insertar Película*/
 DELIMITER //
 create procedure insertPeli (in nom varchar(40), in  clas varchar(1), in gen varchar(30), in sub varchar(15), in lan varchar(15), in  precio int, in sinoPsis varchar (50), in esTado int) BEGIN 
-		insert into peliculas (Nombre, Estado, Clasificacion, Genero, Subtitulado, Idioma, precio, sonopsis, estado) values (nom,clas,gen,sub,lan,precio,sinoPsis,esTado);
+		insert into peliculas (Nombre, Clasificacion, Genero, Subtitulado, Idioma, precio, sinopsis, estado) values (nom,clas,gen,sub,lan,precio,sinoPsis,esTado);
 END//
+-- drop procedure insertPeli;
+-- use cinevision;
 
 /*Procedures de Consulta*/
 /*Consulta Individual*/
@@ -51,3 +53,29 @@ DELIMITER //
     UPDATE peliculas set Nombre = nom, Clasificación = clas, Genero = gen, Subtitulado = sub, Idioma = lan, precio = preciop, sinopsis = sinopsisp, estado = estate where id = idPeliculas;
 END//    
 select * from peliculas;
+
+-- inserte pelis yd erechos
+
+DELIMITER //
+create procedure insertPeli (in nom varchar(45), in  clas varchar(45), in gen varchar(45), in sub varchar(45), in lan varchar(45), in  precio double, in sinoPsis varchar (100)) BEGIN 
+		DECLARE cuenta INT;
+        DECLARE estado INT;
+        SET estado=1;
+        
+        insert into peliculas (Nombre, Clasificación, Genero, Subtitulado, Idioma, precio, sinopsis, estado) values (nom,clas,gen,sub,lan,precio,sinoPsis,1);
+		SET cuenta = LAST_INSERT_ID(); -- obtiene el id de la peli que acabamos de insetar
+        insert into derechos(fkPelicula, estadoDerechos) values(cuenta,0);
+        -- select cuenta;
+        
+END//
+-- drop procedure insertPeli;
+-- 
+select max(idPeliculas) from peliculas;
+select * from peliculas;
+select * from derechos;
+call insertPeli('b','b','b','b','b','32.25','b');
+
+DELIMITER //
+create procedure cuentaPeli (OUT cantidad int) BEGIN 
+		select count(*) from peliculas;
+END//

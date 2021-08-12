@@ -47,6 +47,7 @@ namespace CapaVista
             this.txtSinopsis = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbSub = new System.Windows.Forms.ComboBox();
+            this.btnConsulta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,12 +235,23 @@ namespace CapaVista
             this.cmbSub.Size = new System.Drawing.Size(203, 21);
             this.cmbSub.TabIndex = 47;
             // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Location = new System.Drawing.Point(12, 475);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(75, 44);
+            this.btnConsulta.TabIndex = 48;
+            this.btnConsulta.Text = "Consulta";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
             // frmMantenimientoDePeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(601, 531);
+            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.cmbSub);
             this.Controls.Add(this.txtSinopsis);
             this.Controls.Add(this.label8);
@@ -287,5 +299,6 @@ namespace CapaVista
         private System.Windows.Forms.TextBox txtSinopsis;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbSub;
+        private System.Windows.Forms.Button btnConsulta;
     }
 }

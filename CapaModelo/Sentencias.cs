@@ -391,7 +391,7 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
             int i = 0;
             try
             {
-                string cadena = "call insertPeliculas('" + nom + "','" + clas + "','" + gen + "','" + sub + "','" + idio + "'," + preci + ",'" + sinop + "', 1);";
+                string cadena = "call insertPeli('"+nom+"','"+clas+"','"+gen+"','"+sub+"','"+idio+"','"+preci+"','"+sinop+"');";
                 OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
                 ingreso.ExecuteNonQuery();
                 i = 1;
@@ -421,7 +421,12 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
 
 
 
-
+        public OdbcDataAdapter llenarTblPeli()
+        {
+            string sql = "call consultaGenpelis ();";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
     }
 
 }
