@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControlador;
-
+using MySql.Data.MySqlClient;
 namespace CapaVista
 {
     public partial class frmMantenimientoDePeliculas : Form
@@ -42,6 +42,9 @@ namespace CapaVista
             string idio = txtIdioma.Text;
             string preci = txtPrecio.Text;
             string sinop = txtSinopsis.Text;
+            object ima = imagen.Image;
+
+
 
             /*MessageBox.Show("Param: nom:"+nom+
                 "\nclas:"+clas+
@@ -51,8 +54,9 @@ namespace CapaVista
                 "\npreci:" + preci +
                 "\nsinop:"+sinop
                 );*/
+           
 
-            if (cn.ingresoPeliculas(nom, clas, gen, sub, idio, preci, sinop))
+            if (cn.ingresoPeliculas(nom, clas, gen, sub, idio, preci, sinop,ima))
             {
                 MessageBox.Show("Ingreso exitoso");
             }
@@ -60,7 +64,6 @@ namespace CapaVista
             {
                 MessageBox.Show("Error de ingreso");
             }
-
             txtNom.Text = "";
             cmbClasi.Text = "";
             cmbGenero.Text = "";
@@ -68,7 +71,8 @@ namespace CapaVista
             txtIdioma.Text = "";
             txtPrecio.Text = "";
             txtSinopsis.Text = "";
-        
+            
+
 
         }
 
@@ -84,6 +88,27 @@ namespace CapaVista
             var frmC = new frmConsultaPeliculas();
             frmC.Show();
             this.Hide();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btnSeleccion_Click(object sender, EventArgs e)
+        {
+            ofd.Filter = "Archivo de Imagen |*.jpg| Archivo PNG|*.png|Todos los archivos|*.*";
+            DialogResult resultado = ofd.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                imagen.Image = Image.FromFile(ofd.FileName);
+            }
+
+        }
+
+        private void btnObtener_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
