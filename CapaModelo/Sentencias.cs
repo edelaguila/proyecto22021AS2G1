@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Odbc;
 using System.Collections;
+using System.IO;
 
 namespace CapaModelo
 {
@@ -386,12 +387,13 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
 
         //metodo de ingreso de peliculas
 
-        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop, object imagen)
         {
             int i = 0;
             try
             {
-                string cadena = "call insertPeli('"+nom+"','"+clas+"','"+gen+"','"+sub+"','"+idio+"','"+preci+"','"+sinop+"');";
+                string cadena = "call insertPeli('"+nom+"','"+clas+"','"+gen+"','"+sub+"','"+idio+"','"+preci+"','"+sinop+ "','" + imagen + "'); ";
+
                 OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
                 ingreso.ExecuteNonQuery();
                 i = 1;
@@ -415,6 +417,36 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
         }
 
 
+        public ArrayList busquedaIndividualPelis(string idu)
+        {
+            var arList = new ArrayList();
+            try
+            {
+                string busqueda = "select imagen from peliculas where idPeliculas=12;";
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+
+               
+
+             
+               
+                
+
+
+                while (lector.Read())
+                {
+                    arList.Add(lector[0]);
+                    
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+
+
+            return arList;
+        }
 
 
 

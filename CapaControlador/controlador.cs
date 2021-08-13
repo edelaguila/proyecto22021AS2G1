@@ -92,10 +92,16 @@ namespace CapaControlador
         }
 
 
-        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop, object imagen)
         {
-            return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop);
+            return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop, imagen);
 
+        }
+
+
+        public ArrayList busquedaIndividualPelis(string idu)
+        {
+            return sn.busquedaIndividualPelis(idu);
         }
 
         public DataTable llenarTblPeli()

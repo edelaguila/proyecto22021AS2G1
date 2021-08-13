@@ -1,0 +1,28 @@
+CREATE TABLE `peliculas` (
+  `idPeliculas` int NOT NULL,
+  `Nombre` varchar(45) DEFAULT NULL,
+  `Clasificación` varchar(45) DEFAULT NULL,
+  `Genero` varchar(45) DEFAULT NULL,
+  `Subtitulado` varchar(45) DEFAULT NULL,
+  `Idioma` varchar(45) DEFAULT NULL,
+  `precio` double DEFAULT NULL,
+  `sinopsis` varchar(100) DEFAULT NULL,
+  `estado` tinyint DEFAULT '1',
+   `imagen` longblob
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+-------------------------------------------------
+CREATE PROCEDURE `insertPeli` (IN `nom` VARCHAR(45), IN `clas` VARCHAR(45), IN `gen` VARCHAR(45), IN `sub` VARCHAR(45), IN `lan` VARCHAR(45), IN `precio` DOUBLE, IN `sinoPsis` VARCHAR(100), IN `imagen` longblob )  BEGIN 
+		DECLARE cuenta INT;
+        DECLARE estado INT;
+        SET estado=1;
+        
+        insert into peliculas (Nombre, Clasificación, Genero, Subtitulado, Idioma, precio, sinopsis, estado, imagen) values (nom,clas,gen,sub,lan,precio,sinoPsis,1,imagen);
+		SET cuenta = LAST_INSERT_ID(); -- obtiene el id de la peli que acabamos de insetar
+        insert into derechos(fkPelicula, estadoDerechos) values(cuenta,0);
+        -- select cuenta;
+        
+END$$
