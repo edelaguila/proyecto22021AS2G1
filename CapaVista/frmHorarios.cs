@@ -56,5 +56,10 @@ namespace CapaVista
             frmCH.Show();
             this.Close();
         }
+
+        private void frmHorarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

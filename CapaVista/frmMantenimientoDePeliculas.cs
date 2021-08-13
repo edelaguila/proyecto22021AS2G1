@@ -85,5 +85,12 @@ namespace CapaVista
             frmC.Show();
             this.Hide();
         }
+
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            var frmModif = new frmModificacionPeliculas();
+            frmModif.Show();
+            this.Hide();
+        }
     }
 }

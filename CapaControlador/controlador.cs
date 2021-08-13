@@ -105,6 +105,14 @@ namespace CapaControlador
             dt.Fill(table);
             return table;
         }
+
+        public DataTable llenarTblPeliInd(string id)
+        {
+            OdbcDataAdapter dt = sn.llenarTblPeliInd(id);
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
     }
 
 }

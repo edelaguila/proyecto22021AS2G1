@@ -149,9 +149,10 @@ namespace CapaVista
             this.Controls.Add(this.btnIngreso);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmHorarios";
             this.Text = "frmHorarios";
+            this.Load += new System.EventHandler(this.frmHorarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

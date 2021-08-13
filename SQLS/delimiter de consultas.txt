@@ -1,0 +1,14 @@
+DELIMITER |
+CREATE PROCEDURE consultaIndPeli(in id int)
+BEGIN
+	select Nombre, Clasificación, Genero, Subtitulado, Idioma, precio, sinopsis, estado from peliculas where idPeliculas=id; 
+END
+|
+
+
+DELIMITER |
+CREATE PROCEDURE consultaGenPelis()
+BEGIN
+	select idPeliculas as ID, Nombre, Clasificación, Genero, Subtitulado, Idioma, precio, sinopsis, estado from peliculas; 
+END
+|

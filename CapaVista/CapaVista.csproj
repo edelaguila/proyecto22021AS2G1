@@ -218,6 +218,12 @@
     <Compile Include="frmModificacionHorario.Designer.cs">
       <DependentUpon>frmModificacionHorario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificacionPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificacionPeliculas.Designer.cs">
+      <DependentUpon>frmModificacionPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelecciónAsientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificacionHorario.resx">
       <DependentUpon>frmModificacionHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificacionPeliculas.resx">
+      <DependentUpon>frmModificacionPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelecciónAsientos.resx">
       <DependentUpon>frmSelecciónAsientos.cs</DependentUpon>

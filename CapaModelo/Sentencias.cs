@@ -427,6 +427,13 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
             return dataTable;
         }
+
+        public OdbcDataAdapter llenarTblPeliInd(string id)
+        {
+            string sql = "call consultaIndPeli("+id+");";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
     }
 
 }
