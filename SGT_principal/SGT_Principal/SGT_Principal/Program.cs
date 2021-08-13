@@ -17,7 +17,7 @@ namespace SGT_Principal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var frmAU = new CapaVista.frmMantenimientoDePeliculas();
+            var frmAU = new CapaVista.frmMenuEntrada();
             frmAU.Show();
             Application.Run();
         }

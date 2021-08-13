@@ -52,6 +52,8 @@ namespace CapaVista
             this.imagen = new System.Windows.Forms.PictureBox();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.btnSeleccion = new System.Windows.Forms.Button();
+            this.btnModif = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagen)).BeginInit();
             this.SuspendLayout();
@@ -242,9 +244,9 @@ namespace CapaVista
             // 
             // btnConsulta
             // 
-            this.btnConsulta.Location = new System.Drawing.Point(12, 524);
+            this.btnConsulta.Location = new System.Drawing.Point(12, 494);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(84, 25);
+            this.btnConsulta.Size = new System.Drawing.Size(84, 61);
             this.btnConsulta.TabIndex = 48;
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.UseVisualStyleBackColor = true;
@@ -285,12 +287,34 @@ namespace CapaVista
             this.btnSeleccion.UseVisualStyleBackColor = true;
             this.btnSeleccion.Click += new System.EventHandler(this.btnSeleccion_Click);
             // 
+            // btnModif
+            // 
+            this.btnModif.Location = new System.Drawing.Point(117, 494);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(97, 61);
+            this.btnModif.TabIndex = 53;
+            this.btnModif.Text = "Modificar";
+            this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click_1);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(229, 494);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(95, 61);
+            this.btnEliminar.TabIndex = 54;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmMantenimientoDePeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(908, 567);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModif);
             this.Controls.Add(this.btnSeleccion);
             this.Controls.Add(this.imagen);
             this.Controls.Add(this.label9);
@@ -348,5 +372,7 @@ namespace CapaVista
         private System.Windows.Forms.PictureBox imagen;
         private System.Windows.Forms.OpenFileDialog ofd;
         private System.Windows.Forms.Button btnSeleccion;
+        private System.Windows.Forms.Button btnModif;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

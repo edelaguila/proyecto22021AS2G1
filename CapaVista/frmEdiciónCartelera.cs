@@ -52,9 +52,9 @@ namespace CapaVista
 
         private void btnPrueba_Click(object sender, EventArgs e)
         {
-            var frmTest = new frmEliminacionPeli();
+            /*var frmTest = new frmEliminacionPeli();
             frmTest.Show();
-            this.Hide();
+            this.Hide();*/
         }
     }
 }

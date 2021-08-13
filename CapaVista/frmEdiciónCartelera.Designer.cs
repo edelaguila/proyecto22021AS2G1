@@ -35,7 +35,6 @@ namespace CapaVista
             this.btnPeliculas = new System.Windows.Forms.Button();
             this.btnDerechos = new System.Windows.Forms.Button();
             this.btnHorarios = new System.Windows.Forms.Button();
-            this.btnPrueba = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,23 +109,12 @@ namespace CapaVista
             this.btnHorarios.UseVisualStyleBackColor = false;
             this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
             // 
-            // btnPrueba
-            // 
-            this.btnPrueba.Location = new System.Drawing.Point(74, 98);
-            this.btnPrueba.Name = "btnPrueba";
-            this.btnPrueba.Size = new System.Drawing.Size(75, 33);
-            this.btnPrueba.TabIndex = 47;
-            this.btnPrueba.Text = "btnPrueba";
-            this.btnPrueba.UseVisualStyleBackColor = true;
-            this.btnPrueba.Click += new System.EventHandler(this.btnPrueba_Click);
-            // 
             // frmEdiciónCartelera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(772, 468);
-            this.Controls.Add(this.btnPrueba);
             this.Controls.Add(this.btnHorarios);
             this.Controls.Add(this.btnDerechos);
             this.Controls.Add(this.btnPeliculas);
@@ -147,6 +135,5 @@ namespace CapaVista
         private System.Windows.Forms.Button btnPeliculas;
         private System.Windows.Forms.Button btnDerechos;
         private System.Windows.Forms.Button btnHorarios;
-        private System.Windows.Forms.Button btnPrueba;
     }
 }

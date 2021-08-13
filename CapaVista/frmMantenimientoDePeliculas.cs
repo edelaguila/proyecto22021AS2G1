@@ -117,5 +117,19 @@ namespace CapaVista
             frmModif.Show();
             this.Hide();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var frmElim = new frmEliminacionPeli();
+            frmElim.Show();
+            this.Hide();
+        }
+
+        private void btnModif_Click_1(object sender, EventArgs e)
+        {
+            var frmModif = new frmModificacionPeliculas();
+            frmModif.Show();
+            this.Hide();
+        }
     }
 }
