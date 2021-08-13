@@ -434,6 +434,33 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
             return dataTable;
         }
+
+        public bool actuPelis(string id, string nom, string clasif, string gen, string sub, string idim, string preci, string sinop)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call actuPelis(" + id + ",'" + nom + "','"+clasif+"','"+gen+"','"+sub+"','"+idim+"','"+preci+"','"+sinop+"');";
+                OdbcCommand modif = new OdbcCommand(cadena, con.Conexion());
+                modif.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al modificar película" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 
 }

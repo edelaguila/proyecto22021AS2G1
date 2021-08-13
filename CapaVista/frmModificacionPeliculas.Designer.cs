@@ -52,6 +52,7 @@ namespace CapaVista
             this.label11 = new System.Windows.Forms.Label();
             this.rtxtSinop = new System.Windows.Forms.RichTextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnReg = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAct)).BeginInit();
             this.SuspendLayout();
@@ -279,12 +280,23 @@ namespace CapaVista
             // btnActualizar
             // 
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(634, 271);
+            this.btnActualizar.Location = new System.Drawing.Point(634, 221);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(98, 173);
             this.btnActualizar.TabIndex = 56;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnReg
+            // 
+            this.btnReg.Location = new System.Drawing.Point(645, 424);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(75, 23);
+            this.btnReg.TabIndex = 57;
+            this.btnReg.Text = "Regresar";
+            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // frmModificacionPeliculas
             // 
@@ -292,6 +304,7 @@ namespace CapaVista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(744, 470);
+            this.Controls.Add(this.btnReg);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.rtxtSinop);
             this.Controls.Add(this.label11);
@@ -349,5 +362,6 @@ namespace CapaVista
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox rtxtSinop;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnReg;
     }
 }

@@ -113,6 +113,11 @@ namespace CapaControlador
             dt.Fill(table);
             return table;
         }
+
+        public bool actuPelis(string id, string nom, string clasif, string gen, string sub, string idim, string preci, string sinop)
+        {
+            return sn.actuPelis(id, nom, clasif, gen, sub, idim, preci, sinop);
+        }
     }
 
 }
