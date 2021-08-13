@@ -118,6 +118,11 @@ namespace CapaControlador
         {
             return sn.actuPelis(id, nom, clasif, gen, sub, idim, preci, sinop);
         }
+
+        public bool elimPelis(string id)
+        {
+            return sn.elimPelis(id);
+        }
     }
 
 }
