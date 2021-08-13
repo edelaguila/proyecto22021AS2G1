@@ -279,9 +279,9 @@ CREATE TABLE `peliculas` (
   `Idioma` varchar(45) DEFAULT NULL,
   `precio` double DEFAULT NULL,
   `sinopsis` varchar(100) DEFAULT NULL,
-  `estado` tinyint DEFAULT '1'
+  `estado` tinyint DEFAULT '1',
+   `imagen` longblob
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Volcado de datos para la tabla `peliculas`
 --
