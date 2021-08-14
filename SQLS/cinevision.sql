@@ -221,7 +221,8 @@ CREATE TABLE `factura` (
   `fkCliente` int DEFAULT NULL,
   `metodoPago` varchar(45) DEFAULT NULL,
   `subTotal` double DEFAULT NULL,
-  `impuesto` double DEFAULT NULL
+  `impuesto` double DEFAULT NULL,
+  `estado` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

@@ -79,3 +79,33 @@ DELIMITER //
 create procedure cuentaPeli (OUT cantidad int) BEGIN 
 		select count(*) from peliculas;
 END//
+
+-- Insertar factura
+
+DELIMITER //
+create procedure insertFactura (in codCliente int, in  metPago varchar(45), in subTotal double, in impuesto double, in est int) BEGIN 
+        
+        insert into factura (fkCliente,metodoPago,subTotal,impuesto,estado) values (codCliente,metPago,subTotal,impuesto, est);
+        
+END//
+
+-- Consulta individual factura
+
+DELIMITER //
+	CREATE PROCEDURE consulFactura (in idf int) BEGIN
+		select * from factura where idf = idFactura;
+END//
+
+-- Consulta general factura
+
+DELIMITER //
+	CREATE PROCEDURE consulFactura () BEGIN
+		select * from factura;
+END//
+
+-- Dar de baja a una factura
+
+DELIMITER //
+	CREATE PROCEDURE elimFactura (in id int) BEGIN
+		UPDATE factura set estado = 0 where id = idf;
+END//
