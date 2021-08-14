@@ -100,7 +100,7 @@ END//
 
 DELIMITER //
 	CREATE PROCEDURE consulFactura () BEGIN
-		select * from factura;
+		select idFactura, fkCliente, estado from factura;
 END//
 
 -- Dar de baja a una factura
@@ -109,3 +109,33 @@ DELIMITER //
 	CREATE PROCEDURE elimFactura (in id int) BEGIN
 		UPDATE factura set estado = 0 where id = idf;
 END//
+
+-- Insertar Cliente 
+DELIMITER //
+	CREATE PROCEDURE insertCliente(in nom varchar (45), in nitC varchar (45)) BEGIN
+		INSERT INTO clientes (Nombre, Nit,Estado) values (nom, nitC,1);
+END//
+
+-- Conuslta individual Cliente 
+DELIMITER //
+	CREATE PROCEDURE consCliente(in id int) BEGIN
+		select * from clienes where id = idClientes;
+END//
+
+-- Consulta general de clientes
+DELIMITER //
+	SELECT idClientes, Nombre, Estado from clientes;
+END//
+
+-- Actualizar Clientes
+DELIMITER //
+	CREATE PROCEDURE actuClientes (in id int, in nom varchar (45), in nitC varchar (45)) BEGIN
+		UPDATE clientes set Nombre = nom, Nit = nitC where id = idClientes;
+    
+END//
+
+-- Dar de baja a un cliente 
+DELIMITER //
+	CREATE PROCEDURE bajaCliente (in id int) BEGIN
+		UPDATE cientes set Estado = 0;
+END// 
