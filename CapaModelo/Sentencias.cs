@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Odbc;
 using System.Collections;
+using System.IO;
 
 namespace CapaModelo
 {
@@ -386,12 +387,13 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
 
         //metodo de ingreso de peliculas
 
-        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop, object imagen)
         {
             int i = 0;
             try
             {
-                string cadena = "call insertPeli('"+nom+"','"+clas+"','"+gen+"','"+sub+"','"+idio+"','"+preci+"','"+sinop+"');";
+                string cadena = "call insertPeli('"+nom+"','"+clas+"','"+gen+"','"+sub+"','"+idio+"','"+preci+"','"+sinop+ "','" + imagen + "'); ";
+
                 OdbcCommand ingreso = new OdbcCommand(cadena, con.Conexion());
                 ingreso.ExecuteNonQuery();
                 i = 1;
@@ -415,6 +417,36 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
         }
 
 
+        public ArrayList busquedaIndividualPelis(string idu)
+        {
+            var arList = new ArrayList();
+            try
+            {
+                string busqueda = "select imagen from peliculas where idPeliculas=12;";
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+
+               
+
+             
+               
+                
+
+
+                while (lector.Read())
+                {
+                    arList.Add(lector[0]);
+                    
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+
+
+            return arList;
+        }
 
 
 
@@ -433,6 +465,144 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
             string sql = "call consultaIndPeli("+id+");";
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
             return dataTable;
+        }
+
+        public bool actuPelis(string id, string nom, string clasif, string gen, string sub, string idim, string preci, string sinop)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call actuPelis(" + id + ",'" + nom + "','"+clasif+"','"+gen+"','"+sub+"','"+idim+"','"+preci+"','"+sinop+"');";
+                OdbcCommand modif = new OdbcCommand(cadena, con.Conexion());
+                modif.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al modificar película" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool elimPelis(string id)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call elimPelis("+ id +");";
+                OdbcCommand modif = new OdbcCommand(cadena, con.Conexion());
+                modif.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al eliminar la película" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        
+        public ArrayList busquedaPeliD()
+        {
+            var arList = new ArrayList();
+            try
+            {
+
+                string busqueda = "call consultaDerechosPeli();";//select 
+                //procedure
+                //triger
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+                while (lector.Read())//en toeria esta recorrera todos los registros
+                {
+
+
+                    //arList.Add(lector[0]);//idciudad
+                    arList.Add(lector[0] + "   " + lector[1]+" "+lector[2]);//nombre ciudad
+                                                              // arList.Add(lector[2]);//Dirección
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+
+
+            return arList;//retornara el nombre de todos los cines en el arrayList
+        }
+
+        
+        public OdbcDataAdapter llenarTblPeliD(string peliid)
+        {
+            string sql = "call consultaDP(" + peliid+");";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
+
+        public bool elimPeliD(string id)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call elimPeliD(" + id + ");";
+                OdbcCommand modif = new OdbcCommand(cadena, con.Conexion());
+                modif.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al eliminar los derehcos de la película" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool altaPeliD(string id)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call altaPeliD(" + id + ");";
+                OdbcCommand modif = new OdbcCommand(cadena, con.Conexion());
+                modif.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error al dar de alta los derehcos de la película" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 

@@ -92,10 +92,16 @@ namespace CapaControlador
         }
 
 
-        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop)
+        public bool ingresoPeliculas(string nom, string clas, string gen, string sub, string idio, string preci, string sinop, object imagen)
         {
-            return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop);
+            return sn.ingresoPeliculas(nom,  clas, gen, sub, idio,  preci, sinop, imagen);
 
+        }
+
+
+        public ArrayList busquedaIndividualPelis(string idu)
+        {
+            return sn.busquedaIndividualPelis(idu);
         }
 
         public DataTable llenarTblPeli()
@@ -112,6 +118,38 @@ namespace CapaControlador
             DataTable table = new DataTable();
             dt.Fill(table);
             return table;
+        }
+
+        public bool actuPelis(string id, string nom, string clasif, string gen, string sub, string idim, string preci, string sinop)
+        {
+            return sn.actuPelis(id, nom, clasif, gen, sub, idim, preci, sinop);
+        }
+
+        public bool elimPelis(string id)
+        {
+            return sn.elimPelis(id);
+        }
+        public ArrayList busquedaPeliD()
+        {
+            return sn.busquedaPeliD();
+        }
+
+        public DataTable llenarTblPeliD(string peliid)
+        {
+            OdbcDataAdapter dt = sn.llenarTblPeliD(peliid);
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
+
+        public bool elimPeliD(string id)
+        {
+            return sn.elimPeliD(id);
+        }
+
+        public bool altaPeliD(string id)
+        {
+            return sn.altaPeliD(id);
         }
     }
 

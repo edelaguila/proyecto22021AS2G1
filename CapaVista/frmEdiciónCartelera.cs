@@ -49,5 +49,12 @@ namespace CapaVista
             frmH.Show();
             this.Hide();
         }
+
+        private void btnPrueba_Click(object sender, EventArgs e)
+        {
+            /*var frmTest = new frmEliminacionPeli();
+            frmTest.Show();
+            this.Hide();*/
+        }
     }
 }

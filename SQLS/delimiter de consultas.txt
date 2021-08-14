@@ -12,3 +12,10 @@ BEGIN
 	select idPeliculas as ID, Nombre, Clasificación, Genero, Subtitulado, Idioma, precio, sinopsis, estado from peliculas; 
 END
 |
+
+DELIMITER |
+CREATE PROCEDURE `actuPelis`(IN `id` INT, IN `nom` VARCHAR(45), IN `clas` VARCHAR(45), IN `gen` VARCHAR(45), IN `sub` VARCHAR(45), IN `lan` VARCHAR(45), IN `preciop` double, IN `sinopsisp` VARCHAR(100))
+BEGIN
+	UPDATE peliculas set Nombre = nom, Clasificación = clas, Genero = gen, Subtitulado = sub, Idioma = lan, precio = preciop, sinopsis = sinopsisp where id = idPeliculas;
+END
+|
