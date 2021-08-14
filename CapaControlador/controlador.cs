@@ -184,6 +184,23 @@ namespace CapaControlador
             return table;
         }
 
+        public DataTable consultaIndHorariCi(string id)
+        {
+            OdbcDataAdapter data = sn.consultaIndHorariCi(id);
+            DataTable table = new DataTable();
+            data.Fill(table);
+            return table;
+        }
+
+        public bool modifHorarioPeli(string peli, string sala, string horario, string id)
+        {
+            return sn.modifHorarioPeli(peli, sala, horario, id);
+        }
+
+        public bool elimHorarioPeli(string id)
+        {
+            return sn.elimHorarioPeli(id);
+        }
     }
 
 }

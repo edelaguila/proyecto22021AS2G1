@@ -721,7 +721,62 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
             return dataTable;
         }
 
+        public OdbcDataAdapter consultaIndHorariCi(string id)
+        {
+            string consulta = "call conIndHorarioCi("+id+");";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(consulta, con.Conexion());
+            return dataTable;
+        }
 
+        public bool modifHorarioPeli(string peli, string sala, string horario, string id)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call modifHorarioCi(" + peli + "," + sala + "," + horario + ","+id+");";
+                OdbcCommand ingh = new OdbcCommand(cadena, con.Conexion());
+                ingh.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error, no se pudo modificar el horario de la peli\n" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool elimHorarioPeli(string id)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call bajaHorarioCin(" + id + ");";
+                OdbcCommand ingh = new OdbcCommand(cadena, con.Conexion());
+                ingh.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error, no se pudo eliminar el horario de la peli\n" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
 }
