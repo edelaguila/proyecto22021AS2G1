@@ -82,3 +82,19 @@ BEGIN
     INNER JOIN salas sa on sa.idSalas = hc.fkSala;
 END
 |
+
+DELIMITER |
+CREATE PROCEDURE conIndHorarioCi(IN `id` INT)
+BEGIN
+	select hc.idhorarioCine as ID, pe.Nombre as Película, ho.fechaHora as Horario,
+    sa.Descripción as "Descripción Sala", sa.formatoPeli as Formato
+	from horariocine hc 
+	INNER JOIN peliculas pe on pe.idPeliculas = hc.fkPelicula
+	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario
+    INNER JOIN salas sa on sa.idSalas = hc.fkSala
+    where hc.idhorarioCine=id;
+END
+|
+drop procedure conIndHorarioCi;
+select * from horariocine;
+call conIndHorarioCi(3);
