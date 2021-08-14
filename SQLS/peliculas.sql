@@ -119,11 +119,13 @@ END//
 -- Conuslta individual Cliente 
 DELIMITER //
 	CREATE PROCEDURE consCliente(in id int) BEGIN
-		select * from clienes where id = idClientes;
+		select * from clientes where id = idClientes;
 END//
-
+-- drop procedure consCliente;
 -- Consulta general de clientes
 DELIMITER //
+CREATE PROCEDURE consultaCliente()
+BEGIN
 	SELECT idClientes, Nombre, Estado from clientes;
 END//
 
