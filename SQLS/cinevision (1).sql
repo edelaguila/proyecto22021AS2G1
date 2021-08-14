@@ -192,7 +192,8 @@ INSERT INTO `cines` (`idCines`, `Nombre`, `Direccion`) VALUES
 CREATE TABLE `clientes` (
   `idClientes` int NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
-  `Nit` varchar(45) DEFAULT NULL
+  `Nit` varchar(45) DEFAULT NULL,
+  `Estado` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
