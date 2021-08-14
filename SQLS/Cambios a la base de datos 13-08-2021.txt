@@ -1,0 +1,1 @@
+Añadido el campo estado en la tabla facturas.
