@@ -176,6 +176,14 @@ namespace CapaControlador
         {
             return sn.ingHorarioPeli(peli, sala, horario);
         }
+        public DataTable llenarTblPeliHorario()
+        {
+            OdbcDataAdapter dt = sn.llenarTblPeliHorario();
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
+
     }
 
 }

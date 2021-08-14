@@ -67,3 +67,18 @@ END
 
 call consultaSala();
 
+call conGenHorarioCi();
+
+drop procedure conGenHorarioCi;
+
+DELIMITER |
+CREATE PROCEDURE `conGenHorarioCi`()
+BEGIN
+	select hc.idhorarioCine as ID, pe.Nombre as Pelicula, ho.fechaHora as Horario,
+    sa.Descripción as Descripcion_Sala, sa.formatoPeli as Formato
+	from horariocine hc 
+	INNER JOIN peliculas pe on pe.idPeliculas = hc.fkPelicula
+	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario
+    INNER JOIN salas sa on sa.idSalas = hc.fkSala;
+END
+|

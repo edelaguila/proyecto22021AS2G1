@@ -714,6 +714,14 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
                 return false;
             }
         }
+        public OdbcDataAdapter llenarTblPeliHorario()
+        {
+            string sql = "call conGenHorarioCi();";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
+
+
     }
 
 }
