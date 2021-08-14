@@ -129,6 +129,28 @@ namespace CapaControlador
         {
             return sn.elimPelis(id);
         }
+        public ArrayList busquedaPeliD()
+        {
+            return sn.busquedaPeliD();
+        }
+
+        public DataTable llenarTblPeliD(string peliid)
+        {
+            OdbcDataAdapter dt = sn.llenarTblPeliD(peliid);
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
+
+        public bool elimPeliD(string id)
+        {
+            return sn.elimPeliD(id);
+        }
+
+        public bool altaPeliD(string id)
+        {
+            return sn.altaPeliD(id);
+        }
     }
 
 }
