@@ -151,6 +151,31 @@ namespace CapaControlador
         {
             return sn.altaPeliD(id);
         }
+
+        public bool ingresoHorario( string fechahora)
+        {
+            return sn.ingresoHorario(fechahora);
+        }
+
+        public ArrayList busquedaPeli()
+        {
+            return sn.busquedaPeli();
+        }
+
+        public ArrayList busquedaSala()
+        {
+            return sn.busquedaSala();
+        }
+
+        public ArrayList busquedaHorario()
+        {
+            return sn.busquedaHorario();
+        }
+
+        public bool ingHorarioPeli(string peli, string sala, string horario)
+        {
+            return sn.ingHorarioPeli(peli, sala, horario);
+        }
     }
 
 }
