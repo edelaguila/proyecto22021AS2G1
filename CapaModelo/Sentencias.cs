@@ -604,6 +604,124 @@ insert into peliculas values (2,'Dragon ball super broly','T','peleas','No','lat
                 return false;
             }
         }
+
+        public bool ingresoHorario(string fechahora)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call ingresoHorario('" + fechahora + "');";
+                OdbcCommand ingh = new OdbcCommand(cadena, con.Conexion());
+                ingh.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error, no se pudo ingresar el horario\n" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public ArrayList busquedaPeli()
+        {
+            var arList = new ArrayList();
+            try
+            {
+                string busqueda = "call consultaGenPelis();";
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+                while (lector.Read())
+                {
+                    arList.Add(lector[0] + " -  " + lector[1]);
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+            return arList;
+        }
+
+        public ArrayList busquedaSala()
+        {
+            var arList = new ArrayList();
+            try
+            {
+                string busqueda = "call consultaSala();";
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+                while (lector.Read())
+                {
+                    arList.Add("("+lector[0]+")" + lector[1]+": "+lector[2]+" Cine: "+lector[3]+", "+lector[4]);
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+            return arList;
+        }
+
+        public ArrayList busquedaHorario()
+        {
+            var arList = new ArrayList();
+            try
+            {
+                string busqueda = "select * from horarios;";
+                OdbcCommand busI = new OdbcCommand(busqueda, con.Conexion());
+                OdbcDataReader lector = busI.ExecuteReader();
+                while (lector.Read())
+                {
+                    arList.Add("(" + lector[0] + ") " + lector[1]);
+                }
+            }
+            catch (OdbcException)
+            {
+
+            }
+            return arList;
+        }
+
+        public bool ingHorarioPeli(string peli, string sala, string horario)
+        {
+            int i = 0;
+            try
+            {
+                string cadena = "call ingHorarioCi(" + peli + ","+sala+","+horario+");";
+                OdbcCommand ingh = new OdbcCommand(cadena, con.Conexion());
+                ingh.ExecuteNonQuery();
+                i = 1;
+            }
+            catch (OdbcException Error)
+            {
+                Console.WriteLine("Error, no se pudo asignar el horario a la pelicula seleccionada\n" + Error);
+
+            }
+            if (i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public OdbcDataAdapter llenarTblPeliHorario()
+        {
+            string sql = "call conGenHorarioCi();";
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.Conexion());
+            return dataTable;
+        }
+
+
     }
 
 }

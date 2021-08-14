@@ -61,5 +61,12 @@ namespace CapaVista
         {
 
         }
+
+        private void btnAsig_Click(object sender, EventArgs e)
+        {
+            var frmasing = new frmAsignaHorario();
+            frmasing.Show();
+            this.Close();
+        }
     }
 }

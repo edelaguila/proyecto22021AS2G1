@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-08-2021 a las 06:00:44
+-- Tiempo de generación: 14-08-2021 a las 05:32:35
 -- Versión del servidor: 8.0.23
 -- Versión de PHP: 8.0.2
 
@@ -27,12 +27,25 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actuClientes` (IN `id` INT, IN `nom` VARCHAR(45), IN `nitC` VARCHAR(45))  BEGIN
+		UPDATE clientes set Nombre = nom, Nit = nitC where id = idClientes;
+    
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `actuPelis` (IN `id` INT, IN `nom` VARCHAR(45), IN `clas` VARCHAR(45), IN `gen` VARCHAR(45), IN `sub` VARCHAR(45), IN `lan` VARCHAR(45), IN `preciop` DOUBLE, IN `sinopsisp` VARCHAR(100))  BEGIN
 	UPDATE peliculas set Nombre = nom, Clasificación = clas, Genero = gen, Subtitulado = sub, Idioma = lan, precio = preciop, sinopsis = sinopsisp where id = idPeliculas;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `actuUser` (IN `nusuario` VARCHAR(45), IN `npass` VARCHAR(45), IN `id` INT)  BEGIN
 	update usuarios set Usuario=nusuario, Password=npass where idUsuarios=id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `altaPeliD` (IN `id` INT)  BEGIN
+	update derechos set estadoDerechos = 1 where idDerechos=id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `bajaCliente` (IN `id` INT)  BEGIN
+		UPDATE cientes set Estado = 0;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `bajaHorarioCin` (IN `id` INT)  BEGIN
@@ -60,6 +73,28 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `conGenHorarioCiInd` (IN `id` INT)  
 	INNER JOIN horarios ho on ho.idHorario = hc.fkHorario
     INNER JOIN salas sa on sa.idSalas = hc.fkSala
     where hc.idhorarioCine=id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consCliente` (IN `id` INT)  BEGIN
+		select * from clientes where id = idClientes;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consulFactura` (IN `idf` INT)  BEGIN
+		select * from factura where idf = idFactura;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaCliente` ()  BEGIN
+	SELECT idClientes, Nombre, Estado from clientes;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaDerechosPeli` ()  BEGIN
+	select idPeliculas as ID, nombre as Pelicula, estadoDerechos as estadoDerecho from 
+    peliculas, derechos where idPeliculas=fkPelicula;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaDP` (IN `id` INT)  BEGIN
+	select idPeliculas as ID, nombre as Pelicula, clasificación, genero, sinopsis, estadoDerechos as estadoDerecho from 
+    peliculas, derechos where idPeliculas=fkPelicula and idDerechos=id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaFiltraPelis` ()  BEGIN
@@ -90,6 +125,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaPriv` ()  BEGIN
 	select idPrivilegios as id, descPrivilegio as Privilegio from privilegios;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `elimFactura` (IN `id` INT)  BEGIN
+		UPDATE factura set estado = 0 where id = idf;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `elimPeliD` (IN `id` INT)  BEGIN
+	update derechos set estadoDerechos = 0 where idDerechos=id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `elimPelis` (IN `id` INT)  BEGIN
 	UPDATE peliculas set estado = 0 where id = idPeliculas;
     END$$
@@ -108,6 +151,16 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ingUser` (IN `usuario` VARCHAR(45), IN `pass` VARCHAR(45))  BEGIN
 	insert into usuarios (Usuario, Password) values (usuario,pass);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertCliente` (IN `nom` VARCHAR(45), IN `nitC` VARCHAR(45))  BEGIN
+		INSERT INTO clientes (Nombre, Nit,Estado) values (nom, nitC,1);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertFactura` (IN `codCliente` INT, IN `metPago` VARCHAR(45), IN `subTotal` DOUBLE, IN `impuesto` DOUBLE, IN `est` INT)  BEGIN 
+        
+        insert into factura (fkCliente,metodoPago,subTotal,impuesto,estado) values (codCliente,metPago,subTotal,impuesto, est);
+        
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insertPeli` (IN `nom` VARCHAR(45), IN `clas` VARCHAR(45), IN `gen` VARCHAR(45), IN `sub` VARCHAR(45), IN `lan` VARCHAR(45), IN `precio` DOUBLE, IN `sinoPsis` VARCHAR(100), IN `imagen` LONGBLOB)  BEGIN 
@@ -193,7 +246,7 @@ CREATE TABLE `clientes` (
   `idClientes` int NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
   `Nit` varchar(45) DEFAULT NULL,
-  `Estado` int DEFAULT NULL
+  `estado` tinyint DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -217,7 +270,10 @@ INSERT INTO `derechos` (`idDerechos`, `fkPelicula`, `estadoDerechos`) VALUES
 (2, 10, 0),
 (3, 11, 0),
 (4, 12, 0),
-(5, 13, 0);
+(5, 13, 0),
+(6, 14, 0),
+(7, 15, 0),
+(8, 16, 0);
 
 -- --------------------------------------------------------
 
@@ -230,7 +286,8 @@ CREATE TABLE `factura` (
   `fkCliente` int DEFAULT NULL,
   `metodoPago` varchar(45) DEFAULT NULL,
   `subTotal` double DEFAULT NULL,
-  `impuesto` double DEFAULT NULL
+  `impuesto` double DEFAULT NULL,
+  `estado` tinyint DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -281,26 +338,30 @@ CREATE TABLE `peliculas` (
   `precio` double DEFAULT NULL,
   `sinopsis` varchar(100) DEFAULT NULL,
   `estado` tinyint DEFAULT '1',
-   `imagen` longblob
+  `imagen` longblob
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Volcado de datos para la tabla `peliculas`
 --
 
-INSERT INTO `peliculas` (`idPeliculas`, `Nombre`, `Clasificación`, `Genero`, `Subtitulado`, `Idioma`, `precio`, `sinopsis`, `estado`) VALUES
-(1, 'avengers', 'Adultos', 'peleas', 'No', 'latino', 400, 'No me quiero ir señor coordinador', 1),
-(2, 'Dragon ball super broly', 'T', 'peleas', 'No', 'latino', 500, 'F por Goku', 1),
-(3, 'No Game No Life Zero', 'T', 'Anime', 'Español', 'Japonés', 500, 'Precuela al anime No Game No Life', 1),
-(4, 'Fate/stay night UBW', 'T', 'Anime', 'Español', 'Japonés', 450, 'Im the bone of my sword', 1),
-(5, 'Rapidos y Furiosos 9', 'T', 'Acción', 'Si', 'Español Latino', 50, 'Repollo', 1),
-(6, 'Spiderman 3', 'T', 'Acción', 'Si', 'Español Latino', 30, 'Un clásico', 1),
-(7, 'Coco', 'A ', 'Animada', 'NO', 'Español Latino', 40.5, 'Que triste contexto', 1),
-(8, 'a', 'a', 'a', 'a', 'a', 30.25, 'a', 0),
-(9, 'b', 'PG13', 'Comedia', 'SI', 'b', 564.4, 'b', 0),
-(10, 'Prueba', 'PG ', 'Comedia', 'NO', 'a', 123, 'Prueba 8-23pm', 0),
-(11, '7 Votos del exito', 'PG13', 'Ciencia Ficción', 'SI', 'Español', 250.5, 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 1),
-(12, 'Prueba Peli 2', 'PG13', 'Drama', 'SI', 'Español', 557.54, 'a', 1),
-(13, 'Pelicula Prueba 120821 - 742am', 'PG ', 'Acción', 'SI', 'Inglés', 350.5, 'Esta es una pelicula de prueba a las 7:43am', 1);
+INSERT INTO `peliculas` (`idPeliculas`, `Nombre`, `Clasificación`, `Genero`, `Subtitulado`, `Idioma`, `precio`, `sinopsis`, `estado`, `imagen`) VALUES
+(1, 'avengers', 'Adultos', 'peleas', 'No', 'latino', 400, 'No me quiero ir señor coordinador', 1, NULL),
+(2, 'Dragon ball super broly', 'T', 'peleas', 'No', 'latino', 500, 'F por Goku', 1, NULL),
+(3, 'No Game No Life Zero', 'T', 'Anime', 'Español', 'Japonés', 500, 'Precuela al anime No Game No Life', 1, NULL),
+(4, 'Fate/stay night UBW', 'T', 'Anime', 'Español', 'Japonés', 450, 'Im the bone of my sword', 1, NULL),
+(5, 'Rapidos y Furiosos 9', 'T', 'Acción', 'Si', 'Español Latino', 50, 'Repollo', 1, NULL),
+(6, 'Spiderman 3', 'T', 'Acción', 'Si', 'Español Latino', 30, 'Un clásico', 1, NULL),
+(7, 'Coco', 'A ', 'Animada', 'NO', 'Español Latino', 40.5, 'Que triste contexto', 1, NULL),
+(8, 'a', 'a', 'a', 'a', 'a', 30.25, 'a', 0, NULL),
+(9, 'b', 'PG13', 'Comedia', 'SI', 'b', 564.4, 'b', 0, NULL),
+(10, 'Prueba', 'PG ', 'Comedia', 'NO', 'a', 123, 'Prueba 8-23pm', 0, NULL),
+(11, '7 Votos del exito', 'PG13', 'Ciencia Ficción', 'SI', 'Español', 250.5, 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 1, NULL),
+(12, 'Prueba Peli 2', 'PG13', 'Drama', 'SI', 'Español', 557.54, 'a', 1, NULL),
+(13, 'Pelicula Prueba 120821 - 742am', 'PG ', 'Acción', 'SI', 'Inglés', 350.5, 'Esta es una pelicula de prueba a las 7:43am', 1, NULL),
+(14, 'Steel ball run', 'A ', 'Acción', 'SI', 'Japones', 123, 'Esta es la quinta leccion', 0, 0x53797374656d2e44726177696e672e4269746d6170),
+(15, 'PADORU', 'PG13', 'Ciencia Ficción', 'SI', 'PADORU', 124.4, 'Hashire sori wo, kaze no you ni, tsukihara wo, padoru padoru!', 1, ''),
+(16, 'Peliculaprueba', 'PG13', 'Comedia', 'SI', 'aad', 213, 'adas', 1, '');
 
 -- --------------------------------------------------------
 
@@ -558,7 +619,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `derechos`
 --
 ALTER TABLE `derechos`
-  MODIFY `idDerechos` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idDerechos` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
@@ -582,7 +643,7 @@ ALTER TABLE `horarios`
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idPeliculas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `privilegios`

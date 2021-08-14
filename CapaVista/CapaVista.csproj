@@ -91,6 +91,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAsignaHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignaHorario.Designer.cs">
+      <DependentUpon>frmAsignaHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaHorario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAsignaHorario.resx">
+      <DependentUpon>frmAsignaHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaHorario.resx">
       <DependentUpon>frmConsultaHorario.cs</DependentUpon>
     </EmbeddedResource>

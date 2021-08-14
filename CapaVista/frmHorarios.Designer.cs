@@ -37,6 +37,7 @@ namespace CapaVista
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.btnRegreso = new System.Windows.Forms.Button();
+            this.btnAsig = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@ namespace CapaVista
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Size = new System.Drawing.Size(244, 43);
             this.btnIngreso.TabIndex = 27;
-            this.btnIngreso.Text = "INGRESAR";
+            this.btnIngreso.Text = "INGRESAR HORARIOS";
             this.btnIngreso.UseVisualStyleBackColor = false;
             this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
@@ -104,7 +105,7 @@ namespace CapaVista
             this.btnEliminar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(83, 302);
+            this.btnEliminar.Location = new System.Drawing.Point(83, 334);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(244, 43);
             this.btnEliminar.TabIndex = 29;
@@ -117,7 +118,7 @@ namespace CapaVista
             this.btnConsulta.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnConsulta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta.ForeColor = System.Drawing.Color.White;
-            this.btnConsulta.Location = new System.Drawing.Point(401, 302);
+            this.btnConsulta.Location = new System.Drawing.Point(401, 334);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(244, 43);
             this.btnConsulta.TabIndex = 30;
@@ -136,12 +137,26 @@ namespace CapaVista
             this.btnRegreso.UseVisualStyleBackColor = true;
             this.btnRegreso.Click += new System.EventHandler(this.btnRegreso_Click);
             // 
+            // btnAsig
+            // 
+            this.btnAsig.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAsig.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsig.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAsig.Location = new System.Drawing.Point(241, 242);
+            this.btnAsig.Name = "btnAsig";
+            this.btnAsig.Size = new System.Drawing.Size(244, 43);
+            this.btnAsig.TabIndex = 45;
+            this.btnAsig.Text = "ASIGNAR HORARIOS";
+            this.btnAsig.UseVisualStyleBackColor = false;
+            this.btnAsig.Click += new System.EventHandler(this.btnAsig_Click);
+            // 
             // frmHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(740, 478);
+            this.Controls.Add(this.btnAsig);
             this.Controls.Add(this.btnRegreso);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.btnEliminar);
@@ -170,5 +185,6 @@ namespace CapaVista
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Button btnRegreso;
+        private System.Windows.Forms.Button btnAsig;
     }
 }

@@ -72,5 +72,10 @@ namespace CapaVista
             frmMan.Show();
             this.Close();
         }
+
+        private void frmModificacionPeliculas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

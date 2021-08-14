@@ -329,6 +329,7 @@ namespace CapaVista
             this.Controls.Add(this.panel1);
             this.Name = "frmModificacionPeliculas";
             this.Text = "Modificación de Pelis";
+            this.Load += new System.EventHandler(this.frmModificacionPeliculas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAct)).EndInit();
